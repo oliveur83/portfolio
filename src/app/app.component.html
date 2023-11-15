@@ -1,0 +1,37 @@
+<P class="mode_dev">mode développeur</P>
+<div class="switch">
+<input type="checkbox" name="toggle" [(ngModel)]="isDevMode" (change)="modedev()">
+	<label for="toggle">
+    <i class="bulb">
+      <span class="bulb-center"></span>
+      <span class="filament-1"></span>
+      <span class="filament-2"></span>
+      <span class="reflections">
+        <span></span>
+      </span>
+      <span class="sparks">
+        <i class="spark1"></i>
+        <i class="spark2"></i>
+        <i class="spark3"></i>
+        <i class="spark4"></i>
+      </span>
+    </i>    
+  </label>
+</div>
+<router-outlet></router-outlet>
+
+<div class="baredubas">
+    <div class="menu-princ">
+      <img src="./assets/logo_olicode.png" class="ma-classe" alt="Image 1" >
+      <button (click)="profil()" class="menu-button">Profil</button>
+      <button (click)="contact()" class="menu-button">Contact</button>
+      <button (click)="projet()" class="menu-button">Projet</button>
+      <button (click)="principal()" class="menu-button">Principal</button>
+      <select>
+        <option value="french">Francais</option>
+        <option value="english">English</option>
+  </select>
+      
+    </div>
+  </div>
+    
