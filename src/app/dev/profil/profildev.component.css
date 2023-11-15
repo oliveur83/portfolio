@@ -8,13 +8,37 @@
 body {
   background-color: #1e1e1e;
 }
+/* bouton ongler*/
+.button_onglet_no_select{
+  height: 100px;
+  width: 200px;
+  font-size: 30px;
+  background-color: rgb(45,45,45);
+  color:#ccc;
+  
+}
+.button_onglet_select{
+  height: 100px;
+  width: 200px;
+  font-size: 30px;
+  background-color: #1E1E1E;
+  color:gold
+  
+}
+.onglet{
+  width: 100%;
+  float: left;
+  height: 100px;
+  
+  background-color: #252526;
+} 
 .header {
   background: #3c3c3c;
   padding: 5px;
   display: flex;
   align-items: center;
   position: relative;
-  max-height: 30px;
+  max-height: 70px;
 }
 
 .logo {
@@ -30,7 +54,7 @@ ul.header-menu li.header-menu-link {
   display: inline-block;
   color: #cccccc;
   font-weight: 300;
-  font-size: 12px;
+  font-size: 50px;
   margin-right: 10px;
 }
 
@@ -53,7 +77,7 @@ ul.header-menu li.header-menu-link {
   float: left;
   top: 30px;
   left: 0;
-  width: 47px;
+  width: 100px;
   height: calc(100vh - 50px);
 }
 
@@ -122,36 +146,32 @@ ul.side-header-botton-menu {
   float:left;
   clear:both;
   height:1100px;
-  max-width: fit-content;
-  background-color: #00cc33;
+  width: 100%;
+  background-color: #1E1E1E;
 }
 .terminal{
   float:left;
   clear:both;
   flex:1;
   height: 100px;
-  max-width: fit-content;
-  background-color: #1400cc;
+  width: 100%;
+  background-color: #323232;
 }
 .pourcode{
+ width: 87%;
   float:left;
+  
   background-color: #cc008b;
   height: calc(100vh - 50px);
-  max-width: fit-content;
+
   flex-direction: column;
   display: flex;
 }
-.onglet{
 
-  float: left;
-  height: 100px;
-  max-width: fit-content;
-  background-color: #cc0011;
-}
 .menu-option h5 {
   margin: 10px 20px;
   color: #ccc;
-  font-size: 12px;
+  font-size: 30px;
   font-weight: 300;
 }
 
@@ -159,7 +179,7 @@ ul.side-header-botton-menu {
 
 .box-click i, .box-click span {
   color: #ccc;
-  font-size: 12px;
+  font-size: 20px;
   margin: 0 5px;
   z-index: 99;
   position: relative;
