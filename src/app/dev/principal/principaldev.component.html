@@ -1,0 +1,75 @@
+<body>
+
+  <!--- creation menu -->
+
+  <div class="menu-princ">
+    <div class="menu-item">
+      <img
+        (click)="profil()"
+        src="./assets/photo_profil.jpg"
+        alt="Image 1"
+        class="menu-image-round"
+      />
+      <button (click)="profil()" class="menu-button">Profill</button>
+    </div>
+    <div class="menu-item">
+      <img
+        (click)="projet()"
+        src="./assets/projet.png"
+        alt="Image 2"
+        class="menu-image-round"
+      />
+      <button (click)="projet()" class="menu-button">Projets</button>
+    </div>
+    <div class="menu-item">
+      <img
+        (click)="contact()"
+        src="./assets/contact.jpg"
+        alt="Image 3"
+        class="menu-image-round"
+      />
+      <button (click)="contact()" class="menu-button">Me contacter</button>
+    </div>
+  </div>
+  <h1>Mes projets</h1>
+  <div class="projetemplacemment">
+    <button class="button" (click)="navigate('left')">&lt;</button>
+
+    <div class="divprojet">
+      <div *ngIf="currentContent === 'A'">
+        <img class="imgpro" src="./assets/emploie.png" alt="Image" />
+        <h1 id="titreprojet">Emploi du temps</h1>
+        <p id="paraprojet">
+          Projet réalisé en master-<br />
+          Création d'une application<br />
+          web de gestion et visualition d'emploi du<br />
+          temps<br />
+        </p>
+      </div>
+      <div *ngIf="currentContent === 'B'">
+        <img class="imgpro" src="./assets/aed.png" alt="Image" />
+        <h1 id="titreprojet">Aedificantes</h1>
+        <p id="paraprojet">
+          Mission freelance-<br />
+          Amélioration du site en fonction des exigences <br />
+          du client et resolution de bugs au niveaux de la traduction <br />
+        </p>
+      </div>
+      <div *ngIf="currentContent === 'C'">
+        <img src="chemin/vers/angular.png" alt="Image" />
+        <h1 id="titreprojet">Projet angular & vuejs</h1>
+        <p id="paraprojet">
+          Projet réaliser en master-<br />
+          Réalisation d'un environnement pour la gestion <br />
+          de cours,note, emploie réaliser sur les deux framework.<br />
+        </p>
+      </div>
+    </div>
+
+    <button class="button" (click)="navigate('right')">&gt;</button>
+  </div>
+
+  <!--- bare de menu  -->
+
+  <!--- bare du bas -->
+</body>

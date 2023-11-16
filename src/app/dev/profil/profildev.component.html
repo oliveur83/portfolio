@@ -1,0 +1,152 @@
+<html>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+<body>
+      <!-- file edit  -->
+    
+    <div class="header">
+        <div class="logo">
+            <img src="logo.svg" alt="">
+        </div>
+        <ul class="header-menu">
+            <li class="header-menu-link"(click)="toggleSubMenu() ">File</li>
+            <li class="header-menu-link">Edit</li>
+            <li class="header-menu-link">Selection</li>
+            <li class="header-menu-link">View</li>
+            <li class="header-menu-link">Go</li>
+            <li class="header-menu-link">Run</li>
+            <li class="header-menu-link">Terminal</li>
+            <li class="header-menu-link">Help</li>
+            <ul class="sub-menu" *ngIf="isSubMenuVisible">
+                <li class="sub-menu-label">Label 1</li>
+                <li class="sub-menu-label">Label 2</li>
+                <li class="sub-menu-label">Label 3</li>
+                <li class="sub-menu-label">Label 4</li>
+            </ul>
+        </ul>
+ 
+        <div class="header-app-icons">
+            <ul>
+                <li>
+                    <i class="fa fa-window-minimize"></i>
+                </li>
+                <li>
+                    <i class="fa fa-window-restore"></i>
+                </li>
+                <li>
+                    <i class="fa fa-times"></i>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+  <!-- collone gauche icon-->
+    <div class="side-header">
+        <ul class="side-header-menu">
+            <li class="active">
+                <i class="fa fa-copy"></i>
+            </li>
+            <li>
+                <i class="fa fa-search"></i>
+            </li>
+            <li>
+                <i class="fa fa-share-alt"></i>
+            </li>
+            <li>
+                <i class="fa fa-play"></i>
+            </li>
+            <li>
+                <i class="fa fa-th-large"></i>
+            </li>
+        </ul>
+        <ul class="side-header-botton-menu">
+           
+        </ul>
+    </div>
+      <!-- collone gauche texte -->
+    <div class="menu-option">
+      <h5>EXPLORER</h5>
+      <div class="menu-drop">
+          <div class="box-click">
+              <i class="fa fa-chevron-down"></i> <span>OPEN EDITORS</span>
+              <div class="show-pre">
+                  <ul>
+                      <li class="active"><i class="fab fa-html5"></i> <span>index.html</span> </li>
+                      <li><i class="fab fa-css3-alt"></i> <span  > main.html </span></li>
+                      <li><i class="fab fa-js"></i> <span> main.js </span></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <hr>
+    
+      <div class="menu-drop">
+          <div class="box-click">
+              <i class="fa fa-chevron-down"></i> <span>VSCODE</span>
+              <div class="show-pre">
+                  <ul>
+                      <li><i class="fa fa-chevron-right"></i> <span>css </span></li>
+                      <li><i class="fa fa-chevron-right"></i> <span>webfonts </span></li>
+                      <li><i class="fab fa-html5"></i> <span>index.html </span></li>
+                      <li><i class="fab fa-css3-alt"></i> <span>main.html </span></li>
+                      <li><i class="fab fa-js"></i> <span>main.js </span></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+
+      
+  </div>
+  
+  <div class="pourcode">
+  <div class ="onglet">
+    <button class ="button_onglet_select">python</button>
+    <button class ="button_onglet_no_select">python</button>
+    <button class ="button_onglet_no_select">python</button>
+</div>
+  <div class ="code">
+      <p>toto</p>
+  </div>
+  <div class ="terminal">
+    <p>toto</p>
+</div>
+</div>
+  <!-- truc bleu en bas -->
+    <div class="bottom-header">
+        <ul class="right">
+            <li>
+                <i class="fa fa-times-circle"></i>
+            </li>
+            <li>
+                <i class="fa fa-exclamation-triangle"></i>
+            </li>
+        </ul>
+        <ul class="left">
+            <li>
+                Ln 24, Col 32
+            </li>
+            <li>
+                Spaces: 3
+            </li>
+            <li>
+                UTF-8
+            </li>
+            <li>
+                CRLF
+            </li>
+            <li>
+                HTML
+            </li>
+            <li>
+                <i class="fa fa-radiation-alt"></i> Port: 5050
+            </li>
+            <li>
+                <i class="fa fa-bell"></i>
+            </li>
+        </ul>
+    </div>
+
+
+</body>
+</html>
