@@ -10,22 +10,14 @@
             <img src="logo.svg" alt="">
         </div>
         <ul class="header-menu">
-            <li class="header-menu-link"(click)="toggleSubMenu() ">File</li>
-            <li class="header-menu-link">Edit</li>
-            <li class="header-menu-link">Selection</li>
-            <li class="header-menu-link">View</li>
-            <li class="header-menu-link">Go</li>
-            <li class="header-menu-link">Run</li>
-            <li class="header-menu-link">Terminal</li>
-            <li class="header-menu-link">Help</li>
-            <ul class="sub-menu" *ngIf="isSubMenuVisible">
-                <li class="sub-menu-label">Label 1</li>
-                <li class="sub-menu-label">Label 2</li>
-                <li class="sub-menu-label">Label 3</li>
-                <li class="sub-menu-label">Label 4</li>
-            </ul>
+            <li class="header-menu-link" *ngFor="let menuItem of menuItems" (click)="toggleSubMenu(menuItem)">
+                {{ menuItem.label }}
+                <ul class="sub-menu" *ngIf="menuItem.isSubMenuVisible">
+                    <li class="sub-menu-label" *ngFor="let subItem of menuItem.subMenuItems">{{ subItem.label }}</li>
+                </ul>
+            </li>
+            <!-- Autres éléments du menu -->
         </ul>
- 
         <div class="header-app-icons">
             <ul>
                 <li>
@@ -60,9 +52,7 @@
                 <i class="fa fa-th-large"></i>
             </li>
         </ul>
-        <ul class="side-header-botton-menu">
-           
-        </ul>
+  
     </div>
       <!-- collone gauche texte -->
     <div class="menu-option">
@@ -72,10 +62,10 @@
               <i class="fa fa-chevron-down"></i> <span>OPEN EDITORS</span>
               <div class="show-pre">
                   <ul>
-                      <li class="active"><i class="fab fa-html5"></i> <span>index.html</span> </li>
+                      <li ><i class="fab fa-html5"></i> <span>index.html</span> </li>
                       <li><i class="fab fa-css3-alt"></i> <span  > main.html </span></li>
                       <li><i class="fab fa-js"></i> <span> main.js </span></li>
-                  </ul>
+                  </ul> 
               </div>
           </div>
       </div>
@@ -100,11 +90,11 @@
   </div>
   
   <div class="pourcode">
-  <div class ="onglet">
-    <button class ="button_onglet_select">python</button>
-    <button class ="button_onglet_no_select">python</button>
-    <button class ="button_onglet_no_select">python</button>
-</div>
+ <div class="onglet">
+    <button class="button_onglet_no_select" [class.button_onglet_select]="ongletSelectionne === 'python'" (click)="changerOnglet('python')">python</button>
+    <button class="button_onglet_no_select" [class.button_onglet_select]="ongletSelectionne === 'php'" (click)="changerOnglet('php')">php</button>
+    <button class="button_onglet_no_select" [class.button_onglet_select]="ongletSelectionne === 'angular'" (click)="changerOnglet('angular')">angular</button>
+  </div>
   <div class ="code">
       <p>toto</p>
   </div>
