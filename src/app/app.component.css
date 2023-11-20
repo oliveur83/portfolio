@@ -6,6 +6,18 @@
     justify-content: center;
     margin-top: 100px;
   } 
+  .content_left {
+    flex: 1; /* La classe "content_left" prend le reste de l'espace disponible */
+  }
+  #container {
+    margin-right: 500px;
+    width: 90%;
+    height: 300px;
+    background-color: rgb(196, 228, 244);
+  }
+  .box_du_haut {
+    display: flex;
+  }
   .mode_dev {
     font-size: 50px; /* Ajustez la taille du texte selon vos besoins */
   } 
@@ -56,6 +68,7 @@
   }
   
   .switch {
+    
     position: relative;
     margin-bottom: 100px;
   }

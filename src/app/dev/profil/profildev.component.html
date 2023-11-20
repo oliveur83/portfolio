@@ -1,142 +1,169 @@
 <html>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-
-<body>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+   <body>
       <!-- file edit  -->
-    
-    <div class="header">
-        <div class="logo">
+      <div class="header">
+         <div class="logo">
             <img src="logo.svg" alt="">
-        </div>
-        <ul class="header-menu">
+         </div>
+         <ul class="header-menu">
             <li class="header-menu-link" *ngFor="let menuItem of menuItems" (click)="toggleSubMenu(menuItem)">
-                {{ menuItem.label }}
-                <ul class="sub-menu" *ngIf="menuItem.isSubMenuVisible">
-                    <li class="sub-menu-label" *ngFor="let subItem of menuItem.subMenuItems">{{ subItem.label }}</li>
-                </ul>
+            {{ menuItem.label }}
+            <ul class="sub-menu" *ngIf="menuItem.isSubMenuVisible">
+               <li class="sub-menu-label" *ngFor="let subItem of menuItem.subMenuItems" (click)="submenu(subItem.label)">{{ subItem.label }}</li>
+            </ul>
             </li>
             <!-- Autres éléments du menu -->
-        </ul>
-        <div class="header-app-icons">
+         </ul>
+         <div class="header-app-icons">
             <ul>
-                <li>
-                    <i class="fa fa-window-minimize"></i>
-                </li>
-                <li>
-                    <i class="fa fa-window-restore"></i>
-                </li>
-                <li>
-                    <i class="fa fa-times"></i>
-                </li>
+               <li>
+                  <i class="fa fa-window-minimize"></i>
+               </li>
+               <li>
+                  <i class="fa fa-window-restore"></i>
+               </li>
+               <li>
+                  <i class="fa fa-times"></i>
+               </li>
             </ul>
-        </div>
-        
-    </div>
-  <!-- collone gauche icon-->
-    <div class="side-header">
-        <ul class="side-header-menu">
+         </div>
+      </div>
+      <!-- collone gauche icon-->
+      <div class="side-header">
+         <ul class="side-header-menu">
             <li class="active">
-                <i class="fa fa-copy"></i>
+               <i class="fa fa-copy"></i>
             </li>
             <li>
-                <i class="fa fa-search"></i>
+               <i class="fa fa-search"></i>
             </li>
             <li>
-                <i class="fa fa-share-alt"></i>
+               <i class="fa fa-share-alt"></i>
             </li>
             <li>
-                <i class="fa fa-play"></i>
+               <i class="fa fa-play"></i>
             </li>
             <li>
-                <i class="fa fa-th-large"></i>
+               <i class="fa fa-th-large"></i>
             </li>
-        </ul>
-  
-    </div>
+         </ul>
+      </div>
       <!-- collone gauche texte -->
-    <div class="menu-option">
-      <h5>EXPLORER</h5>
-      <div class="menu-drop">
-          <div class="box-click">
-              <i class="fa fa-chevron-down"></i> <span>OPEN EDITORS</span>
-              <div class="show-pre">
+      <div class="menu-option">
+         <h5>EXPLORER</h5>
+         <div class="menu-drop">
+            <div class="box-click">
+               <i class="fa fa-chevron-down"></i> <span>OPEN EDITORS</span>
+               <div class="show-pre">
                   <ul>
-                      <li ><i class="fab fa-html5"></i> <span>index.html</span> </li>
-                      <li><i class="fab fa-css3-alt"></i> <span  > main.html </span></li>
-                      <li><i class="fab fa-js"></i> <span> main.js </span></li>
-                  </ul> 
-              </div>
-          </div>
-      </div>
-      <hr>
-    
-      <div class="menu-drop">
-          <div class="box-click">
-              <i class="fa fa-chevron-down"></i> <span>VSCODE</span>
-              <div class="show-pre">
-                  <ul>
-                      <li><i class="fa fa-chevron-right"></i> <span>css </span></li>
-                      <li><i class="fa fa-chevron-right"></i> <span>webfonts </span></li>
-                      <li><i class="fab fa-html5"></i> <span>index.html </span></li>
-                      <li><i class="fab fa-css3-alt"></i> <span>main.html </span></li>
-                      <li><i class="fab fa-js"></i> <span>main.js </span></li>
+                     <li ><i class="fab fa-html5"></i> <span>index.html</span> </li>
+                     <li><i class="fab fa-css3-alt"></i> <span  > main.html </span></li>
+                     <li><i class="fab fa-js"></i> <span> main.js </span></li>
                   </ul>
-              </div>
-          </div>
+               </div>
+            </div>
+         </div>
+         <hr>
+         <div class="menu-drop">
+            <div class="box-click">
+               <i class="fa fa-chevron-down"></i> <span>VSCODE</span>
+               <div class="show-pre">
+                  <ul>
+                     <li><i class="fa fa-chevron-right"></i> <span>css </span></li>
+                     <li><i class="fa fa-chevron-right"></i> <span>webfonts </span></li>
+                     <li><i class="fab fa-html5"></i> <span>index.html </span></li>
+                     <li><i class="fab fa-css3-alt"></i> <span>main.html </span></li>
+                     <li><i class="fab fa-js"></i> <span>main.js </span></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
       </div>
-
-      
-  </div>
-  
-  <div class="pourcode">
- <div class="onglet">
-    <button class="button_onglet_no_select" [class.button_onglet_select]="ongletSelectionne === 'python'" (click)="changerOnglet('python')">python</button>
-    <button class="button_onglet_no_select" [class.button_onglet_select]="ongletSelectionne === 'php'" (click)="changerOnglet('php')">php</button>
-    <button class="button_onglet_no_select" [class.button_onglet_select]="ongletSelectionne === 'angular'" (click)="changerOnglet('angular')">angular</button>
-  </div>
-  <div class ="code">
-      <p>toto</p>
-  </div>
-  <div class ="terminal">
-    <p>toto</p>
-</div>
-</div>
-  <!-- truc bleu en bas -->
-    <div class="bottom-header">
-        <ul class="right">
+      <div class="pourcode">
+         <div class="onglet">
+            <button class="button_onglet_no_select" [class.button_onglet_select]="ongletSelectionne === 'python'" (click)="changerOnglet('python')">python</button>
+            <button class="button_onglet_no_select" [class.button_onglet_select]="ongletSelectionne === 'php'" (click)="changerOnglet('php')">php</button>
+            <button class="button_onglet_no_select" [class.button_onglet_select]="ongletSelectionne === 'angular'" (click)="changerOnglet('angular')">angular</button>
+         </div>
+         <div class="containerdev">
+            <div class="code" id="code"  (scroll)="syncMinimap($event)">
+               <span class="variable">nom</span> = <span class="string">"Olivier"</span><br>
+               <span class="variable">prenom</span> = <span class="string">"Jean"</span><br>
+               <span class="variable">age</span> = <span class="number">25</span><br>
+               <span class="variable">ville</span> = <span class="string">"Paris"</span><br>
+               <span class="variable">stage_a_paris</span> = <span class="string">True</span><br>
+               <span class="variable">nom</span> = <span class="string">"Olivier"</span><br>
+               <span class="variable">prenom</span> = <span class="string">"Jean"</span><br>
+               <span class="variable">age</span> = <span class="number">25</span><br>
+               <span class="variable">ville</span> = <span class="string">"Paris"</span><br>
+               <span class="variable">stage_a_paris</span> = <span class="string">True</span><br>
+               <span class="variable">nom</span> = <span class="string">"Olivier"</span><br>
+               <span class="variable">prenom</span> = <span class="string">"Jean"</span><br>
+               <span class="variable">age</span> = <span class="number">25</span><br>
+               <span class="variable">ville</span> = <span class="string">"Paris"</span><br>
+               <span class="variable">stage_a_paris</span> = <span class="string">True</span><br>
+               <span class="variable">nom</span> = <span class="string">"Olivier"</span><br>
+               <span class="variable">prenom</span> = <span class="string">"Jean"</span><br>
+               <span class="variable">age</span> = <span class="number">25</span><br>
+               <span class="variable">ville</span> = <span class="string">"Paris"</span><br>
+               <span class="variable">stage_a_paris</span> = <span class="string">True</span><br>
+               <span class="variable">nom</span> = <span class="string">"Olivier"</span><br>
+               <span class="variable">prenom</span> = <span class="string">"Jean"</span><br>
+               <span class="variable">age</span> = <span class="number">25</span><br>
+               <span class="variable">ville</span> = <span class="string">"Paris"</span><br>
+               <span class="variable">stage_a_paris</span> = <span class="string">True</span><br>
+               <span class="variable">nom</span> = <span class="string">"Olivier"</span><br>
+               <span class="variable">prenom</span> = <span class="string">"Jean"</span><br>
+               <span class="variable">age</span> = <span class="number">25</span><br>
+               <span class="variable">ville</span> = <span class="string">"Paris"</span><br>
+               <span class="variable">stage_a_paris</span> = <span class="string">True</span><br>
+               <span class="variable">nom</span> = <span class="string">"Olivier"</span><br>
+               <span class="variable">prenom</span> = <span class="string">"Jean"</span><br>
+               <span class="variable">age</span> = <span class="number">25</span><br>
+               <span class="variable">ville</span> = <span class="string">"Paris"</span><br>
+               <span class="variable">stage_a_paris</span> = <span class="string">True</span><br>
+            </div>
+            <div class="minimap" id="minimap"></div>
+         </div>
+         <div class ="terminal">
+            sfdq
+         </div>
+      </div>
+      <!-- truc bleu en bas -->
+      <div class="bottom-header">
+         <ul class="right">
             <li>
-                <i class="fa fa-times-circle"></i>
+               <i class="fa fa-times-circle"></i>
             </li>
             <li>
-                <i class="fa fa-exclamation-triangle"></i>
+               <i class="fa fa-exclamation-triangle"></i>
             </li>
-        </ul>
-        <ul class="left">
+         </ul>
+         <ul class="left">
             <li>
-                Ln 24, Col 32
-            </li>
-            <li>
-                Spaces: 3
+               Ln 24, Col 32
             </li>
             <li>
-                UTF-8
+               Spaces: 3
             </li>
             <li>
-                CRLF
+               UTF-8
             </li>
             <li>
-                HTML
+               CRLF
             </li>
             <li>
-                <i class="fa fa-radiation-alt"></i> Port: 5050
+               HTML
             </li>
             <li>
-                <i class="fa fa-bell"></i>
+               <i class="fa fa-radiation-alt"></i> Port: 5050
             </li>
-        </ul>
-    </div>
-
-
-</body>
+            <li>
+               <i class="fa fa-bell"></i>
+            </li>
+         </ul>
+      </div>
+   </body>
 </html>

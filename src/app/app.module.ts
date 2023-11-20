@@ -12,6 +12,7 @@ import { ProjetComponent } from './projet/projet.component';
 import { ProfilComponentdev } from './dev/profil/profildev.component';
 import { DevPrincipalComponent } from './dev/principal/principaldev.component';
 import { ContactComponentdev } from './dev/contact/contactdev.component';
+
 @NgModule({
   declarations: [
     ContactComponentdev,
@@ -21,7 +22,8 @@ import { ContactComponentdev } from './dev/contact/contactdev.component';
     ProfilComponent,
     ContactComponent,
     PrincipalComponent,
-    ProjetComponent
+    ProjetComponent,
+   
   ],
   imports: [CommonModule,
     BrowserModule,

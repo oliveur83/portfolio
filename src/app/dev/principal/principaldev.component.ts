@@ -9,7 +9,6 @@ import {
 } from '@angular/animations';
 import { NavigationExtras, Router } from '@angular/router';
 
-import { logo } from './logo';
 
 @Component({
   selector: 'app-principaldev',
@@ -37,8 +36,7 @@ export class DevPrincipalComponent {
   ngAfterViewInit() {
     const container = this.elementRef.nativeElement.querySelector('#container');
 
-    const threeJSUtils = new logo(container);
-    threeJSUtils.init();
+
   }
   contents = ['A', 'B', 'C'];
   currentContent = 'A';

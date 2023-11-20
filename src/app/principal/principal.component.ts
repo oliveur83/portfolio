@@ -9,7 +9,7 @@ import {
 } from '@angular/animations';
 import { NavigationExtras, Router } from '@angular/router';
 
-import { logo } from './logo';
+import { logo } from '../logo';
 
 @Component({
   selector: 'app-principal',

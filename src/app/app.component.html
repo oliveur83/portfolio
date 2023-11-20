@@ -1,24 +1,32 @@
-<P class="mode_dev">Mode développeur</P>
 
-<div class="switch">
-<input type="checkbox" name="toggle" [(ngModel)]="isDevMode" (change)="modedev()">
-<label for="toggle">
-    <i class="bulb">
-      <span class="bulb-center"></span>
-      <span class="filament-1"></span>
-      <span class="filament-2"></span>
-      <span class="reflections">
-        <span></span>
-      </span>
-      <span class="sparks">
-        <i class="spark1"></i>
-        <i class="spark2"></i>
-        <i class="spark3"></i>
-        <i class="spark4"></i>
-      </span>
-    </i>    
-  </label>
+<div class="box_du_haut">
+  <div class="content_left">
+    <p class="mode_dev">Mode développeur</p>
+    <div class="switch">
+      <input type="checkbox" name="toggle" [(ngModel)]="isDevMode" (change)="modedev()">
+      <label for="toggle">
+        <i class="bulb">
+          <span class="bulb-center"></span>
+          <span class="filament-1"></span>
+          <span class="filament-2"></span>
+          <span class="reflections">
+            <span></span>
+          </span>
+          <span class="sparks">
+            <i class="spark1"></i>
+            <i class="spark2"></i>
+            <i class="spark3"></i>
+            <i class="spark4"></i>
+          </span>
+        </i>
+      </label>
+    </div>
+  </div>
+  <div id="container"*ngIf="!isDevMode" >
+    <!-- Contenu du conteneur -->
+  </div>
 </div>
+
 <router-outlet></router-outlet>
 
 <div class="baredubas">
