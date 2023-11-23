@@ -11,9 +11,12 @@ interface MenuItem {
   styleUrls: ['./profildev.component.css']
 })
 export class ProfilComponentdev {
-  
+  ouvreeditorla: boolean= true;
+  mot: string = 'terminal';
+  terminalSelectionne: string = 'TERMINAL';
   isSubMenuVisible: boolean = false;
   ongletSelectionne: string = 'python';
+  fichierSelectionne: string = 'profil';
   menuItems: MenuItem[] = [
     { label: 'File', isSubMenuVisible: false, subMenuItems: [{ label: 'download' }, { label: 'Print' }, { label: 'Tutu' }, { label: 'Toto' }] },
     { label: 'Edit', isSubMenuVisible: false, subMenuItems: [{ label: 'Cut' }, { label: 'Copy' }, { label: 'Paste' }] },
@@ -23,7 +26,9 @@ export class ProfilComponentdev {
   console.log('tata')
 
 }
-
+ouvreeditors(){
+this.ouvreeditorla=!this.ouvreeditorla
+}
 toggleSubMenu(menuItem: MenuItem) {
   menuItem.isSubMenuVisible = !menuItem.isSubMenuVisible;
 }
@@ -56,7 +61,17 @@ download()
 
 changerOnglet(nouvelOnglet: string): void {
   this.ongletSelectionne = nouvelOnglet;
-
+ 
+this.syncMinimap();
+}
+changerterminal(nouvelterminal: string): void {
+  this.terminalSelectionne = nouvelterminal;
+  this.mot = nouvelterminal;
+}
+changerfichier(nouvelficher: string): void {
+  this.fichierSelectionne = nouvelficher;
+  
+this.syncMinimap();
 }
 ngOnInit() {
   this.syncMinimap();
@@ -65,27 +80,37 @@ ngOnInit() {
 @HostListener('window:resize', ['$event'])
 onResize(event: Event) {
   this.syncMinimap();
-}
-
-syncMinimap(event?: Event) {
-  const codeContent = document.getElementById('code');
-  const minimap = document.getElementById('minimap');
-
-  if (codeContent && minimap) {
-    // Copiez le contenu de la div principale dans la minimap
-    minimap.innerHTML = codeContent.innerHTML;
-
-    // Ajustez la hauteur de la minimap en fonction de la fenêtre principale
-    const scaleFactor = codeContent.clientHeight / codeContent.scrollHeight;
-  
-   
-    // Synchronisez la position de défilement entre la div principale et la minimap
-    minimap.scrollTop = codeContent.scrollTop * scaleFactor;
   }
-}
+  ngAfterViewInit() {
+    this.syncMinimap();
+    console.log('ici')// Code à exécuter après l'initialisation de la vue
+  }
+  syncMinimap(event?: Event) {
+    const codeContent = document.getElementById('code');
+    const minimap = document.getElementById('minimap');
+    console.log(minimap,codeContent)
+    if (codeContent && minimap) {
+      // Copiez le contenu de la div principale dans la minimap
+      minimap.innerHTML = codeContent.innerHTML;
+      console.log("reussi")
+      // Ajustez la hauteur de la minimap en fonction de la fenêtre principale
+      const scaleFactor = codeContent.clientHeight / codeContent.scrollHeight;
+    
+      // Synchronisez la position de défilement entre la div principale et la minimap
+      minimap.scrollTop = codeContent.scrollTop * scaleFactor;
+
+    }
+    else{
+      console.log("pas trop")
+    }
+  }
+  
 
 @HostListener('scroll', ['$event'])
 onScroll(event: Event) {
+  this.syncMinimap();
+}@HostListener('document:click', ['$event'])
+onDocumentClick(event: MouseEvent) {
   this.syncMinimap();
 }
 }

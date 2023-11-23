@@ -55,87 +55,335 @@
          <h5>EXPLORER</h5>
          <div class="menu-drop">
             <div class="box-click">
-               <i class="fa fa-chevron-down"></i> <span>OPEN EDITORS</span>
-               <div class="show-pre">
-                  <ul>
-                     <li ><i class="fab fa-html5"></i> <span>index.html</span> </li>
-                     <li><i class="fab fa-css3-alt"></i> <span  > main.html </span></li>
-                     <li><i class="fab fa-js"></i> <span> main.js </span></li>
+               <i class="fa fa-chevron-down" (click)="ouvreeditors()" ></i> <span>OPEN EDITORS</span>
+               <div >
+                  <ul *ngIf="ongletSelectionne === 'python' && ouvreeditorla == true">
+                     <li class="show-pre" [class.show-press-select]="fichierSelectionne === 'profil'" (click)="changerfichier('profil')" ><i class="fab fa-python "></i> <span>profil.py</span> </li>
+                     <li class="show-pre"  [class.show-press-select]="fichierSelectionne === 'contact'" (click)="changerfichier('contact')"><i class="fab fa-python"></i> <span  > contact.py </span></li>
+                     <li  class="show-pre"  [class.show-press-select]="fichierSelectionne === 'projet'" (click)="changerfichier('projet')"><i class="fab fa-python"></i> <span> projet.py </span></li>
+                  </ul>
+                  <ul *ngIf="ongletSelectionne === 'php'&& ouvreeditorla == true">
+                     <li class="show-pre" [class.show-press-select]="fichierSelectionne === 'profil'"(click)="changerfichier('profil')"><i class="fab fa-php"></i> <span>profil.php</span> </li>
+                     <li class="show-pre"  [class.show-press-select]="fichierSelectionne === 'contact'"(click)="changerfichier('contact')"><i class="fab fa-php"></i> <span  > contact.php </span></li>
+                     <li  class="show-pre"  [class.show-press-select]="fichierSelectionne === 'projet'"(click)="changerfichier('projet')"><i class="fab fa-php"></i> <span> projet.php </span></li>
+                  </ul>
+                  <ul *ngIf="ongletSelectionne === 'javascript'&& ouvreeditorla == true ">
+                     <li class="show-pre" [class.show-press-select]="fichierSelectionne === 'profil'"(click)="changerfichier('profil')"><i class="fab fa-js"></i> <span>profil.php</span> </li>
+                     <li class="show-pre"  [class.show-press-select]="fichierSelectionne === 'contact'" (click)="changerfichier('contact')"><i class="fab fa-js"></i> <span  > contact.php </span></li>
+                     <li  class="show-pre"  [class.show-press-select]="fichierSelectionne === 'projet'"(click)="changerfichier('projet')"><i class="fab fa-js"></i> <span> projet.php </span></li>
                   </ul>
                </div>
             </div>
          </div>
          <hr>
-         <div class="menu-drop">
-            <div class="box-click">
-               <i class="fa fa-chevron-down"></i> <span>VSCODE</span>
-               <div class="show-pre">
-                  <ul>
-                     <li><i class="fa fa-chevron-right"></i> <span>css </span></li>
-                     <li><i class="fa fa-chevron-right"></i> <span>webfonts </span></li>
-                     <li><i class="fab fa-html5"></i> <span>index.html </span></li>
-                     <li><i class="fab fa-css3-alt"></i> <span>main.html </span></li>
-                     <li><i class="fab fa-js"></i> <span>main.js </span></li>
-                  </ul>
-               </div>
-            </div>
-         </div>
+        
       </div>
       <div class="pourcode">
          <div class="onglet">
-            <button class="button_onglet_no_select" [class.button_onglet_select]="ongletSelectionne === 'python'" (click)="changerOnglet('python')">python</button>
-            <button class="button_onglet_no_select" [class.button_onglet_select]="ongletSelectionne === 'php'" (click)="changerOnglet('php')">php</button>
-            <button class="button_onglet_no_select" [class.button_onglet_select]="ongletSelectionne === 'angular'" (click)="changerOnglet('angular')">angular</button>
+            <button class="button_onglet_no_select" [class.button_onglet_select]="ongletSelectionne === 'python'" (click)="changerOnglet('python')"><i class="fab fa-python "></i>python</button>
+            <button class="button_onglet_no_select" [class.button_onglet_select]="ongletSelectionne === 'php'" (click)="changerOnglet('php')"><i class="fab fa-php"></i>php</button>
+            <button class="button_onglet_no_select" [class.button_onglet_select]="ongletSelectionne === 'javascript'" (click)="changerOnglet('javascript')"><i class="fab fa-js"></i>javascript</button>
          </div>
-         <div class="containerdev">
-            <div class="code" id="code"  (scroll)="syncMinimap($event)">
-               <span class="variable">nom</span> = <span class="string">"Olivier"</span><br>
-               <span class="variable">prenom</span> = <span class="string">"Jean"</span><br>
-               <span class="variable">age</span> = <span class="number">25</span><br>
-               <span class="variable">ville</span> = <span class="string">"Paris"</span><br>
-               <span class="variable">stage_a_paris</span> = <span class="string">True</span><br>
-               <span class="variable">nom</span> = <span class="string">"Olivier"</span><br>
-               <span class="variable">prenom</span> = <span class="string">"Jean"</span><br>
-               <span class="variable">age</span> = <span class="number">25</span><br>
-               <span class="variable">ville</span> = <span class="string">"Paris"</span><br>
-               <span class="variable">stage_a_paris</span> = <span class="string">True</span><br>
-               <span class="variable">nom</span> = <span class="string">"Olivier"</span><br>
-               <span class="variable">prenom</span> = <span class="string">"Jean"</span><br>
-               <span class="variable">age</span> = <span class="number">25</span><br>
-               <span class="variable">ville</span> = <span class="string">"Paris"</span><br>
-               <span class="variable">stage_a_paris</span> = <span class="string">True</span><br>
-               <span class="variable">nom</span> = <span class="string">"Olivier"</span><br>
-               <span class="variable">prenom</span> = <span class="string">"Jean"</span><br>
-               <span class="variable">age</span> = <span class="number">25</span><br>
-               <span class="variable">ville</span> = <span class="string">"Paris"</span><br>
-               <span class="variable">stage_a_paris</span> = <span class="string">True</span><br>
-               <span class="variable">nom</span> = <span class="string">"Olivier"</span><br>
-               <span class="variable">prenom</span> = <span class="string">"Jean"</span><br>
-               <span class="variable">age</span> = <span class="number">25</span><br>
-               <span class="variable">ville</span> = <span class="string">"Paris"</span><br>
-               <span class="variable">stage_a_paris</span> = <span class="string">True</span><br>
-               <span class="variable">nom</span> = <span class="string">"Olivier"</span><br>
-               <span class="variable">prenom</span> = <span class="string">"Jean"</span><br>
-               <span class="variable">age</span> = <span class="number">25</span><br>
-               <span class="variable">ville</span> = <span class="string">"Paris"</span><br>
-               <span class="variable">stage_a_paris</span> = <span class="string">True</span><br>
-               <span class="variable">nom</span> = <span class="string">"Olivier"</span><br>
-               <span class="variable">prenom</span> = <span class="string">"Jean"</span><br>
-               <span class="variable">age</span> = <span class="number">25</span><br>
-               <span class="variable">ville</span> = <span class="string">"Paris"</span><br>
-               <span class="variable">stage_a_paris</span> = <span class="string">True</span><br>
+         <div class="containerdev" *ngIf="ongletSelectionne === 'python' && fichierSelectionne === 'profil'">
+            <div class="code" id="code"  (scroll)="syncMinimap($event)" >
+               <span class="variable">prenom</span> = "<span class="string">tom</span>"<br>
+               <span class="variable">nom</span> = "<span class="string">Olivier</span>"<br>
+               <span class="variable">mail</span> = "<span class="string">tomolivierpro@gmail.com</span>"<br>
+               <span class="variable">ville</span> = "<span class="string">lyon</span>"<br>
+               <span class="variable">langages</span> = <span class="boolean">False</span><br>
+               
+               <span class="print">print</span>(<span class="string">" formation "</span>)<br>
+               <span class="key">if</span> <span class="variable">ville</span> == "<span class="string">toulon</span>":<br>
+                   <span class="tabulation print">print</span>(<span class="string">"DUT GEII , 2017-2019"</span>)<br>
+                   <span class="tabulation print">print</span>(<span class="string">"licence informatique , 2019 - 2022"</span>)<br>
+               <span class="key">elif</span> <span class="variable">ville</span> == "<span class="string">corse</span>":<br>
+                   <span class="tabulation print">print</span>(<span class="string">"master informatique, 2022 -2024"</span>)<br>
+               
+               <span class="print">print</span>(<span class="string">"experience profesionnel"</span>)<br>
+               <span class="key">if</span> <span class="variable">ville</span> == "<span class="string">toulon</span>":<br>
+                   <span class="tabulation print">print</span>(<span class="string">""" stage fin de DUT GEII , 2019, 8 semaine
+                         hopital saint anne
+                         techno principaux  :php ,mysql
+                         """</span>)<br>
+               <span class="key">elif</span> <span class="variable">ville</span> == "<span class="string">corse</span>":<br>
+                   <span class="tabulation print">print</span>(<span class="string">"""stage fin de master , 2024 , 6 mois a
+                         alteca 
+                         techno principaux php(synfony), vuejs
+                         
+                         """</span>)<br>
+                         
+                         <span class="key">def</span> <span class="fonction">switch_case_annee</span>(<span class="variable">annee</span>):<br>
+            <span class="tabulation variable"> switch</span> = (<br>
+            <span class="tabulation number"> 2019</span>:<span class="string"> """ Stage à l'Hôpital d'Instruction des Armées Sainte-Anne de Toulon, création d'une application web de type QCM destinée aux apprentis
+Docteurs en transfusion sanguine. Récupération de données pour analyse par le directeur.
+
+Concours entrepreneuriat "Les Entrep' Var", création de "Handicap Indépendance", une application connectée à différents modules qui
+Permettront à n'importe quelle personne handicapée d'être autonome chez elle.
+"""</span>,<br>
+<span class="tabulation number"> 2022</span>: <span class="string"> """Hackathon, développement d'une application web de type jeu de loi avec des voitures électriques comme pions pour que l'utilisateur
+Comprenne l'importance de la gestion de l'énergie. Réalisé en
+Collaboration avec EDF Corse."""</span>,<br>
+<span class="tabulation number"> 2023</span>:<span class="string">  """Concours entrepreneuriat "Challenge Innovation", création d'un boîtier connecté relié à une application intelligente. OXI (nom de
+L’entreprise) vous permet d'arrêter de fumer en gérant à votre place votre consommation de tabac."""</span>,<br>
+<span class="tabulation number"> 2024</span>:<span class="string">  """2024 """</span>,<br>
+   <span class="tabulation" >)</span> <br>
+    
+    <span class="variable">annee</span> = 2023<br>
+    <span class="variable">resultat</span> = <span class="function">switch_case_annee</span>(<span class="variable">annee</span>)<br>
+    <span class="print">print</span>(<span class="variable">resultat</span>)<br>
+    <span class="print">print</span>(<span class="string">"compétence"</span>)<br>
+    <span class="key">if</span> <span class="variable">langages</span> == <span class="boolean">True</span>:<br>
+        <span class="tabulation variable">top_langage_decroissante</span> = (1: 'python', 2: 'javascript', 3: 'php',<br>
+                                  4: 'html/css', 5: 'typescript', 6: 'flutter', 7: 'SQL')<br>
+        <span class="key tabulation">for</span> <span class="variable">cle</span>, <span class="variable">valeur</span> in <span class="variable">top_langage_decroissante</span>.<span class="function">items</span>():<br>
+            <span class="print tabulation">print</span>(<span class="string">f"Clé : (cle), Valeur : (valeur)"</span>)<br>
+    <span class="key">else</span>:<br>
+        <span class="tabulation variable">top_framework</span> = ["angular", 'vuejs', 'react']<br>
+        <span class="tabulation variable">logiciel</span> = ['github', 'vscode']<br>
+        <span class="tabulation print">print</span>(<span class="string">"loisir"</span>)<br>
+
+<span class="key">def</span> <span class="fonction">myloisir</span>():<br>
+    <span class="tabulation print">print</span>(<span class="string">""" 
+          Pratique du street workout et du triathlon, ce qui m'apporte 
+          rigueur et discipline. Voyages autour du monde (Japon, États-Unis, 
+          Irlande, Londres, Thaïlande), grâce à quoi j'ai acquis une adaptabilité
+           aux imprévus et une ouverture d'esprit.
+Les projets 3D JavaScript et les projets Python handtracking qui satisfont
+           ma curiosité et mon envie de réaliser des projets.
+          """</span>)<br>
+
+<span class="fonction">myloisir</span>()<br>
             </div>
             <div class="minimap" id="minimap"></div>
          </div>
-         <div class ="terminal">
-            sfdq
+         <div class="containerdev" *ngIf="ongletSelectionne === 'python' && fichierSelectionne === 'contact'">
+            <div class="code" id="code"  (scroll)="syncMinimap($event)" >
+               <span class="variable">nom</span> = <span class="string">"Olivier"</span><br>
+               cxv<span class="variable">prenom</span> = <span class="string">"Jean"</span><br>
+               <span class="variable">age</span> = <span class="number">25</span><br>
+               <span class="variable">ville</span> = <span class="string">"Paris"</span><br>
+               <span class="variable">stage_a_paris</span> = <span class="string">True</span><br>
+               <span class="print">print</span>(<span class="string">"formation"</span> ) <br>
+               <span class="key">if</span> <span class="variable">ville</span> == <span class="string">"Toulon"</span> <br>
+               <span class="tabulation print">print</span>(<span class="string">"DUT GEII,2017-2019"</span> ) <br>
+               <span  class="tabulation print">print</span>(<span class="string">"Licence informatique,2019-2022"</span> ) <br>
+               <span class="key">elif</span> <span class="variable">ville</span> == <span class="string">"corte"</span> <br>
+               <span class="tabulation print">print</span>(<span class="string">"Master informatique,2022-2024"</span> ) <br>
+            
+            </div>
+            <div class="minimap" id="minimap"></div>
          </div>
+         <div class="containerdev" *ngIf="ongletSelectionne === 'python' && fichierSelectionne === 'projet'">
+            <div class="code" id="code"  (scroll)="syncMinimap($event)" >
+              fds <span class="variable">nom</span> = <span class="string">"Olivier"</span><br>
+               <span class="variable">prenom</span> = <span class="string">"Jean"</span><br>
+               <span class="variable">age</span> = <span class="number">25</span><br>
+               <span class="variable">ville</span> = <span class="string">"Paris"</span><br>
+               <span class="variable">stage_a_paris</span> = <span class="string">True</span><br>
+               <span class="print">print</span>(<span class="string">"formation"</span> ) <br>
+               <span class="key">if</span> <span class="variable">ville</span> == <span class="string">"Toulon"</span> <br>
+               <span class="tabulation print">print</span>(<span class="string">"DUT GEII,2017-2019"</span> ) <br>
+               <span  class="tabulation print">print</span>(<span class="string">"Licence informatique,2019-2022"</span> ) <br>
+               <span class="key">elif</span> <span class="variable">ville</span> == <span class="string">"corte"</span> <br>
+               <span class="tabulation print">print</span>(<span class="string">"Master informatique,2022-2024"</span> ) <br>
+            
+            </div>
+            <div class="minimap" id="minimap"></div>
+         </div>
+        
+         <div class="containerdev" *ngIf="ongletSelectionne === 'php' && fichierSelectionne === 'profil'">
+            <div class="code" id="code"  (scroll)="syncMinimap($event)" >
+              <span class="variable_php">$nom</span> = <span class="string_php">"Olivier"</span><br>
+               <span class="variable_php">$prenom</span> = <span class="string_php">"Jean"</span><br>
+               <span class="variable_php">$age</span> = <span class="number_php">25</span><br>
+               <span class="variable_php">$ville</span> = <span class="string_php">"Paris"</span><br>
+               <span class="variable_php">$stage_a_paris</span> = <span class="string_php">True</span><br>
+               <span class="echo">echo</span><span class="string_php">"formation"</span>  <br>
+               <span class="key_php">if</span><span class="variable_php">$ville</span>  == <span class="string_php">"Toulon"</span> <br>
+               <span class="echo">echo</span><span class="string_php">"DUT GEII , 2017-2019\n"</span>  <br>
+               <span class="echo">echo</span><span class="string_php">"Licence informatique , 2019 - 2022\n"</span>  <br>
+               <span class="key_php">elseif</span><span class="variable_php">$ville</span>  == <span class="string_php">"corse"</span> <br>
+               <span class="echo">echo</span><span class="string_php">"Master informatique, 2022 - 2024\n"</span>  <br>
+               <span class="echo">echo</span><span class="string_php">"Expérience professionnelle\n"</span>  <br>
+               
+               <span class="key_php">if</span><span class="variable_php">$ville</span>  == <span class="string_php">"Toulon"</span> <br>
+               <span class="echo">echo</span><span class="string_php">"Stage fin de DUT GEII , 2019, 8 semaines\n"</span>  <br>
+               <span class="echo">echo</span><span class="string_php">"Hopital Saint Anne\n"</span>  <br>
+               <span class="echo">echo</span><span class="string_php">"Techno principaux : PHP, MySQL\n"</span>  <br>
+               <span class="key_php">if</span><span class="variable_php">$ville</span>  == <span class="string_php">"corse"</span> <br>
+               <span class="echo">echo</span><span class="string_php">"Stage fin de master , 2024 , 6 mois à\n"</span>  <br>
+               <span class="echo">echo</span><span class="string_php">"Alteca\n"</span>  <br>
+               <span class="echo">echo</span><span class="string_php">"Techno principaux: PHP (Symfony), Vue.js\n"</span>  <br>
+               <span class="fonction_php">function</span>  <span class="fonction">switch_case_annee</span>(<span class="variable_php">$annee</span>) (<br>
+                  <span class ="key_php">switch</span>(<span class="variable_php">$annee</span>) (
+                      <span class="key_php">case</span> <span class ="number">2019</span>:<br>
+                      <span class="echo">echo</span> <span class="string_php">"Stage à l'Hôpital d'Instruction des Armées Sainte-Anne de Toulon, création d'une application web de type QCM destinée aux apprentis Docteurs en transfusion sanguine. Récupération de données pour analyse par le directeur.\n\nConcours entrepreneuriat \"Les Entrep' Var\", création de \"Handicap Indépendance\", une application connectée à différents modules qui permettront à n'importe quelle personne handicapée d'être autonome chez elle.\n"</span>;
+                      <br><span class="key_php">break</span>;<br>
+                      <span class="key_php">case</span> <span class ="number">2022</span>:<br>
+                      <span class="echo">echo</span> <span class="string_php">"Hackathon, développement d'une application web de type jeu de loi avec des voitures électriques comme pions pour que l'utilisateur comprenne l'importance de la gestion de l'énergie. Réalisé en collaboration avec EDF Corse.\n"</span>;
+                      <br>  <span class="key_php">break</span>;<br>
+                      <span class="key_php">case</span> <span class ="number">2023</span>:<br>
+                      <span class="echo">echo</span> <span class="string_php">"Concours entrepreneuriat \"Challenge Innovation\", création d'un boîtier connecté relié à une application intelligente. OXI (nom de l’entreprise) vous permet d'arrêter de fumer en gérant à votre place votre consommation de tabac.\n"</span>;
+                      <br> <span class="key_php">break</span>;<br>
+                      <span class="key_php">case</span> <span class ="number">2024</span>:<br>
+                      <span class="echo">echo</span> <span class="string_php">"2024\n"</span>;
+                      <br> <span class="key_php">break</span>;<br>
+                      <span class="key_php">defautl</span>:<br>
+                      <span class="echo">echo</span> <span class="string_php">"L'année n'est pas 2019, 2022, 2023, 2024 ou 2029.\n"</span>;<br>
+                      <br>)
+              )
+              <span class="variable_php"> $annee</span> = <span class ="number">2023</span>;<br>
+              <span class="fonction"> switch_case_annee</span>  (<span class="variable_php"> $annee</span> );<br>
+              
+              <span class="echo">echo</span><span class="string_php">"Compétence\n";</span><br>
+              <span class="key_php">if</span> (<span class="variable_php">$langages</span>) (<br>
+               <span class="variable_php">$top_langage_decroissante</span> = [1 => 'Python', 2 => 'JavaScript', 3 => 'PHP', 4 => 'HTML/CSS', 5 => 'TypeScript', 6 => 'Flutter', 7 => 'SQL'];<br>
+               <span class="key_php">foreach</span> ($top_langage_decroissante as $cle => $valeur) (<br>
+                      <span class="echo">echo</span> "Clé : $cle, Valeur : $valeur\n";<br>
+                  )
+              ) <span class="key_php">else</span> (<br>
+               <span class="variable_php"> $top_framework</span> = ["Angular", 'Vue.js', 'React'];<br>
+                  <span class="variable_php"> $logiciel</span> = ['GitHub', 'VSCode'];<br>
+              )
+              
+              <span class="echo">echo</span> "Loisir\n";<br>
+              <span class="fonction_php">function myloisir()</span> (<br>
+                  <span class="echo">echo</span> <span class="string_php">"Pratique du street workout et du triathlon, ce qui m'apporte rigueur et discipline. Voyages autour du monde (Japon, États-Unis, Irlande, Londres, Thaïlande), grâce à quoi j'ai acquis une adaptabilité aux imprévus et une ouverture d'esprit.\nLes projets 3D JavaScript et les projets Python handtracking qui satisfont ma curiosité et mon envie de réaliser des projets.\n"</span>;<br>
+              )<br>
+              <br><br><br><br>
+              <span class="fonction_php"> myloisir()</span>;<br>
+              
+               
+            </div>
+            <div class="minimap" id="minimap"></div>
+         </div>
+         <div class="containerdev" *ngIf="ongletSelectionne === 'php' && fichierSelectionne === 'contact'">
+            <div class="code" id="code"  (scroll)="syncMinimap($event)" >
+               <span class="variable_php">$nom</span> = <span class="string_php">"Olivier"</span><br>
+               <span class="variable_php">$prenom</span> = <span class="string_php">"Jean"</span><br>
+              <span class="variable_php">$ville</span> = <span class="string_php">"Paris"</span><br>
+               <span class="variable_php">$stage_a_paris</span> = <span class="string_php">True</span><br>
+               <span class="echo">echo</span>(<span class="string_php">"formation"</span> ) <br>
+               <span class="key_php">if</span> <span class="variable_php">$ville</span> == <span class="string_php">"Toulon"</span> <br>
+            </div>
+            <div class="minimap" id="minimap"></div>
+         </div>
+         <div class="containerdev" *ngIf="ongletSelectionne === 'php'&& fichierSelectionne === 'projet'">
+            <div class="code" id="code"  (scroll)="syncMinimap($event)" >
+               <span class="variable_php">$nom</span> = <span class="string_php">"Olivier"</span><br>
+               <span class="variable_php">$prenom</span> = <span class="string_php">"Jean"</span><br>
+               <span class="variable_php">$age</span> = <span class="number_php">25</span><br>
+               <span class="variable_php">$ville</span> = <span class="string_php">"Paris"</span><br>
+               <span class="variable_php">$stage_a_paris</span> = <span class="string_php">True</span><br>
+           </div>
+            <div class="minimap" id="minimap"></div>
+         </div>
+         <div class="containerdev" *ngIf="ongletSelectionne === 'javascript' && fichierSelectionne === 'profil'">
+            <div class="code" id="code"  (scroll)="syncMinimap($event)" >
+               <span class="variable">nom</span> = <span class="string">"Olivier"</span><br>
+               <span class="variable">prenom</span> = <span class="string">"Jean"</span><br>
+               <span class="variable">age</span> = <span class="number">25</span><br>
+               <span class="variable">stage_a_paris</span> = <span class="string">True</span><br>
+               <span class="print">print</span>(<span class="string">"formation"</span> ) <br>
+             
+            </div>
+            <div class="minimap" id="minimap"></div>
+         </div>
+         <div class="containerdev" *ngIf="ongletSelectionne === 'javascript' && fichierSelectionne === 'contact'">
+            <div class="code" id="code"  (scroll)="syncMinimap($event)" >
+              <span class="variable">prenom</span> = <span class="string">"Jean"</span><br>
+               <span class="variable">age</span> = <span class="number">25</span><br>
+               <span class="variable">ville</span> = <span class="string">"Paris"</span><br>
+               <span class="variable">stage_a_paris</span> = <span class="string">True</span><br>
+               <span class="print">print</span>(<span class="string">"formation"</span> ) <br>
+             
+            </div>
+            <div class="minimap" id="minimap"></div>
+         </div>
+         <div class="containerdev" *ngIf="ongletSelectionne === 'javascript'&& fichierSelectionne === 'projet'">
+            <div class="code" id="code"  (scroll)="syncMinimap($event)" >
+               <span class="variable">nom</span> = <span class="string">"Olivier"</span><br>
+               <span class="variable">prenom</span> = <span class="string">"Jean"</span><br>
+               <span class="variable">age</span> = <span class="number">25</span><br>
+               <span class="variable">ville</span> = <span class="string">"Paris"</span><br>
+               <span class="variable">stage_a_paris</span> = <span class="string">True</span><br>
+               <span class="print">print</span><span class="string">"formation"</span> ) <br>
+             
+            </div>
+            <div class="minimap" id="minimap"></div>
+         </div>
+         <div class="terminal">
+            <div class="button-container_ter">
+                <button class="button_ter" [class.button_ter_select]="terminalSelectionne === 'PROBLeME'" (click)="changerterminal('PROBLeME')">PROBLÈME</button>
+                <button class="button_ter" [class.button_ter_select]="terminalSelectionne === 'SORTIE'" (click)="changerterminal('SORTIE')">SORTIE</button>
+                <button class="button_ter" [class.button_ter_select]="terminalSelectionne === 'TERMINAL'" (click)="changerterminal('TERMINAL')">TERMINAL</button>
+                <button class="button_ter" [class.button_ter_select]="terminalSelectionne === 'PORTS'" (click)="changerterminal('PORTS')">PORTS</button>
+            </div>
+            
+            <!-- La deuxième div avec le mot changeant -->
+          
+            <div class="interface_ter" *ngIf="terminalSelectionne==='TERMINAL'" >
+            
+               PS C:\Users\tomol\OneDrive\Bureau\freelance\forpor> ng serve<br>
+              <span class="number"> ✔</span> Browser application bundle generation complete.<br>
+               <br>
+               <div class="table">
+                  <div class="table-row">
+                      <div class="table-cell ">Initial Chunk Files</div>
+                      <div class="table-cell">Names</div>
+                      <div class="table-cell ">Raw Size</div>
+                  </div>
+                  <div class="table-row">
+                      <div class="table-cell number">vendor.js</div>
+                      <div class="table-cell">vendor</div>
+                      <div class="table-cell variable">4.08 MB</div>
+                  </div>
+                  <div class="table-row">
+                      <div class="table-cell number">polyfills.js</div>
+                      <div class="table-cell">polyfills</div>
+                      <div class="table-cell variable">333.17 kB</div>
+                  </div>
+                  <div class="table-row">
+                      <div class="table-cell number">main.js</div>
+                      <div class="table-cell">main</div>
+                      <div class="table-cell variable">250.64 kB</div>
+                  </div>
+                  <div class="table-row">
+                      <div class="table-cell number">styles.css, styles.js</div>
+                      <div class="table-cell">styles</div>
+                      <div class="table-cell variable">230.50 kB</div>
+                  </div>
+                  <div class="table-row">
+                      <div class="table-cell number">runtime.js</div>
+                      <div class="table-cell">runtime</div>
+                      <div class="table-cell variable">6.51 kB</div>
+                  </div>
+              </div>  <br>
+                                     | Initial Total |   4.88 MB<br>
+                                     <br>
+               Build at: 2023-11-21T15:16:31.865Z - Hash: 187f42945e756cae - Time: 7930ms<br>
+               <br>
+               ** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **<br>
+               <br><br>
+               <span class="number"> ✔</span> Compiled successfully.<br>
+            </div>
+            <div class="interface_ter" *ngIf="terminalSelectionne==='PROBLeME'" >
+            Aucun problème n'a été détecté dans mon code car il parfait
+            </div>
+            <div class="interface_ter" *ngIf="terminalSelectionne==='SORTIE'" >{{ mot }}</div>
+            <div class="interface_ter" *ngIf="terminalSelectionne==='PORTS'" >
+            Aucun port transféré. Transférez moi votre port pour accéder à nos services exécutés localement sur internet 
+           <br> <input type="text" id="texteInput" name="texteInput" placeholder="Votre texte ici">
+           <br><button type="button" onclick="afficherTexte()">Afficher</button>
+     
+            </div>
+        </div>
       </div>
       <!-- truc bleu en bas -->
       <div class="bottom-header">
          <ul class="right">
             <li>
-               <i class="fa fa-times-circle"></i>
+               <i class="fas fa-times-circle enlarged"></i>
             </li>
             <li>
                <i class="fa fa-exclamation-triangle"></i>
