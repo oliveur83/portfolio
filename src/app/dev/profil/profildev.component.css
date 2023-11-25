@@ -6,65 +6,22 @@
   list-style: none;
 
 }
-/* terminal*/
-
-.code {
-  float: left;
-  clear: both;
-  height: 900px;
-  width: 80%; /* Ajustez la largeur selon vos besoins */
-  background-color: #1E1E1E;
-  overflow-y: scroll;
-  overflow-x: scroll;
-  font-size: 40px;
-  color: #cccccc;
-
-}
-.interface_ter{
-  color:#ccc;
-  font-size: 30px;
-  height: 280px;
-  overflow-y: scroll;
-}
-.button-container_ter {
+/* header */
+.header {
+  background: #3c3c3c;
+  padding: 5px;
   display: flex;
+  align-items: center;
+  position: relative;
+  max-height: 70px;
 }
-
-.button_ter {
-  margin-right: 10px;
-  margin:10px;
-  background-color: #1E1E1E;
-  color:#ccc;
-  font-size: 30px;
-  border:none;
+.logo {
+  display: inline-block;
 }
-.button_ter_select {
-  font-weight: bold;
-  margin-right: 10px;
-  background-color: #323232;
-  color:#ccc;
-  border-bottom: 2px solid #ffffff; 
-  font-size: 35px;
- 
-
+ul.header-menu {
+  display: inline-block;
+  margin-left: 15px;
 }
-/* ------------------------*/
-/* python */
-.variable { color: #68CDFE  }
-.string { color:#CE9178 }
-.number { color:#B5CEA8  }
-.print{color: #DCDC8B }
-.key{color: #C586C0 }
-.fonction{color:darkgoldenrod}
-/* php */
-.variable_php { color: #68CDFE }
-.string_php { color: #CE9178}
-.number_php { color: #B5CEA8 }
-.echo{color: #DCDC8B }
-.key_php{color: #C586C0 }
-.acolade{color:darkgoldenrod}
-.fonction_php{color:#0b0bea}
-/* javascript */
 .sub-menu {
   background: #3c3c3c;
     list-style-type: none;
@@ -84,53 +41,6 @@
     z-index: 1;
     color: #ccc;
 }
-body {
-  background-color: #1e1e1e;
-}
-/* bouton ongler*/
-.button_onglet_no_select{
-  height: 100px;
-  width: 200px;
-  font-size: 30px;
-  background-color: rgb(45,45,45);
-  color:#ccc;
-  border: none;
-  
-}
-.button_onglet_select{
-  height: 100px;
-  width: 200px;
-  font-size: 30px;
-  background-color: #1E1E1E;
-  color:gold;
-  border:none;
-  
-}
-.onglet{
-  width: 100%;
-  float: left;
-  height: 100px;
-  
-  background-color: #252526;
-} 
-.header {
-  background: #3c3c3c;
-  padding: 5px;
-  display: flex;
-  align-items: center;
-  position: relative;
-  max-height: 70px;
-}
-
-.logo {
-  display: inline-block;
-}
-
-ul.header-menu {
-  display: inline-block;
-  margin-left: 15px;
-}
-
 ul.header-menu li.header-menu-link {
   display: inline-block;
   color: #cccccc;
@@ -138,10 +48,6 @@ ul.header-menu li.header-menu-link {
   width: 150px;
   font-size: 50px;
   margin-right: 10px;
-}
-
-.logo img {
-  width: 17px;
 }
 
 .header-app-icons {position: absolute;right: 0;}
@@ -154,6 +60,8 @@ ul.header-menu li.header-menu-link {
   color: #ccc;
 }
 
+/*side header*/
+
 .side-header {
   background: #333;
   float: left;
@@ -161,20 +69,8 @@ ul.header-menu li.header-menu-link {
   left: 0;
   z-index: 9999;
   width: 100px;
-  height: calc(100vh - 50px);
+  height: calc(97vh);
 }
-
-.bottom-header {
-  clear:both;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  background: #007acc;
-  padding: 0px 10px;
-}
-
-
 .side-header li:after {
   content: '';
   position: absolute;
@@ -187,15 +83,12 @@ ul.header-menu li.header-menu-link {
   transition: all .3s linear;
   opacity: 0;
 }
-
 .side-header li i {
   line-height: 47px !important;
   color: #ccc;
   cursor: pointer;
   font-size: 50px;
 }
-
-
 .side-header li {
   text-align: center;
   height: 44px;
@@ -206,107 +99,36 @@ ul.header-menu li.header-menu-link {
   width: 2px;
   opacity: 1;
 }
-
 .side-header li.active:after {
   width: 2px;
   opacity: 1;
   z-index: 0;
 }
-
 .side-header .active i {
   color: #fff;
   z-index: 0;
 }
 ul.side-header-botton-menu {
   position: absolute;
-  
   width: 100%;
   bottom: 0;
 }
-
+/*menu-option*/
 .menu-option {
   background: #252526;
   float: left;
   width: 270px;
   height: calc(100vh - 50px);
- 
+  cursor: pointer;
 }
-.containerdev {
-  position: relative;
-  display: flex;
-}
-
-
-.tabulation {
-  padding-left: 40px;
-}
-
-.minimap {
-  height: 100%; /* Ajustez la hauteur selon vos besoins */
-  width: 20%; /* Ajustez la largeur selon vos besoins */
-  background-color: #1E1E1E; /* Couleur de fond de la minimap */
-  position: sticky;
-  top: 0;
-  font-size: 0.6rem !important; 
-  
-}
-
-.terminal{
-  border-top: 2px solid #595757; 
-  float:left;
-  clear:both;
-  flex:1;
-  height: 200px;
-  width: 100%;
-  background-color: #1E1E1E;
-}
-.pourcode{
- width: 86%;
-  float:left;
-  
-  background-color: #cc008b;
-  height: calc(100vh);
-
-  flex-direction: column;
-  display: flex;
-}
-
+.aref{font-size: 40px;
+color:#ccc}
 .menu-option h5 {
   margin: 10px 20px;
   color: #ccc;
   font-size: 50px;
   font-weight: 300;
 }
-
-
-
-.box-click i, .box-click span {
-  color: #ccc;
-  font-size: 40px;
-  margin: 0 5px;
-  z-index: 99;
-  position: relative;
-}
-
-.show-pre {
-  margin-left: 15px;
-  margin-top: 4px;
-  margin-bottom: 4px;
-  
-}
-.show-press-select {
-  margin-left: 15px;
-  margin-top: 4px;
-  margin-bottom: 4px;
-  background-color: rgba(0, 122, 204, 0.5);
-  border-color: #68CDFE;
-
-}
-
-hr {
-  border-color: #585858;
-}
-
 .menu-option li {
   font-size: 12px;
   color: #ccc;
@@ -314,7 +136,6 @@ hr {
   position: relative;
   cursor: pointer;
 }
-
 .menu-option li:before {
   content: '';
   background: #37373d;
@@ -328,7 +149,6 @@ hr {
 .menu-option li:hover:before {
   opacity: 1;
 }
-
 .menu-option li.active {
   background: #0b0bea;
   z-index: 0;
@@ -342,47 +162,179 @@ hr {
   background-color: rgba(0, 122, 204, 0.3);
   border: 2px solid #68CDFE;
 }
+.box-click i, .box-click span {
+  color: #ccc;
+  font-size: 40px;
+  margin: 0 5px;
+  z-index: 99;
+  position: relative;
+}
+.show-pre {
+  margin-left: 15px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  
+}
+.show-press-select {
+  margin-left: 15px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  background-color: rgba(0, 122, 204, 0.5);
+  border-color: #68CDFE;
+}
+/* pourcode*/
+.pourcode{
+  width: 86%;
+   float:left;
+  
+   background-color: #cc008b;
+   height: calc(98vh);
+ 
+   flex-direction: column;
+   display: flex;
+ }
+ .onglet{
+  width: 100%;
+  float: left;
+  height: 100px;
+  
+  background-color: #252526;
+} 
+.button_onglet_select {
+  height: 100px;
+  width: 200px;
+  font-size: 30px;
+  background-color: #1E1E1E;
+  color:gold;
+  border:none;
+  
+}
+.button_onglet_no_select {
+  height: 100px;
+  width: 200px;
+  font-size: 30px;
+  background-color: rgb(45,45,45);
+  color:#ccc;
+  border: none;
+  
+}
+.button_onglet_no_select:hover .croix {
+  display: inline-block; 
+}
+.containerdev {
+  position: relative;
+  display: flex;
+}
+.num_code::-webkit-scrollbar {
+  width: 0;  /* Rendre la barre de défilement invisible */
+}
+.num_code{
+  float:left;
+  width: 80px;
+  flex-direction: column; 
+  background-color: #1E1E1E;
+  height:900px;
+  overflow: auto;
+  font-size: 40px;
+  color:#ccc;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent; 
+  
+}
+.code {
+  float: left;
+  clear: both;
+  height: 900px;
+  width: 90%; /* Ajustez la largeur selon vos besoins */
+  background-color: #1E1E1E;
+  overflow: auto;
+ 
+  font-size: 40px;
+  color: #cccccc;
 
+}
+.minimap {
+  height: 100%; /* Ajustez la hauteur selon vos besoins */
+  width: 10%; /* Ajustez la largeur selon vos besoins */
+  background-color: #1E1E1E; /* Couleur de fond de la minimap */
+  position: sticky;
+  top: 0;
+  font-size: 0.6rem !important; 
+  
+}
+/*terminal*/
+.resizable {
 
+  resize: vertical; /* permet la redimension verticale */
+}
+.terminal{
+  resize: vertical;
+  float:left;
+  clear:both;
+  flex:1;
+  height: 100px;
+  width: 100%;
+  background-color: #1E1E1E;
+}
+.button-container_ter {
+  display: flex;
+}
+.button_ter {
+  margin-right: 10px;
+  margin:10px;
+  background-color: #1E1E1E;
+  color:#ccc;
+  font-size: 30px;
+  border:none;
+}
+.button_ter_select {
+  font-weight: bold;
+  margin-right: 10px;
+  background-color: #323232;
+  color:#ccc;
+  border-bottom: 2px solid #ffffff; 
+  font-size: 35px;
+ 
 
-
-
-ul.bottom-links {
+}
+.interface_ter{
+  color:#ccc;
+  font-size: 30px;
+  height: 300px;
+  overflow-y: scroll;
+}
+.table {
+  display: table;
+}
+.table-row {
+  display: table-row;
+}
+.table-cell {
+  display: table-cell;
+  padding: 8px;
+   /* Ajoutez une bordure pour séparer les cellules */
+}
+/*bar bleu */
+.bottom-header {
+  clear:both;
   bottom: 0;
-  position: absolute;
+  flex:1;
   width: 100%;
-}
-
-ul.bottom-links li:first-of-type {
-  border-bottom: 1px solid #585858;
-}
-
-ul.bottom-links li {
-  width: 100%;
-  text-indent: 3px;
-}
-
-ul.bottom-links li:hover {
-  background: transparent;
-}
-
-ul.bottom-links li:hover:before {
-  content: unset;
+  height: 50px;
+  background: #007acc;
+  padding: 0px 10px;
 }
 ul.right {
   float: left;
 }
-
 ul.right li {
   display: inline-block;
   margin: 0 5px;
 }
-
 ul.right li i {
   color: #fff;
   font-size: 12px;
 }
-
 ul.left {
   float: right;
 }
@@ -393,6 +345,41 @@ ul.left li {
   color: #ddd;
   margin: 0 9px;
 }
+
+/* ------------------------*/
+/* python */
+.variable { color: #68CDFE  }
+.string { color:#CE9178 }
+.number { color:#B5CEA8  }
+.print{color: #DCDC8B }
+.key{color: #C586C0 }
+.fonction{color:darkgoldenrod}
+.boolean{color:#007acc}
+
+/* php */
+.variable_php { color: #68CDFE }
+.string_php { color: #CE9178}
+.number_php { color: #B5CEA8 }
+.echo{color: #DCDC8B }
+.key_php{color: #C586C0 }
+.acolade{color:darkgoldenrod}
+.fonction_php{color:#0b0bea}
+/* javascript */
+.tabulation {
+  padding-left: 40px;
+}
+body {
+  background-color: #1e1e1e;
+}
+.croix{
+  display: none;
+}
+.logo img {
+  width: 17px;
+}
+.imgpro{ width: 80%;
+  height: 15%;}
+
 i.fab.fa-python {
   color: #68CDFE;
 }
@@ -409,19 +396,5 @@ i.fab.fa-js {
 .bottom-header .left li  {
   font-size: 30px; /* ou toute autre valeur souhaitée */
 }
-.table {
-  display: table;
-  
 
-}
-
-.table-row {
-  display: table-row;
-}
-
-.table-cell {
-  display: table-cell;
-  padding: 8px;
-   /* Ajoutez une bordure pour séparer les cellules */
-}
 

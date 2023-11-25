@@ -34,31 +34,31 @@
       <div class="side-header">
          <ul class="side-header-menu">
             <li class="active">
-               <i class="fa fa-copy"></i>
+               <i class="fa fa-copy" (click)="sied_h('copy')"></i>
             </li>
             <li>
-               <i class="fa fa-search"></i>
+               <i class="fa fa-search" (click)="sied_h('search')"></i>
             </li>
             <li>
-               <i class="fa fa-share-alt"></i>
+               <i class="fa fa-share-alt" (click)="sied_h('share-alt')"></i>
             </li>
             <li>
-               <i class="fa fa-play"></i>
+               <i class="fa fa-play" (click)="sied_h('play')"></i>
             </li>
             <li>
-               <i class="fa fa-th-large"></i>
+               <i class="fa fa-th-large" (click)="sied_h('th-large')"></i>
             </li>
          </ul>
       </div>
       <!-- collone gauche texte -->
-      <div class="menu-option">
+      <div class="menu-option" *ngIf="side_h_var === 'copy' && side_h_var_vi">
          <h5>EXPLORER</h5>
          <div class="menu-drop">
             <div class="box-click">
                <i class="fa fa-chevron-down" (click)="ouvreeditors()" ></i> <span>OPEN EDITORS</span>
                <div >
                   <ul *ngIf="ongletSelectionne === 'python' && ouvreeditorla == true">
-                     <li class="show-pre" [class.show-press-select]="fichierSelectionne === 'profil'" (click)="changerfichier('profil')" ><i class="fab fa-python "></i> <span>profil.py</span> </li>
+                     <li class="show-pre" [class.show-press-select]="fichierSelectionne === 'profil'" (click)="changerfichier('profil')" ><i class="fab fa-python "></i> <span>profil.py</span>  </li>
                      <li class="show-pre"  [class.show-press-select]="fichierSelectionne === 'contact'" (click)="changerfichier('contact')"><i class="fab fa-python"></i> <span  > contact.py </span></li>
                      <li  class="show-pre"  [class.show-press-select]="fichierSelectionne === 'projet'" (click)="changerfichier('projet')"><i class="fab fa-python"></i> <span> projet.py </span></li>
                   </ul>
@@ -75,79 +75,130 @@
                </div>
             </div>
          </div>
-         <hr>
+         <br>
         
+      </div>
+      <div class="menu-option" *ngIf="side_h_var === 'search' && side_h_var_vi">
+         <h5>search</h5>
+        
+         
+          
+      </div>
+      <div class="menu-option" *ngIf="side_h_var === 'share-alt' && side_h_var_vi">
+         <h5>partage ton code</h5>
+         
+         <a class="aref" href="https://github.com/oliveur83" target="_blank" rel="noopener noreferrer">
+            <img class="imgpro" src="./assets/qrgit.png" alt="Image" />
+            GitHub
+          </a>
+          <br>
+          <a class="aref" href="https://www.linkedin.com/in/tom-pascal-olivier/" target="_blank" rel="noopener noreferrer">
+            <img class="imgpro" src="./assets/qrlink.png" alt="Image" />
+            LinkedIn
+          </a>
+      </div>
+
+      <div class="menu-option" *ngIf="side_h_var === 'play' && side_h_var_vi">
+         <h5>play</h5>
+      </div>
+      <div class="menu-option" *ngIf="side_h_var === 'th-large' && side_h_var_vi">
+         <h5>th-large</h5>
       </div>
       <div class="pourcode">
          <div class="onglet">
-            <button class="button_onglet_no_select" [class.button_onglet_select]="ongletSelectionne === 'python'" (click)="changerOnglet('python')"><i class="fab fa-python "></i>python</button>
-            <button class="button_onglet_no_select" [class.button_onglet_select]="ongletSelectionne === 'php'" (click)="changerOnglet('php')"><i class="fab fa-php"></i>php</button>
-            <button class="button_onglet_no_select" [class.button_onglet_select]="ongletSelectionne === 'javascript'" (click)="changerOnglet('javascript')"><i class="fab fa-js"></i>javascript</button>
+            <button class="button_onglet_no_select" [class.button_onglet_select]="ongletSelectionne === 'python'" (click)="changerOnglet('python')"><i class="fab fa-python "></i> python <i class="fa fa-times croix"></i></button>
+            <button class="button_onglet_no_select" [class.button_onglet_select]="ongletSelectionne === 'php'" (click)="changerOnglet('php')"><i class="fab fa-php"></i> php <i class="fa fa-times croix"></i></button>
+            <button class="button_onglet_no_select" [class.button_onglet_select]="ongletSelectionne === 'javascript'" (click)="changerOnglet('javascript')"><i class="fab fa-js"></i> javascript <i class="fa fa-times croix"></i></button>
          </div>
-         <div class="containerdev" *ngIf="ongletSelectionne === 'python' && fichierSelectionne === 'profil'">
+        
+         <div class="containerdev"  *ngIf="ongletSelectionne === 'python' && fichierSelectionne === 'profil'">
+            <div class="num_code"  >
+               <div *ngFor="let lineNumber of lineNumbers">
+                 {{ lineNumber }} 
+               </div>
+             </div>
+             
             <div class="code" id="code"  (scroll)="syncMinimap($event)" >
                <span class="variable">prenom</span> = "<span class="string">tom</span>"<br>
                <span class="variable">nom</span> = "<span class="string">Olivier</span>"<br>
                <span class="variable">mail</span> = "<span class="string">tomolivierpro@gmail.com</span>"<br>
                <span class="variable">ville</span> = "<span class="string">lyon</span>"<br>
                <span class="variable">langages</span> = <span class="boolean">False</span><br>
-               
+               <br>
                <span class="print">print</span>(<span class="string">" formation "</span>)<br>
-               <span class="key">if</span> <span class="variable">ville</span> == "<span class="string">toulon</span>":<br>
+               <br>
+               <span class="key">if </span><span class="variable">ville</span> == <span class="string">"toulon"</span>:<br>
                    <span class="tabulation print">print</span>(<span class="string">"DUT GEII , 2017-2019"</span>)<br>
                    <span class="tabulation print">print</span>(<span class="string">"licence informatique , 2019 - 2022"</span>)<br>
-               <span class="key">elif</span> <span class="variable">ville</span> == "<span class="string">corse</span>":<br>
-                   <span class="tabulation print">print</span>(<span class="string">"master informatique, 2022 -2024"</span>)<br>
                
-               <span class="print">print</span>(<span class="string">"experience profesionnel"</span>)<br>
-               <span class="key">if</span> <span class="variable">ville</span> == "<span class="string">toulon</span>":<br>
+                   <span class="key">elif </span> <span class="variable">ville</span> == <span class="string">"corse"</span>:<br>
+                   <span class="tabulation print">print</span>(<span class="string">"master informatique, 2022 -2024"</span>)<br>
+                   <br>
+                   <span class="print">print</span>(<span class="string">"experience profesionnel"</span>)<br>
+                  <br>
+                  <span class="key">if </span> <span class="variable">ville</span> == <span class="string">"toulon"</span>:<br>
                    <span class="tabulation print">print</span>(<span class="string">""" stage fin de DUT GEII , 2019, 8 semaine
                          hopital saint anne
                          techno principaux  :php ,mysql
                          """</span>)<br>
-               <span class="key">elif</span> <span class="variable">ville</span> == "<span class="string">corse</span>":<br>
+               <span class="key">elif</span> <span class="variable">ville</span> == <span class="string">"corse"</span>:<br>
                    <span class="tabulation print">print</span>(<span class="string">"""stage fin de master , 2024 , 6 mois a
                          alteca 
                          techno principaux php(synfony), vuejs
-                         
                          """</span>)<br>
-                         
-                         <span class="key">def</span> <span class="fonction">switch_case_annee</span>(<span class="variable">annee</span>):<br>
-            <span class="tabulation variable"> switch</span> = (<br>
-            <span class="tabulation number"> 2019</span>:<span class="string"> """ Stage à l'Hôpital d'Instruction des Armées Sainte-Anne de Toulon, création d'une application web de type QCM destinée aux apprentis
-Docteurs en transfusion sanguine. Récupération de données pour analyse par le directeur.
+                         <br>
+               <span class="key">def</span> <span class="fonction">switch_case_annee</span>(<span class="variable">annee</span>):<br>
+               <span class="tabulation variable"> switch</span> = (<br>
+               <span class="tabulation number"> 2019</span>:<span class="string"> """ Stage à l'Hôpital d'Instruction des Armées Sainte-Anne de Toulon,<br>
+                  création d'une application web de type QCM destinée aux apprentis Docteurs en transfusion sanguine.<br> Récupération de données pour analyse
+                  par le directeur.
+                  <br><br>
+                  Concours entrepreneuriat "Les Entrep' Var", création de "Handicap Indépendance", une application connectée à différents modules qui
+                  Permettront à n'importe quelle personne handicapée d'être autonome chez elle.
+                  """</span>,<br><br>
 
-Concours entrepreneuriat "Les Entrep' Var", création de "Handicap Indépendance", une application connectée à différents modules qui
-Permettront à n'importe quelle personne handicapée d'être autonome chez elle.
-"""</span>,<br>
-<span class="tabulation number"> 2022</span>: <span class="string"> """Hackathon, développement d'une application web de type jeu de loi avec des voitures électriques comme pions pour que l'utilisateur
-Comprenne l'importance de la gestion de l'énergie. Réalisé en
-Collaboration avec EDF Corse."""</span>,<br>
-<span class="tabulation number"> 2023</span>:<span class="string">  """Concours entrepreneuriat "Challenge Innovation", création d'un boîtier connecté relié à une application intelligente. OXI (nom de
-L’entreprise) vous permet d'arrêter de fumer en gérant à votre place votre consommation de tabac."""</span>,<br>
-<span class="tabulation number"> 2024</span>:<span class="string">  """2024 """</span>,<br>
+               <span class="tabulation number"> 2022</span>: <span class="string"> """Hackathon, développement d'une application web de type jeu de loi avec des voitures 
+                  électriques comme pions pour que l'utilisateur
+               Comprenne l'importance de la gestion de l'énergie. Réalisé en
+               Collaboration avec EDF Corse."""</span>,<br><br>
+
+               <span class="tabulation number"> 2023</span>:<span class="string">  """Concours entrepreneuriat "Challenge Innovation", création d'un boîtier connecté relié 
+                  à une application intelligente. OXI (nom de L’entreprise) vous permet d'arrêter de fumer en gérant à votre place votre consommation de tabac."""</span>,<br>
+                  <br>
+   <span class="tabulation number"> 2024</span>:<span class="string">  """2024 """</span>,<br>
    <span class="tabulation" >)</span> <br>
     
-    <span class="variable">annee</span> = 2023<br>
-    <span class="variable">resultat</span> = <span class="function">switch_case_annee</span>(<span class="variable">annee</span>)<br>
+    <span class="variable">annee</span> = <span class="'number">2023</span><br>
+    <span class="variable">resultat</span> = <span class="fonction">switch_case_annee</span>(<span class="variable">annee</span>)<br>
     <span class="print">print</span>(<span class="variable">resultat</span>)<br>
+    <br>   
     <span class="print">print</span>(<span class="string">"compétence"</span>)<br>
-    <span class="key">if</span> <span class="variable">langages</span> == <span class="boolean">True</span>:<br>
-        <span class="tabulation variable">top_langage_decroissante</span> = (1: 'python', 2: 'javascript', 3: 'php',<br>
-                                  4: 'html/css', 5: 'typescript', 6: 'flutter', 7: 'SQL')<br>
-        <span class="key tabulation">for</span> <span class="variable">cle</span>, <span class="variable">valeur</span> in <span class="variable">top_langage_decroissante</span>.<span class="function">items</span>():<br>
-            <span class="print tabulation">print</span>(<span class="string">f"Clé : (cle), Valeur : (valeur)"</span>)<br>
-    <span class="key">else</span>:<br>
-        <span class="tabulation variable">top_framework</span> = ["angular", 'vuejs', 'react']<br>
-        <span class="tabulation variable">logiciel</span> = ['github', 'vscode']<br>
-        <span class="tabulation print">print</span>(<span class="string">"loisir"</span>)<br>
+    <br>
+    <span class="key">if </span> <span class="variable">langages</span> == <span class="boolean">True</span>:<br>
+        <span class="tabulation variable">top_langage_decroissante</span> = (
+         <span class="number">1</span>: <span class="string">"python"</span>,
+         <span class="number">2</span>:  <span class="string">"javascript"</span>,
+         <span class="number">3</span>: <br><span class="string">"php"</span>,
+         <span class="number">4</span>:  <span class="string">"html/css"</span>,
+         <span class="number">5</span>:  <span class="string">"typescript"</span>,
+         <span class="number">6</span>:  <span class="string">"flutter"</span>,
+         <span class="number">7</span>: <br><span class="string">"SQL"</span>,)
 
+            <span class="key tabulation">for </span> <span class="variable">cle</span>, <span class="variable">valeur</span> in <span class="variable">top_langage_decroissante</span>.<span class="function">items</span>():<br>
+            <span class="print tabulation tabulation">print</span>(<span class="string">f"Clé : (cle), Valeur : (valeur)"</span>)<br>
+    
+      <span class="key">else</span>:<br>
+        <span class="tabulation variable">top_framework</span> = [<span class="string">"angular"</span>, <span class="string">"vue.js"</span>,<span class="string">"react"</span>]<br>
+        <span class="tabulation variable">logiciel</span> = [<span class="string">"github"</span>, <span class="string">"vscode"</span>]<br>
+        <span class="tabulation print">print</span>(<span class="string">"loisir"</span>)<br>
+         <br>
+         
 <span class="key">def</span> <span class="fonction">myloisir</span>():<br>
     <span class="tabulation print">print</span>(<span class="string">""" 
           Pratique du street workout et du triathlon, ce qui m'apporte 
-          rigueur et discipline. Voyages autour du monde (Japon, États-Unis, 
+          rigueur et discipline.<br><br> Voyages autour du monde (Japon, États-Unis, 
           Irlande, Londres, Thaïlande), grâce à quoi j'ai acquis une adaptabilité
-           aux imprévus et une ouverture d'esprit.
+           aux imprévus et une ouverture d'esprit.<br><br>
 Les projets 3D JavaScript et les projets Python handtracking qui satisfont
            ma curiosité et mon envie de réaliser des projets.
           """</span>)<br>
@@ -157,6 +208,11 @@ Les projets 3D JavaScript et les projets Python handtracking qui satisfont
             <div class="minimap" id="minimap"></div>
          </div>
          <div class="containerdev" *ngIf="ongletSelectionne === 'python' && fichierSelectionne === 'contact'">
+            <div class="num_code"  >
+               <div *ngFor="let lineNumber of lineNumbers">
+                 {{ lineNumber }} 
+               </div>
+             </div>
             <div class="code" id="code"  (scroll)="syncMinimap($event)" >
                <span class="variable">nom</span> = <span class="string">"Olivier"</span><br>
                cxv<span class="variable">prenom</span> = <span class="string">"Jean"</span><br>
@@ -174,6 +230,11 @@ Les projets 3D JavaScript et les projets Python handtracking qui satisfont
             <div class="minimap" id="minimap"></div>
          </div>
          <div class="containerdev" *ngIf="ongletSelectionne === 'python' && fichierSelectionne === 'projet'">
+            <div class="num_code"  >
+               <div *ngFor="let lineNumber of lineNumbers">
+                 {{ lineNumber }} 
+               </div>
+             </div>
             <div class="code" id="code"  (scroll)="syncMinimap($event)" >
               fds <span class="variable">nom</span> = <span class="string">"Olivier"</span><br>
                <span class="variable">prenom</span> = <span class="string">"Jean"</span><br>
@@ -192,6 +253,11 @@ Les projets 3D JavaScript et les projets Python handtracking qui satisfont
          </div>
         
          <div class="containerdev" *ngIf="ongletSelectionne === 'php' && fichierSelectionne === 'profil'">
+            <div class="num_code"  >
+               <div *ngFor="let lineNumber of lineNumbers">
+                 {{ lineNumber }} 
+               </div>
+             </div>
             <div class="code" id="code"  (scroll)="syncMinimap($event)" >
               <span class="variable_php">$nom</span> = <span class="string_php">"Olivier"</span><br>
                <span class="variable_php">$prenom</span> = <span class="string_php">"Jean"</span><br>
@@ -258,6 +324,11 @@ Les projets 3D JavaScript et les projets Python handtracking qui satisfont
             <div class="minimap" id="minimap"></div>
          </div>
          <div class="containerdev" *ngIf="ongletSelectionne === 'php' && fichierSelectionne === 'contact'">
+            <div class="num_code"  >
+               <div *ngFor="let lineNumber of lineNumbers">
+                 {{ lineNumber }} 
+               </div>
+             </div>
             <div class="code" id="code"  (scroll)="syncMinimap($event)" >
                <span class="variable_php">$nom</span> = <span class="string_php">"Olivier"</span><br>
                <span class="variable_php">$prenom</span> = <span class="string_php">"Jean"</span><br>
@@ -269,6 +340,11 @@ Les projets 3D JavaScript et les projets Python handtracking qui satisfont
             <div class="minimap" id="minimap"></div>
          </div>
          <div class="containerdev" *ngIf="ongletSelectionne === 'php'&& fichierSelectionne === 'projet'">
+            <div class="num_code"  >
+               <div *ngFor="let lineNumber of lineNumbers">
+                 {{ lineNumber }} 
+               </div>
+             </div>
             <div class="code" id="code"  (scroll)="syncMinimap($event)" >
                <span class="variable_php">$nom</span> = <span class="string_php">"Olivier"</span><br>
                <span class="variable_php">$prenom</span> = <span class="string_php">"Jean"</span><br>
@@ -279,6 +355,11 @@ Les projets 3D JavaScript et les projets Python handtracking qui satisfont
             <div class="minimap" id="minimap"></div>
          </div>
          <div class="containerdev" *ngIf="ongletSelectionne === 'javascript' && fichierSelectionne === 'profil'">
+            <div class="num_code"  >
+               <div *ngFor="let lineNumber of lineNumbers">
+                 {{ lineNumber }} 
+               </div>
+             </div>
             <div class="code" id="code"  (scroll)="syncMinimap($event)" >
                <span class="variable">nom</span> = <span class="string">"Olivier"</span><br>
                <span class="variable">prenom</span> = <span class="string">"Jean"</span><br>
@@ -290,6 +371,11 @@ Les projets 3D JavaScript et les projets Python handtracking qui satisfont
             <div class="minimap" id="minimap"></div>
          </div>
          <div class="containerdev" *ngIf="ongletSelectionne === 'javascript' && fichierSelectionne === 'contact'">
+            <div class="num_code"  >
+               <div *ngFor="let lineNumber of lineNumbers">
+                 {{ lineNumber }} 
+               </div>
+             </div>
             <div class="code" id="code"  (scroll)="syncMinimap($event)" >
               <span class="variable">prenom</span> = <span class="string">"Jean"</span><br>
                <span class="variable">age</span> = <span class="number">25</span><br>
@@ -301,6 +387,11 @@ Les projets 3D JavaScript et les projets Python handtracking qui satisfont
             <div class="minimap" id="minimap"></div>
          </div>
          <div class="containerdev" *ngIf="ongletSelectionne === 'javascript'&& fichierSelectionne === 'projet'">
+            <div class="num_code"  >
+               <div *ngFor="let lineNumber of lineNumbers">
+                 {{ lineNumber }} 
+               </div>
+             </div>
             <div class="code" id="code"  (scroll)="syncMinimap($event)" >
                <span class="variable">nom</span> = <span class="string">"Olivier"</span><br>
                <span class="variable">prenom</span> = <span class="string">"Jean"</span><br>
@@ -312,7 +403,10 @@ Les projets 3D JavaScript et les projets Python handtracking qui satisfont
             </div>
             <div class="minimap" id="minimap"></div>
          </div>
-         <div class="terminal">
+         <div class="terminal resizable" id="terminal"
+         (mousedown)="onMouseDown($event)"
+         (document:mousemove)="onMouseMove($event)"
+         (document:mouseup)="onMouseUp()">
             <div class="button-container_ter">
                 <button class="button_ter" [class.button_ter_select]="terminalSelectionne === 'PROBLeME'" (click)="changerterminal('PROBLeME')">PROBLÈME</button>
                 <button class="button_ter" [class.button_ter_select]="terminalSelectionne === 'SORTIE'" (click)="changerterminal('SORTIE')">SORTIE</button>
