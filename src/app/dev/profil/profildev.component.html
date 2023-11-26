@@ -80,9 +80,6 @@
       </div>
       <div class="menu-option" *ngIf="side_h_var === 'search' && side_h_var_vi">
          <h5>search</h5>
-        
-         
-          
       </div>
       <div class="menu-option" *ngIf="side_h_var === 'share-alt' && side_h_var_vi">
          <h5>partage ton code</h5>
@@ -106,9 +103,13 @@
       </div>
       <div class="pourcode">
          <div class="onglet">
-            <button class="button_onglet_no_select" [class.button_onglet_select]="ongletSelectionne === 'python'" (click)="changerOnglet('python')"><i class="fab fa-python "></i> python <i class="fa fa-times croix"></i></button>
-            <button class="button_onglet_no_select" [class.button_onglet_select]="ongletSelectionne === 'php'" (click)="changerOnglet('php')"><i class="fab fa-php"></i> php <i class="fa fa-times croix"></i></button>
-            <button class="button_onglet_no_select" [class.button_onglet_select]="ongletSelectionne === 'javascript'" (click)="changerOnglet('javascript')"><i class="fab fa-js"></i> javascript <i class="fa fa-times croix"></i></button>
+            <button [ngClass]="{'button_onglet_select': ongletSelectionne === 'python', 'button_onglet_no_select': ongletSelectionne !== 'python'}" (click)="changerOnglet('python')">
+               <i class="fab fa-python"></i> python <i class="fa fa-times croix"></i>
+             </button>
+             <button [ngClass]="{'button_onglet_select': ongletSelectionne === 'php', 'button_onglet_no_select': ongletSelectionne !== 'php'}" (click)="changerOnglet('php')">
+               <i class="fab fa-php"></i> php <i class="fa fa-times croix"></i></button>
+               <button [ngClass]="{'button_onglet_select': ongletSelectionne === 'javascript', 'button_onglet_no_select': ongletSelectionne !== 'javascript'}" (click)="changerOnglet('javascript')">
+                  <i class="fab fa-js"></i> javascript <i class="fa fa-times croix"></i></button>
          </div>
         
          <div class="containerdev"  *ngIf="ongletSelectionne === 'python' && fichierSelectionne === 'profil'">

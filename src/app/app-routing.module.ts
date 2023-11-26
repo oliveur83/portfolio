@@ -7,6 +7,7 @@ import { ProjetComponent } from './projet/projet.component';
 import {DevPrincipalComponent} from './dev/principal/principaldev.component'
 import {ProfilComponentdev} from './dev/profil/profildev.component'
 import { ContactComponentdev } from './dev/contact/contactdev.component';
+import { JeuDeLoieComponent } from './projet/jeu-de-loie/jeu-de-loie.component';
 const routes: Routes = [
   {path:'dev/contact' , component:ContactComponentdev},
   { path: 'dev/principal', component: DevPrincipalComponent }, // Assurez-vous que le composant est correct
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'contact',component: ContactComponent },
   {path: 'projet',component: ProjetComponent },
   {path: 'principal',component: PrincipalComponent },
+  {path: 'jeu-de-loie',component: JeuDeLoieComponent },
   
   {
   path:'',redirectTo:'principal',pathMatch:'full'

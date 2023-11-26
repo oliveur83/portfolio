@@ -12,6 +12,13 @@ import { ProjetComponent } from './projet/projet.component';
 import { ProfilComponentdev } from './dev/profil/profildev.component';
 import { DevPrincipalComponent } from './dev/principal/principaldev.component';
 import { ContactComponentdev } from './dev/contact/contactdev.component';
+import { JeuDeLoieComponent } from './projet/jeu-de-loie/jeu-de-loie.component';
+import { JeuDeDameComponent } from './projet/jeu-de-dame/jeu-de-dame.component';
+import { OXIComponent } from './projet/oxi/oxi.component';
+import { EDTComponent } from './projet/edt/edt.component';
+import { GestionCampingComponent } from './projet/gestion-camping/gestion-camping.component';
+import { AngularVuejsComponent } from './projet/angular-vuejs/angular-vuejs.component';
+import { HandtrackingComponent } from './projet/handtracking/handtracking.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +30,13 @@ import { ContactComponentdev } from './dev/contact/contactdev.component';
     ContactComponent,
     PrincipalComponent,
     ProjetComponent,
+    JeuDeLoieComponent,
+    JeuDeDameComponent,
+    OXIComponent,
+    EDTComponent,
+    GestionCampingComponent,
+    AngularVuejsComponent,
+    HandtrackingComponent,
    
   ],
   imports: [CommonModule,
