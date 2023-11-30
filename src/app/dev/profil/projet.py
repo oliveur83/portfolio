@@ -1,6 +1,8 @@
 import tkinter as tk
 from tkinter import PhotoImage
 
+def afficher_image ():
+     print('toto')
 projets = [
     [
         {"imgSrc": "src/assets/emploie.png", "titre": "Emploi du temps", "openfenetre": "Emploi_du_temps", "description": "Projet réalisé en master - Création d'une application web de gestion et visualisation \nd'emploi du temps sous différentes formes techno:"},

@@ -277,17 +277,20 @@ color:#ccc}
 
 .button_onglet_select {
   height: 100px;
-  width: 250px;
-  font-size: 30px;
+  width: 350px;
+  font-size: 40px;
   background-color: #1E1E1E;
-  color:gold;
+  color:#ccc;
   border:none;
   
 }
+.button_onglet_select .croix {
+  visibility: visible;
+} 
 .button_onglet_no_select {
   height: 100px;
-  width: 250px;
-  font-size: 30px;
+  width: 350px;
+  font-size: 40px;
   background-color: rgb(45,45,45);
   color:#ccc;
   border: none;
@@ -428,11 +431,11 @@ ul.left li {
 .number { color:#B5CEA8  }
 .print{color: #DCDC8B }
 .key{color: #C586C0 }
-.fonction{color:darkgoldenrod}
+.fonction{color:#DCDCAA}
 .boolean{color:#007acc}
-.import_key{color:#5a7d2d}
-.import{color:blueviolet}
-.def{color:#0b0bea}
+.import_key{color:#4EC9B0}
+.import{color:#C086C0}
+.def{color:#569CD6}
 .comments{color:#B5CEA8}
 
 /* php */
@@ -452,7 +455,12 @@ body {
 }
 
 .croix{
-  display: none;
+ visibility: hidden;
+  margin-left: 30px;
+}
+button:hover .croix {
+  visibility: visible;
+  /* Ajoutez d'autres styles au survol si nécessaire */
 }
 .logo img {
   width: 17px;
