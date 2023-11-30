@@ -13,14 +13,17 @@
   display: flex;
   align-items: center;
   position: relative;
-  max-height: 70px;
+  max-height: 100px;
+  justify-content: space-between;
+  
 }
 .logo {
   display: inline-block;
 }
 ul.header-menu {
-  display: inline-block;
+  float:right;
   margin-left: 15px;
+
 }
 .sub-menu {
   background: #3c3c3c;
@@ -50,25 +53,43 @@ ul.header-menu li.header-menu-link {
   margin-right: 10px;
 }
 
-.header-app-icons {position: absolute;right: 0;}
+.header-app-icons {
+  position: absolute;
+  right: 0;
+font-size: 40px;
+}
 
 .header:after {content: '';clear: both;}
 
 .header-app-icons li {
   display: inline-block;
-  margin: 0 9px;
+  margin: 0 30px;
   color: #ccc;
+
+}
+.center_onglet{
+  display: flex;
+  right:0;
+  
+}
+.center_onglet > * {
+  margin-right: 40px; /* Ajoute une marge de 20 pixels entre chaque élément */
 }
 
+.center_onglet > :last-child {
+  margin-right: 0; /* Supprime la marge à droite du dernier élément */
+}
 /*side header*/
-
+.side-header-menu{
+  margin-top: 50px;
+}
 .side-header {
   background: #333;
   float: left;
   top: 30px;
   left: 0;
   z-index: 9999;
-  width: 3%;
+  width: 4%;
   height: calc(97vh);
 }
 .side-header li:after {
@@ -85,14 +106,15 @@ ul.header-menu li.header-menu-link {
 }
 .side-header li i {
   line-height: 47px !important;
-  color: #ccc;
+  color: #858585;
   cursor: pointer;
-  font-size: 50px;
+  
+  font-size: 80px;
 }
 .side-header li {
   text-align: center;
   height: 44px;
-  margin: 1cm;
+  margin-bottom: 3cm;
   position: relative;
 }
 .side-header li:hover:after {
@@ -117,7 +139,7 @@ ul.side-header-botton-menu {
 .menu-option {
   background: #252526;
   float: left;
-  width: 10%;
+  width: 14%;
   height: calc(100vh - 50px);
   cursor: pointer;
 }
@@ -126,9 +148,10 @@ color:#ccc}
 .menu-option h5 {
   margin: 10px 20px;
   color: #ccc;
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 300;
 }
+
 .menu-option li {
   font-size: 12px;
   color: #ccc;
@@ -169,6 +192,37 @@ color:#ccc}
   z-index: 99;
   position: relative;
 }
+.header-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-label-button {
+  display: flex;
+ 
+  padding: 10px;
+  background-color: #464646; /* Couleur de fond du bouton */
+  color: #fff; /* Couleur du texte */
+  border: 1px solid #616161;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  height: 60px;
+  width: 1430px;
+  font-size: 40px;
+
+}
+
+.icon-label-button i {
+  margin-right: 8px; /* Marge à droite de l'icône pour l'espace */
+}
+.arrow-icon {
+  font-size: 50px;
+  cursor: pointer;
+  color :#ccc
+}
 .show-pre {
   margin-left: 15px;
   margin-top: 4px;
@@ -184,7 +238,7 @@ color:#ccc}
 }
 /* pourcode*/
 .pourcode{
-  width: 87%;
+  width: 82%;
    float:left;
   
    background-color: #cc008b;
@@ -193,21 +247,29 @@ color:#ccc}
    flex-direction: column;
    display: flex;
  }
+ .reduced-height-image {
+  height: 40px;
+}
  .onglet {
   display: flex;
   justify-content: space-between;
   align-items: center;
  width: 100%;
   float: left;
-  height: 100px;
+  height: 110px;
   background-color: #252526;
+  cursor: pointer;
 }
 
 .boutons {
   display: flex;
   margin: 30px;
 }
-
+.icon_droite_onglet{
+  color:#ccc;
+  font-size: 40px;
+  margin-left: 40px;
+}
 .image-container {
   margin-right: 10px; /* Ajustez la marge selon vos besoins */
   color:#5a7d2d

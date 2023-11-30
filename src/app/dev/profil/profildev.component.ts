@@ -144,7 +144,7 @@ onResize(event: Event) {
   ngAfterViewInit() {
     this.syncMinimap();
     const codeDiv = this.el.nativeElement.querySelector('.code');
-    const lines = codeDiv.innerHTML.split('<br _ngcontent-ng-c516400532=""').length;
+    const lines = codeDiv.innerHTML.split('<br _ngcontent-ng-c3155106393=""').length;
   
     this.lineNumbers = Array.from({ length: lines }, (_, index) => index + 1);
  }

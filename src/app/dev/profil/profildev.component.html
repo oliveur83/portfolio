@@ -4,18 +4,18 @@
    <body>
       <!-- file edit  -->
       <div class="header">
-         <div class="logo">
-            <img src="logo.svg" alt="">
-         </div>
          <ul class="header-menu">
-            <li class="header-menu-link" *ngFor="let menuItem of menuItems" (click)="toggleSubMenu(menuItem)">
-            {{ menuItem.label }}
-            <ul class="sub-menu" *ngIf="menuItem.isSubMenuVisible">
-               <li class="sub-menu-label" *ngFor="let subItem of menuItem.subMenuItems" (click)="submenu(subItem.label)">{{ subItem.label }}</li>
-            </ul>
-            </li>
-            <!-- Autres éléments du menu -->
+            <img   src="./assets/visual.png" alt="Image" />
+         
          </ul>
+         <div class="center_onglet"> 
+         <i class="fas fa-arrow-left arrow-icon" onclick="sied_h('left')"></i>
+         <i class="fas fa-arrow-right arrow-icon" onclick="sied_h('right')"></i>
+         <button class="icon-label-button" onclick="handleClick()">
+            <i class="fas fa-search"></i>
+            <span style="margin-left: 8px;">Portfolio</span>
+        </button>
+      </div>
          <div class="header-app-icons">
             <ul>
                <li>
@@ -33,6 +33,10 @@
       <!-- collone gauche icon-->
       <div class="side-header">
          <ul class="side-header-menu">
+            
+            <li>
+               <i class="fas fa-bars"></i>
+            </li>
             <li class="active">
                <i class="fa fa-copy" (click)="sied_h('copy')"></i>
             </li>
@@ -52,7 +56,8 @@
       </div>
       <!-- collone gauche texte -->
       <div class="menu-option" *ngIf="side_h_var === 'copy' && side_h_var_vi">
-         <h5>EXPLORER</h5>
+         <h5>EXPLORATEUR  <i class="fas fa-ellipsis-h icon_droite_onglet"></i>
+          </h5>
          <div class="menu-drop">
             <div class="box-click">
                <i class="fa fa-chevron-down" (click)="ouvreeditors()" ></i> <span>OPEN EDITORS</span>
@@ -80,6 +85,11 @@
       </div>
       <div class="menu-option" *ngIf="side_h_var === 'search' && side_h_var_vi">
          <h5>search</h5>
+         <li class="header-menu-link" *ngFor="let menuItem of menuItems" (click)="toggleSubMenu(menuItem)">
+            {{ menuItem.label }}
+            <ul class="sub-menu" *ngIf="menuItem.isSubMenuVisible">
+               <li class="sub-menu-label" *ngFor="let subItem of menuItem.subMenuItems" (click)="submenu(subItem.label)">{{ subItem.label }}</li>
+            </ul>
       </div>
       <div class="menu-option" *ngIf="side_h_var === 'share-alt' && side_h_var_vi">
          <h5>partage ton code</h5>
@@ -94,7 +104,6 @@
             LinkedIn
           </a>
       </div>
-
       <div class="menu-option" *ngIf="side_h_var === 'play' && side_h_var_vi">
          <h5>play</h5>
       </div>
@@ -116,7 +125,12 @@
             </div>
             
             <div class="image-container">
-              <img class="play" *ngIf="ongletSelectionne === 'python' && fichierSelectionne === 'projet'" src="./assets/exec.png" (click)="exectkinter()">
+              <img  class="reduced-height-image"  *ngIf="ongletSelectionne === 'python' && fichierSelectionne === 'projet'" src="./assets/exec.png" (click)="exectkinter()">
+              <i class="fas fa-edit icon_droite_onglet"></i>
+              <i class="fas fa-print icon_droite_onglet"></i>
+              <i class="fas fa-columns icon_droite_onglet"></i>
+              <i class="fas fa-ellipsis-h icon_droite_onglet"></i>
+
             </div>
           </div>
           
