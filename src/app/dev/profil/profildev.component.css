@@ -68,7 +68,7 @@ ul.header-menu li.header-menu-link {
   top: 30px;
   left: 0;
   z-index: 9999;
-  width: 100px;
+  width: 3%;
   height: calc(97vh);
 }
 .side-header li:after {
@@ -117,7 +117,7 @@ ul.side-header-botton-menu {
 .menu-option {
   background: #252526;
   float: left;
-  width: 270px;
+  width: 10%;
   height: calc(100vh - 50px);
   cursor: pointer;
 }
@@ -184,7 +184,7 @@ color:#ccc}
 }
 /* pourcode*/
 .pourcode{
-  width: 86%;
+  width: 87%;
    float:left;
   
    background-color: #cc008b;
@@ -193,16 +193,29 @@ color:#ccc}
    flex-direction: column;
    display: flex;
  }
- .onglet{
-  width: 100%;
+ .onglet {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ width: 100%;
   float: left;
   height: 100px;
-  
   background-color: #252526;
-} 
+}
+
+.boutons {
+  display: flex;
+  margin: 30px;
+}
+
+.image-container {
+  margin-right: 10px; /* Ajustez la marge selon vos besoins */
+  color:#5a7d2d
+}
+
 .button_onglet_select {
   height: 100px;
-  width: 200px;
+  width: 250px;
   font-size: 30px;
   background-color: #1E1E1E;
   color:gold;
@@ -211,7 +224,7 @@ color:#ccc}
 }
 .button_onglet_no_select {
   height: 100px;
-  width: 200px;
+  width: 250px;
   font-size: 30px;
   background-color: rgb(45,45,45);
   color:#ccc;
@@ -233,7 +246,7 @@ color:#ccc}
   width: 80px;
   flex-direction: column; 
   background-color: #1E1E1E;
-  height:900px;
+  height:920px;
   overflow: auto;
   font-size: 40px;
   color:#ccc;
@@ -244,7 +257,7 @@ color:#ccc}
 .code {
   float: left;
   clear: both;
-  height: 900px;
+  height: 920px;
   width: 90%; /* Ajustez la largeur selon vos besoins */
   background-color: #1E1E1E;
   overflow: auto;
@@ -355,6 +368,10 @@ ul.left li {
 .key{color: #C586C0 }
 .fonction{color:darkgoldenrod}
 .boolean{color:#007acc}
+.import_key{color:#5a7d2d}
+.import{color:blueviolet}
+.def{color:#0b0bea}
+.comments{color:#B5CEA8}
 
 /* php */
 .variable_php { color: #68CDFE }
@@ -371,6 +388,7 @@ ul.left li {
 body {
   background-color: #1e1e1e;
 }
+
 .croix{
   display: none;
 }

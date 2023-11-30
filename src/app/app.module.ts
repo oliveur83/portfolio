@@ -19,7 +19,8 @@ import { EDTComponent } from './projet/edt/edt.component';
 import { GestionCampingComponent } from './projet/gestion-camping/gestion-camping.component';
 import { AngularVuejsComponent } from './projet/angular-vuejs/angular-vuejs.component';
 import { HandtrackingComponent } from './projet/handtracking/handtracking.component';
-
+import { ModalComponent } from './dev/profil/modal/modal.component';
+import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
   declarations: [
     ContactComponentdev,
@@ -37,13 +38,15 @@ import { HandtrackingComponent } from './projet/handtracking/handtracking.compon
     GestionCampingComponent,
     AngularVuejsComponent,
     HandtrackingComponent,
+    ModalComponent,
    
   ],
   imports: [CommonModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

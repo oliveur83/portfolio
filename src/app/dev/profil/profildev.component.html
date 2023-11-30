@@ -1,4 +1,4 @@
-<html>
+<html >
    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
    <body>
@@ -103,14 +103,23 @@
       </div>
       <div class="pourcode">
          <div class="onglet">
-            <button [ngClass]="{'button_onglet_select': ongletSelectionne === 'python', 'button_onglet_no_select': ongletSelectionne !== 'python'}" (click)="changerOnglet('python')">
-               <i class="fab fa-python"></i> python <i class="fa fa-times croix"></i>
-             </button>
-             <button [ngClass]="{'button_onglet_select': ongletSelectionne === 'php', 'button_onglet_no_select': ongletSelectionne !== 'php'}" (click)="changerOnglet('php')">
-               <i class="fab fa-php"></i> php <i class="fa fa-times croix"></i></button>
-               <button [ngClass]="{'button_onglet_select': ongletSelectionne === 'javascript', 'button_onglet_no_select': ongletSelectionne !== 'javascript'}" (click)="changerOnglet('javascript')">
-                  <i class="fab fa-js"></i> javascript <i class="fa fa-times croix"></i></button>
-         </div>
+            <div class="boutons">
+              <button [ngClass]="{'button_onglet_select': ongletSelectionne === 'python', 'button_onglet_no_select': ongletSelectionne !== 'python'}" (click)="changerOnglet('python')">
+                <i class="fab fa-python"></i> python.py <i class="fa fa-times croix"></i>
+              </button>
+              <button [ngClass]="{'button_onglet_select': ongletSelectionne === 'php', 'button_onglet_no_select': ongletSelectionne !== 'php'}" (click)="changerOnglet('php')">
+                <i class="fab fa-php"></i> php.php <i class="fa fa-times croix"></i>
+              </button>
+              <button [ngClass]="{'button_onglet_select': ongletSelectionne === 'javascript', 'button_onglet_no_select': ongletSelectionne !== 'javascript'}" (click)="changerOnglet('javascript')">
+                <i class="fab fa-js"></i> javascript.js <i class="fa fa-times croix"></i>
+              </button>
+            </div>
+            
+            <div class="image-container">
+              <img class="play" *ngIf="ongletSelectionne === 'python' && fichierSelectionne === 'projet'" src="./assets/exec.png" (click)="exectkinter()">
+            </div>
+          </div>
+          
         
          <div class="containerdev"  *ngIf="ongletSelectionne === 'python' && fichierSelectionne === 'profil'">
             <div class="num_code"  >
@@ -215,18 +224,12 @@ Les projets 3D JavaScript et les projets Python handtracking qui satisfont
                </div>
              </div>
             <div class="code" id="code"  (scroll)="syncMinimap($event)" >
-               <span class="variable">nom</span> = <span class="string">"Olivier"</span><br>
-               cxv<span class="variable">prenom</span> = <span class="string">"Jean"</span><br>
-               <span class="variable">age</span> = <span class="number">25</span><br>
-               <span class="variable">ville</span> = <span class="string">"Paris"</span><br>
-               <span class="variable">stage_a_paris</span> = <span class="string">True</span><br>
-               <span class="print">print</span>(<span class="string">"formation"</span> ) <br>
-               <span class="key">if</span> <span class="variable">ville</span> == <span class="string">"Toulon"</span> <br>
-               <span class="tabulation print">print</span>(<span class="string">"DUT GEII,2017-2019"</span> ) <br>
-               <span  class="tabulation print">print</span>(<span class="string">"Licence informatique,2019-2022"</span> ) <br>
-               <span class="key">elif</span> <span class="variable">ville</span> == <span class="string">"corte"</span> <br>
-               <span class="tabulation print">print</span>(<span class="string">"Master informatique,2022-2024"</span> ) <br>
-            
+               <span class="variable">contact</span> ={{ '{' }}<br>
+               <span class="string">github </span>:<span class="string"> https://github.com/oliveur83</span>;<br>
+               <span class="string">linkedin </span>:<span class="string"> https://www.linkedin.com/in/tom-pascal-olivier/</span>;<br>
+               <span class="string">mail </span>:<span class="string"> tomolivierpro@gmail.com</span>;<br>
+               {{ '}' }}
+
             </div>
             <div class="minimap" id="minimap"></div>
          </div>
@@ -237,18 +240,25 @@ Les projets 3D JavaScript et les projets Python handtracking qui satisfont
                </div>
              </div>
             <div class="code" id="code"  (scroll)="syncMinimap($event)" >
-              fds <span class="variable">nom</span> = <span class="string">"Olivier"</span><br>
-               <span class="variable">prenom</span> = <span class="string">"Jean"</span><br>
-               <span class="variable">age</span> = <span class="number">25</span><br>
-               <span class="variable">ville</span> = <span class="string">"Paris"</span><br>
-               <span class="variable">stage_a_paris</span> = <span class="string">True</span><br>
-               <span class="print">print</span>(<span class="string">"formation"</span> ) <br>
-               <span class="key">if</span> <span class="variable">ville</span> == <span class="string">"Toulon"</span> <br>
-               <span class="tabulation print">print</span>(<span class="string">"DUT GEII,2017-2019"</span> ) <br>
-               <span  class="tabulation print">print</span>(<span class="string">"Licence informatique,2019-2022"</span> ) <br>
-               <span class="key">elif</span> <span class="variable">ville</span> == <span class="string">"corte"</span> <br>
-               <span class="tabulation print">print</span>(<span class="string">"Master informatique,2022-2024"</span> ) <br>
-            
+               <span class="import">import</span><span class="import_key">tkinter</span><span class="import">as</span> <span class="import_key">tk</span><br>
+               <span class="import">from</span> <span class="import_key">tkinter</span> <span class="import">import</span><span class="import_key">PhotoImage</span> <br>
+               <br>
+               <span class="def">  def</span> <span class="fonction">afficher_image()</span>:<br>
+               <br>
+               <span class="variable tabulation">fenetre</span> = <span class="import_key">tk</span>.<span class="import_key">Tk</span>()<br>
+               <span class="variable tabulation">fenetre</span>.<span class="variable tabulation">title</span>(<span class="string">"Affichage d'une image"</span>)<br>
+               <br>
+               <span class="variable tabulation">chemin_image </span> = <span class="string">""chemin/vers/votre/image.png""</span><br>
+               <span class="variable tabulation">img</span> =<span class="import_key">PhotoImage</span> (<span class="variable tabulation">file</span>=<span class="variable">chemin_image </span>)<br>
+               <br>
+               <span class="variable tabulation">label_image</span> = <span class="import_key">tk</span>.<span class="import_key">label</span>(<span class="variable">fenetre</span>, <span class="variable">image</span>=<span class="variable">img</span>)<br>
+               <span class="variable tabulation">label_image</span>.<span class="variable tabulation">pack()</span> <br>
+                   <span class="variable tabulation">  fenetre</span>.<span class="fonction">mainloop()</span>
+               
+                   <br>
+                   <span class="comments">  # veulliez executer le code pour voir le resultat </span><br>
+                   <span class="fonction">afficher_image()</span><br>
+               
             </div>
             <div class="minimap" id="minimap"></div>
          </div>
@@ -265,12 +275,15 @@ Les projets 3D JavaScript et les projets Python handtracking qui satisfont
                <span class="variable_php">$age</span> = <span class="number_php">25</span><br>
                <span class="variable_php">$ville</span> = <span class="string_php">"Paris"</span><br>
                <span class="variable_php">$stage_a_paris</span> = <span class="string_php">True</span><br>
+              <br>
                <span class="echo">echo</span><span class="string_php">"formation"</span>  <br>
+               <br>
                <span class="key_php">if</span><span class="variable_php">$ville</span>  == <span class="string_php">"Toulon"</span> <br>
                <span class="echo">echo</span><span class="string_php">"DUT GEII , 2017-2019\n"</span>  <br>
                <span class="echo">echo</span><span class="string_php">"Licence informatique , 2019 - 2022\n"</span>  <br>
                <span class="key_php">elseif</span><span class="variable_php">$ville</span>  == <span class="string_php">"corse"</span> <br>
                <span class="echo">echo</span><span class="string_php">"Master informatique, 2022 - 2024\n"</span>  <br>
+               <br>
                <span class="echo">echo</span><span class="string_php">"Expérience professionnelle\n"</span>  <br>
                
                <span class="key_php">if</span><span class="variable_php">$ville</span>  == <span class="string_php">"Toulon"</span> <br>

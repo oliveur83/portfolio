@@ -1,5 +1,6 @@
-import { Component,HostListener, ElementRef,OnInit, Renderer2, ViewChild  } from '@angular/core';
-
+import { Component,HostListener, ElementRef, Renderer2 } from '@angular/core';
+import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
+import { ModalComponent } from './modal/modal.component';
 interface MenuItem {
   label: string;
   isSubMenuVisible: boolean;
@@ -25,15 +26,14 @@ export class ProfilComponentdev {
     { label: 'Edit', isSubMenuVisible: false, subMenuItems: [{ label: 'texte_agrandir' },] },
     // Ajoutez d'autres éléments du menu avec leurs sous-menus ici
   ];
-
-  side_h_var: String='copy'
-  side_h_var_vi: boolean =true
-  constructor(private el: ElementRef,private renderer: Renderer2){
+  deplacement_dialog=false;
+  side_h_var: String='copy';
+  side_h_var_vi: boolean =true;
+  dialogRef: MatDialogRef<ModalComponent> | undefined;
+  constructor(private dialog: MatDialog,private el: ElementRef,private renderer: Renderer2){
 
   }
-  nginit(){
-
-}
+ 
 ouvreeditors(){
 this.ouvreeditorla=!this.ouvreeditorla
 }
@@ -66,7 +66,31 @@ download()
   // Supprimer l'élément <a> après le téléchargement
   document.body.removeChild(link);
 }
-
+exectkinter()
+{
+  const dialogConfig = new MatDialogConfig();
+  dialogConfig.position = {
+    top: '50px',
+    left: '50px'
+  };
+  this.dialogRef = this.dialog.open(ModalComponent, dialogConfig);
+  this.dialogRef.componentInstance.dialogClick.subscribe(() => {
+    this.deplacement_dialog=! this.deplacement_dialog
+    console.log('Clic à l\'intérieur de la boîte de dialogue détecté');
+    // Vous pouvez effectuer d'autres actions ici
+  });
+}
+@HostListener('document:mousemove', ['$event'])
+  onMouseMovedialog(event: MouseEvent) {
+    console.log("toto")
+    if (this.deplacement_dialog) {
+      // Mettre à jour la position de la boîte de dialogue en fonction des nouvelles coordonnées
+      this.dialogRef?.updatePosition({
+        top: event.clientY + 'px',
+        left: event.clientX + 'px'
+      });
+    }
+  }
 changerOnglet(nouvelOnglet: string): void {
   this.ongletSelectionne = nouvelOnglet;
  
@@ -95,12 +119,16 @@ onResize(event: Event) {
     const codeDiv = this.el.nativeElement.querySelector('.pourcode');
     if (side_h==this.side_h_var){ 
    const currentWidth = codeDiv.offsetWidth;
-      if (currentWidth=="2422"){
-        this.renderer.setStyle(codeDiv, 'width', '96%');
+   const screenWidth = window.innerWidth;
+   const percentage = (currentWidth / screenWidth) * 100;
+
+   console.log(percentage)
+      if (percentage<87){
+        this.renderer.setStyle(codeDiv, 'width', '97%');
         this.side_h_var_vi=false
       }
       else{
-        this.renderer.setStyle(codeDiv, 'width', '86%');
+        this.renderer.setStyle(codeDiv, 'width', '87%');
         this.side_h_var_vi=true
       }
    
@@ -116,7 +144,7 @@ onResize(event: Event) {
   ngAfterViewInit() {
     this.syncMinimap();
     const codeDiv = this.el.nativeElement.querySelector('.code');
-    const lines = codeDiv.innerHTML.split('<br _ngcontent-ng-c2496203463="">').length;
+    const lines = codeDiv.innerHTML.split('<br _ngcontent-ng-c516400532=""').length;
   
     this.lineNumbers = Array.from({ length: lines }, (_, index) => index + 1);
  }
@@ -151,10 +179,11 @@ onResize(event: Event) {
   }
   
 
+
 @HostListener('scroll', ['$event'])
 onScroll(event: Event) {
  
- console.log(this.scrollTop)
+
   this.syncMinimap();
   
 }@HostListener('document:click', ['$event'])
@@ -182,9 +211,9 @@ onMouseMove(event: MouseEvent): void {
 
     const newHeight = this.initialHeight + (event.clientY - this.initialHeight);
     const codeDiv = document.getElementById('terminal');
-    console.log("hauteur",codeDiv?.style.height)
+  
     this.renderer.setStyle(codeDiv, 'height', `${newHeight}px`);
-    console.log(newHeight)
+    
   }
 }
 
