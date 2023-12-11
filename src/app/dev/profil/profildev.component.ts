@@ -1,6 +1,7 @@
 import { Component,HostListener, ElementRef, Renderer2 } from '@angular/core';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 import { ModalComponent } from './modal/modal.component';
+
 interface MenuItem {
   label: string;
   isSubMenuVisible: boolean;
@@ -9,7 +10,7 @@ interface MenuItem {
 @Component({
   selector: 'app-profil-dev',
   templateUrl: './profildev.component.html',
-  styleUrls: ['./profildev.component.css']
+  styleUrls: ['./profildev.component.css','./profildev2.component.css']
 })
 export class ProfilComponentdev {
   ouvreeditorla: boolean= true;
