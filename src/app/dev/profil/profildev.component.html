@@ -8,27 +8,45 @@
             <img   src="./assets/visual.png" alt="Image" />
          
          </ul>
-         <div class="center_onglet"> 
-         <i class="fas fa-arrow-left arrow-icon" onclick="sied_h('left')"></i>
-         <i class="fas fa-arrow-right arrow-icon" onclick="sied_h('right')"></i>
-         <button class="icon-label-button" onclick="handleClick()">
-            <i class="fas fa-search"></i>
-            <span style="margin-left: 8px;">Portfolio</span>
-        </button>
-      </div>
+         <div class="center_onglet">
+            <i class="fas fa-arrow-left arrow-icon" (click)="changerOngletFleche('left')"></i>
+            <i class="fas fa-arrow-right arrow-icon" (click)="changerOngletFleche('right')"></i>
+            <button class="icon-label-button" >
+              <i class="fas fa-search"></i>
+              <span style="margin-left: 8px;">Portfolio</span>
+              <div class="search_h">Recherche portfolio --python.py - Portfolio - Visual Studio Code</div>
+            </button>
+          </div>
+          
          <div class="header-app-icons">
             <ul>
                <li>
-                  <img   src="./assets/icon_croix_next.png" alt="Image"  style="width: 400px; height: 79px;" />
+                  <img  class="header_img" src="./assets/header/case1.png" alt="Image"/>
+                  <span class="header_droit">Basculer la barre latéral primaire (Ctrl+B)</span>
                </li>
                <li>
-                  <i class="fa fa-window-minimize"></i>
+                  <img  class="header_img" src="./assets/header/case2.png" alt="Image"/>
+                  <span class="header_droit">Activer/désactiver le panneau (Ctrl+j)</span>
                </li>
                <li>
-                  <i class="fa fa-window-restore"></i>
+                  <img  class="header_img" src="./assets/header/case3.png" alt="Image"/>
+                  <span class="header_droit">Basculer la barre latérale secondaire(Ctrl+Alt+B)</span>
                </li>
                <li>
-                  <i class="fa fa-times"></i>
+                  <img  class="header_img" src="./assets/header/case.png" alt="Image"/>
+                  <span class="header_droit">Personnaliser la dispostion...</span>
+               </li>
+               <li>
+                  <img  class="header_img" src="./assets/header/case4.png" alt="Image"/>
+                  
+               </li>
+               <li>
+                  <img  class="header_img" src="./assets/header/case5.png" alt="Image"/>
+                  
+               </li>
+               <li>
+                  <img  class="header_img" src="./assets/header/case6.png" alt="Image"/>
+                  
                </li>
             </ul>
          </div>
@@ -36,35 +54,69 @@
       <!-- collone gauche icon-->
       <div class="side-header">
          <ul class="side-header-menu">
-            
+           <li>
+            <img  (click)="sied_h('file')" class="search-image" src="./assets/side_header/file.png" alt="Image" />   
+           </li>
             <li>
-               <i class="fas fa-bars"></i>
-            </li>
-            <li class="active">
-               <i class="fa fa-copy" (click)="sied_h('copy')"></i>
-            </li>
-            <li>
-               <i class="fa fa-search" (click)="sied_h('search')"></i>
+               <img  (click)="sied_h('copy')" class="search-image" src="./assets/side_header/copy.png" alt="Image" />
+               
+               <span class="tooltiptext">Explorateur (Ctrl+Maj+E)</span>
             </li>
             <li>
-               <i class="fa fa-share-alt" (click)="sied_h('share-alt')"></i>
+               <img  (click)="sied_h('search')" class="search-image" src="./assets/side_header/search.png" alt="Image" />
+               <span class="tooltiptext">Recherche (Ctrl+Maj+F)</span>
             </li>
             <li>
-               <i class="fa fa-play" (click)="sied_h('play')"></i>
+               <img  (click)="sied_h('play')" class="search-image" src="./assets/side_header/play.png" alt="Image" />
+               <span class="tooltiptext">Exécuter et déboguer</span>
             </li>
             <li>
-               <i class="fa fa-th-large" (click)="sied_h('th-large')"></i>
+               <img  (click)="sied_h('extension')" class="search-image" src="./assets/side_header/extension.png" alt="Image" />
+              
+               <span class="tooltiptext">Extension (Ctrl+Maj+X)</span>
+            </li>
+            <li>
+               <img  (click)="sied_h('postman')" class="search-image" src="./assets/side_header/postman.png" alt="Image" />
+              
+               <span class="tooltiptext">Postman </span>
+            </li>
+            <li>
+               <img  (click)="sied_h('check')" class="search-image" src="./assets/side_header/test.png" alt="Image" />
+              
+               <span class="tooltiptext">Test</span>
+            </li>
+            <li>
+               <img  (click)="sied_h('database')" class="search-image" src="./assets/side_header/database.png" alt="Image" />
+              
+               <span class="tooltiptext">Mysql</span>
+            </li>
+            <li>
+               <img  (click)="sied_h('spock')" class="search-image" src="./assets/side_header/spoke.png" alt="Image" />
+              
+               <span class="tooltiptext">Spockee</span>
+            </li>
+         </ul>
+         <ul class="side-header-menu_d">
+            <li>
+               <img  (click)="sied_h('user')" class="search-image" src="./assets/side_header/user.png" alt="Image" />
+              
+               <span class="tooltiptext">Accounts</span>
+            </li>
+            <li>
+               <img  (click)="sied_h('cog')" class="search-image" src="./assets/side_header/cog.png" alt="Image" />
+              
+               <span class="tooltiptext">Manage</span>
             </li>
          </ul>
       </div>
       <!-- collone gauche texte -->
       <div class="menu-option" *ngIf="side_h_var === 'copy' && side_h_var_vi">
-         <h5>EXPLORATEUR  <i class="fas fa-ellipsis-h icon_droite_onglet"></i>
+         <h5>EXPLORATEUR<i class="fas fa-ellipsis-h icon_droite_onglet"></i>
           </h5>
          <div class="menu-drop">
             <div class="box-click">
-               <i class="fa fa-chevron-down" (click)="ouvreeditors()" ></i> <span>OPEN EDITORS</span>
-               <div >
+               <i class="fa fa-chevron-down" (click)="ouvreeditors()" ></i> <span>PORTFORLIO</span>
+               <div class="box-click2" >
                   <ul *ngIf="ongletSelectionne === 'python' && ouvreeditorla == true">
                      <li class="show-pre" [class.show-press-select]="fichierSelectionne === 'profil'" (click)="changerfichier('profil')" ><i class="fab fa-python "></i> <span>profil.py</span>  </li>
                      <li class="show-pre"  [class.show-press-select]="fichierSelectionne === 'contact'" (click)="changerfichier('contact')"><i class="fab fa-python"></i> <span  > contact.py </span></li>
@@ -86,15 +138,40 @@
          <br>
         
       </div>
-      <div class="menu-option" *ngIf="side_h_var === 'search' && side_h_var_vi">
-         <h5>search</h5>
+      <div class="menu-option" *ngIf="side_h_var === 'extension' && side_h_var_vi">
+         <h5>extension compétence</h5>
+         <div class="menu-drop">
+            <div class="box-click">
+               <i class="fa fa-chevron-down" (click)="ouvreeditors()" ></i> <span>installé</span>
+               <div class="box-click2" >
+                  <ul>
+                     <li>
+                        <P > angular langage</P>
+                        <P> framework web </P>
+                        <P> angular</P>
+                     </li>
+                </ul>
+               </div>
+            </div>
+         </div>
+         <div class="menu-drop">
+            <div class="box-click">
+               <i class="fa fa-chevron-down" (click)="ouvreeditors()" ></i> <span>recommandation</span>
+               <div class="box-click2" >
+                  <ul>
+                     <P> angular langage</P>
+                        <P> framework web </P>
+                        <P> angular</P>  </ul>
+               </div>
+            </div>
+         </div>
          <li class="header-menu-link" *ngFor="let menuItem of menuItems" (click)="toggleSubMenu(menuItem)">
             {{ menuItem.label }}
             <ul class="sub-menu" *ngIf="menuItem.isSubMenuVisible">
                <li class="sub-menu-label" *ngFor="let subItem of menuItem.subMenuItems" (click)="submenu(subItem.label)">{{ subItem.label }}</li>
             </ul>
       </div>
-      <div class="menu-option" *ngIf="side_h_var === 'share-alt' && side_h_var_vi">
+      <div class="menu-option" *ngIf="side_h_var === 'search' && side_h_var_vi">
          <h5>partage ton code</h5>
          
          <a class="aref" href="https://github.com/oliveur83" target="_blank" rel="noopener noreferrer">
@@ -108,10 +185,71 @@
           </a>
       </div>
       <div class="menu-option" *ngIf="side_h_var === 'play' && side_h_var_vi">
-         <h5>play</h5>
+         <div class="menu-drop">
+            <div class="box-click">
+               <i class="fa fa-chevron-down" (click)="ouvreeditors()" ></i> <span>Exécuter</span>
+               <div class="box-click2" >
+                  <ul>
+                     <li>
+                        <P > angular langage</P>
+                        <P> framework web </P>
+                        <P> angular</P>
+                     </li>
+                </ul>
+               </div>
+            </div>
+         </div>
+         <div class="menu-drop">
+            <div class="box-click">
+               <i class="fa fa-chevron-down" (click)="ouvreeditors()" ></i> <span>Points D'arrèt</span>
+               <div class="box-click2" >
+                  <ul>
+                     <li>
+                        <P > angular langage</P>
+                        <P> framework web </P>
+                        <P> angular</P>
+                     </li>
+                </ul>
+               </div>
+            </div>
+         </div>
       </div>
-      <div class="menu-option" *ngIf="side_h_var === 'th-large' && side_h_var_vi">
-         <h5>th-large</h5>
+      <div class="menu-option" *ngIf="side_h_var === 'cog' && side_h_var_vi">
+         <h5>cog</h5>
+      </div>
+      <div class="menu-option" *ngIf="side_h_var === 'postman' && side_h_var_vi">
+         <h5>post</h5>
+      </div>
+      <div class="menu-option" *ngIf="side_h_var === 'spock' && side_h_var_vi">
+         <h5>spock</h5>
+      </div>
+      <div class="menu-option" *ngIf="side_h_var === 'user' && side_h_var_vi">
+         <h5>user</h5>
+      </div>
+      <div class="menu-option" *ngIf="side_h_var === 'database' && side_h_var_vi">
+         <h5>database</h5>
+         <div class="menu-drop">
+            <div class="box-click">
+               <i class="fa fa-chevron-down" (click)="ouvreeditors()" ></i> <span>Connection</span>
+               <div class="box-click2" >
+                  <ul>
+                     <li>
+                        <P > angular langage</P>
+                        <button class="bouton_bleu"> Add Connexion</button>
+        
+                     </li>
+                </ul>
+               </div>
+            </div>
+         </div>
+         
+      </div>
+      <div class="menu-option" *ngIf="side_h_var === 'check' && side_h_var_vi">
+         <h5>Test introuvables dans cet espace de travail.<br>
+            Configure a test framework to see your tests header
+            <button class="bouton_bleu"> Configure Python Test</button><br>
+            <button class="bouton_bleu"> installer des extensions de test suplémentaire..</button>
+         </h5>
       </div>
       <div class="pourcode">
          <div class="onglet">
@@ -135,12 +273,10 @@
               <i class="fas fa-ellipsis-h icon_droite_onglet"></i>
 
             </div>
-          </div>
-          
-        
+          </div>   
          <div class="containerdev"  *ngIf="ongletSelectionne === 'python' && fichierSelectionne === 'profil'">
             <div class="num_code"  >
-               <div *ngFor="let lineNumber of lineNumbers">
+               <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
                  {{ lineNumber }} 
                </div>
              </div>
@@ -195,7 +331,7 @@
    <span class="tabulation number"> 2024</span>:<span class="string">  """2024 """</span>,<br>
    <span class="tabulation" >)</span> <br>
     
-    <span class="variable">annee</span> = <span class="'number">2023</span><br>
+    <span class="variable">annee</span> = <span class="  number">2023</span><br>
     <span class="variable">resultat</span> = <span class="fonction">switch_case_annee</span>(<span class="variable">annee</span>)<br>
     <span class="print">print</span>(<span class="variable">resultat</span>)<br>
     <br>   
@@ -235,8 +371,8 @@ Les projets 3D JavaScript et les projets Python handtracking qui satisfont
             <div class="minimap" id="minimap"></div>
          </div>
          <div class="containerdev" *ngIf="ongletSelectionne === 'python' && fichierSelectionne === 'contact'">
-            <div class="num_code"  >
-               <div *ngFor="let lineNumber of lineNumbers">
+        <div class="num_code"  >
+               <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
                  {{ lineNumber }} 
                </div>
              </div>
@@ -251,8 +387,8 @@ Les projets 3D JavaScript et les projets Python handtracking qui satisfont
             <div class="minimap" id="minimap"></div>
          </div>
          <div class="containerdev" *ngIf="ongletSelectionne === 'python' && fichierSelectionne === 'projet'">
-            <div class="num_code"  >
-               <div *ngFor="let lineNumber of lineNumbers">
+        <div class="num_code"  >
+               <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
                  {{ lineNumber }} 
                </div>
              </div>
@@ -281,8 +417,8 @@ Les projets 3D JavaScript et les projets Python handtracking qui satisfont
          </div>
         
          <div class="containerdev" *ngIf="ongletSelectionne === 'php' && fichierSelectionne === 'profil'">
-            <div class="num_code"  >
-               <div *ngFor="let lineNumber of lineNumbers">
+        <div class="num_code"  >
+               <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
                  {{ lineNumber }} 
                </div>
              </div>
@@ -355,8 +491,8 @@ Les projets 3D JavaScript et les projets Python handtracking qui satisfont
             <div class="minimap" id="minimap"></div>
          </div>
          <div class="containerdev" *ngIf="ongletSelectionne === 'php' && fichierSelectionne === 'contact'">
-            <div class="num_code"  >
-               <div *ngFor="let lineNumber of lineNumbers">
+        <div class="num_code"  >
+               <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
                  {{ lineNumber }} 
                </div>
              </div>
@@ -371,8 +507,8 @@ Les projets 3D JavaScript et les projets Python handtracking qui satisfont
             <div class="minimap" id="minimap"></div>
          </div>
          <div class="containerdev" *ngIf="ongletSelectionne === 'php'&& fichierSelectionne === 'projet'">
-            <div class="num_code"  >
-               <div *ngFor="let lineNumber of lineNumbers">
+        <div class="num_code"  >
+               <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
                  {{ lineNumber }} 
                </div>
              </div>
@@ -386,8 +522,8 @@ Les projets 3D JavaScript et les projets Python handtracking qui satisfont
             <div class="minimap" id="minimap"></div>
          </div>
          <div class="containerdev" *ngIf="ongletSelectionne === 'javascript' && fichierSelectionne === 'profil'">
-            <div class="num_code"  >
-               <div *ngFor="let lineNumber of lineNumbers">
+        <div class="num_code"  >
+               <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
                  {{ lineNumber }} 
                </div>
              </div>
@@ -402,8 +538,8 @@ Les projets 3D JavaScript et les projets Python handtracking qui satisfont
             <div class="minimap" id="minimap"></div>
          </div>
          <div class="containerdev" *ngIf="ongletSelectionne === 'javascript' && fichierSelectionne === 'contact'">
-            <div class="num_code"  >
-               <div *ngFor="let lineNumber of lineNumbers">
+        <div class="num_code"  >
+               <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
                  {{ lineNumber }} 
                </div>
              </div>
@@ -418,8 +554,8 @@ Les projets 3D JavaScript et les projets Python handtracking qui satisfont
             <div class="minimap" id="minimap"></div>
          </div>
          <div class="containerdev" *ngIf="ongletSelectionne === 'javascript'&& fichierSelectionne === 'projet'">
-            <div class="num_code"  >
-               <div *ngFor="let lineNumber of lineNumbers">
+        <div class="num_code"  >
+               <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
                  {{ lineNumber }} 
                </div>
              </div>
@@ -443,7 +579,10 @@ Les projets 3D JavaScript et les projets Python handtracking qui satisfont
                 <button class="button_ter" [class.button_ter_select]="terminalSelectionne === 'SORTIE'" (click)="changerterminal('SORTIE')">SORTIE</button>
                 <button class="button_ter" [class.button_ter_select]="terminalSelectionne === 'TERMINAL'" (click)="changerterminal('TERMINAL')">TERMINAL</button>
                 <button class="button_ter" [class.button_ter_select]="terminalSelectionne === 'PORTS'" (click)="changerterminal('PORTS')">PORTS</button>
-            </div>
+           
+                <button class="button_ter" [class.button_ter_select]="terminalSelectionne === 'POSTMAN'" (click)="changerterminal('POSTMAN')">POSTMAN CONSOLE</button>
+          
+               </div>
             
             <!-- La deuxième div avec le mot changeant -->
           
@@ -498,20 +637,31 @@ Les projets 3D JavaScript et les projets Python handtracking qui satisfont
             <div class="interface_ter" *ngIf="terminalSelectionne==='SORTIE'" >{{ mot }}</div>
             <div class="interface_ter" *ngIf="terminalSelectionne==='PORTS'" >
             Aucun port transféré. Transférez moi votre port pour accéder à nos services exécutés localement sur internet 
-           <br> <input type="text" id="texteInput" name="texteInput" placeholder="Votre texte ici">
-           <br><button type="button" onclick="afficherTexte()">Afficher</button>
+           <br> <input class ="port_texte " type="text" id="texteInput" name="texteInput" placeholder="Votre texte ici">
+           <br><button class=" port_bouton"type="button" onclick="afficherTexte()">Transférer un port</button>
      
             </div>
+            <div class="interface_ter" *ngIf="terminalSelectionne==='POSTMAN'" >
+               no logs yet<br> send a request to view its details in the console 
+               </div>
         </div>
       </div>
       <!-- truc bleu en bas -->
       <div class="bottom-header">
          <ul class="right">
+            <li> 
+               <i>
+               <img  class ="terminal_image_v"src="./assets/terminal/vert.png" alt="Image" />
+            </i> 
+         </li>
             <li>
-               <i class="fas fa-times-circle enlarged"></i>
+               <i>
+                  <img  class ="terminal_image_g"src="./assets/terminal/git.png" alt="Image" />
+               </i> 
             </li>
             <li>
-               <i class="fa fa-exclamation-triangle"></i>
+               <img  class ="terminal_image_t"src="./assets/terminal/test.png" alt="Image" />
+          
             </li>
          </ul>
          <ul class="left">

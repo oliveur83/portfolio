@@ -2,7 +2,24 @@ import tkinter as tk
 from tkinter import PhotoImage
 
 def afficher_image ():
-     print('toto')
+    
+    fenetre = tk.Tk()
+    fenetre.title("Affichage d'une image")
+
+    chemin_image = "chemin/vers/votre/image.png"
+    img =PhotoImage (file=chemin_image )
+
+    label_image = tk.label(fenetre, image=img)
+    label_image.pack()
+    fenetre.mainloop()
+# veulliez executer le code pour voir le resultat
+afficher_image()
+
+
+
+
+
+    
 projets = [
     [
         {"imgSrc": "src/assets/emploie.png", "titre": "Emploi du temps", "openfenetre": "Emploi_du_temps", "description": "Projet réalisé en master - Création d'une application web de gestion et visualisation \nd'emploi du temps sous différentes formes techno:"},

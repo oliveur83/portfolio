@@ -21,6 +21,7 @@ import { AngularVuejsComponent } from './projet/angular-vuejs/angular-vuejs.comp
 import { HandtrackingComponent } from './projet/handtracking/handtracking.component';
 import { ModalComponent } from './dev/profil/modal/modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ChenilleComponent } from './projet/chenille/chenille.component';
 @NgModule({
   declarations: [
     ContactComponentdev,
@@ -39,6 +40,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     AngularVuejsComponent,
     HandtrackingComponent,
     ModalComponent,
+    ChenilleComponent,
    
   ],
   imports: [CommonModule,

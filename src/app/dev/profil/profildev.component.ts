@@ -17,6 +17,7 @@ export class ProfilComponentdev {
   terminalSelectionne: string = 'TERMINAL';
   isSubMenuVisible: boolean = false;
   ongletSelectionne: string = 'python';
+
   fichierSelectionne: string = 'profil';
   lineNumbers: number[] = [];
   scrollTop = 0;
@@ -96,6 +97,25 @@ changerOnglet(nouvelOnglet: string): void {
  
 this.syncMinimap();
 }
+changerOngletFleche(direction: string) {
+  // Logique de votre fonction ici
+  if (direction=="right"){
+    console.log("totofds")
+    if (this.ongletSelectionne=="python"){this.ongletSelectionne="php"}
+    else if  (this.ongletSelectionne=="php"){this.ongletSelectionne="javascript"}
+    else{this.ongletSelectionne="python"}
+  }
+  else{
+    if (this.ongletSelectionne=="python"){this.ongletSelectionne="javascript"}
+    else if  (this.ongletSelectionne=="javacript"){this.ongletSelectionne="php"}
+    else{this.ongletSelectionne="python"}
+  }
+  console.log("tototo")
+  this.syncMinimap();
+}
+
+
+
 changerterminal(nouvelterminal: string): void {
   this.terminalSelectionne = nouvelterminal;
   this.mot = nouvelterminal;
@@ -124,18 +144,18 @@ onResize(event: Event) {
 
    console.log(percentage)
       if (percentage<87){
-        this.renderer.setStyle(codeDiv, 'width', '97%');
+        this.renderer.setStyle(codeDiv, 'width', '96%');
         this.side_h_var_vi=false
       }
       else{
-        this.renderer.setStyle(codeDiv, 'width', '87%');
+        this.renderer.setStyle(codeDiv, 'width', '81%');
         this.side_h_var_vi=true
       }
    
   }
   else{
     
-      this.renderer.setStyle(codeDiv, 'width', '86%');
+      this.renderer.setStyle(codeDiv, 'width', '81%');
     this.side_h_var_vi=true
     
   }
@@ -144,7 +164,7 @@ onResize(event: Event) {
   ngAfterViewInit() {
     this.syncMinimap();
     const codeDiv = this.el.nativeElement.querySelector('.code');
-    const lines = codeDiv.innerHTML.split('<br _ngcontent-ng-c3155106393=""').length;
+    const lines = codeDiv.innerHTML.split('<br _ngcontent-ng-c458445368=""').length;
   
     this.lineNumbers = Array.from({ length: lines }, (_, index) => index + 1);
  }
@@ -209,10 +229,14 @@ onMouseMove(event: MouseEvent): void {
   
   if (this.isResizing) {
 
-    const newHeight = this.initialHeight + (event.clientY - this.initialHeight);
-    const codeDiv = document.getElementById('terminal');
-  
-    this.renderer.setStyle(codeDiv, 'height', `${newHeight}px`);
+    const interfaceTer = this.el.nativeElement.querySelector('.interface_ter');
+
+    const terminalHeight = event.clientY;
+    const containerHeight = window.innerHeight - terminalHeight;
+    const interfaceTerHeight=terminalHeight-450
+    this.renderer.setStyle(this.el.nativeElement.querySelector('.containerdev'), 'height', `${containerHeight}px`);
+    //this.renderer.setStyle(this.el.nativeElement.querySelector('.interface_ter'), 'height', `${terminalHeight}px`);
+    this.renderer.setStyle(interfaceTer, 'height', `${interfaceTerHeight}px`);
     
   }
 }

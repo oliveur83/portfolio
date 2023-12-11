@@ -1,0 +1,20 @@
+.container {
+    display: flex; /* Utilisez la propriété flexbox pour disposer les éléments horizontalement */
+  }
+
+  .box {
+    width: 50%; /* Chaque boîte prendra 50% de la largeur de la boîte parente */
+    padding: 20px;
+   
+    box-sizing: border-box; /* Assurez-vous que la bordure est incluse dans la largeur/hauteur spécifiée */
+  }
+  .img{
+    width: 90%;
+  }
+  h1{
+    font-size: 100px;
+    text-align: center;
+  }
+  p{
+    font-size: 50px;
+  }

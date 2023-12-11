@@ -6,6 +6,7 @@
   list-style: none;
 
 }
+
 /* header */
 .header {
   background: #3c3c3c;
@@ -13,7 +14,7 @@
   display: flex;
   align-items: center;
   position: relative;
-  max-height: 100px;
+  height: 117px;
   justify-content: space-between;
   
 }
@@ -54,17 +55,28 @@ ul.header-menu li.header-menu-link {
 }
 
 .header-app-icons {
+  height: max-content;
   position: absolute;
+  height: 100%;
   right: 0;
 font-size: 40px;
+
 }
-
+.header-app-icons ul{
+  height: 100%;
+}
 .header:after {content: '';clear: both;}
-
+.header_img{
+  height: 100%;
+  vertical-align: middle;
+}
 .header-app-icons li {
   display: inline-block;
-  margin: 0 30px;
+  margin-left: 20px;
   color: #ccc;
+height:80%;
+text-align: center; 
+
 
 }
 .center_onglet{
@@ -72,6 +84,48 @@ font-size: 40px;
   right:0;
   
 }
+.header-app-icons li:hover .header_droit {
+  visibility: visible;
+}
+.header-app-icons .header_droit {
+  visibility: hidden;
+  width:max-content;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  height:60px;
+  font-size: 40px;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 10000;
+  
+  transform: translateY(90px) translateX(-200px);
+
+}
+.center_onglet button:hover .search_h {
+  visibility: visible;
+}
+.center_onglet .search_h {
+  visibility: hidden;
+  width:max-content;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  height:60px;
+  font-size: 40px;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 10000;
+  top: 150%;
+  left: 50%;
+  transform: translateY(-90px)translateX(-400px);
+
+}
+
 .center_onglet > * {
   margin-right: 40px; /* Ajoute une marge de 20 pixels entre chaque élément */
 }
@@ -80,8 +134,9 @@ font-size: 40px;
   margin-right: 0; /* Supprime la marge à droite du dernier élément */
 }
 /*side header*/
-.side-header-menu{
-  margin-top: 50px;
+.side-header .search-image {
+  width: 100%;
+  height: 100%;
 }
 .side-header {
   background: #333;
@@ -90,63 +145,109 @@ font-size: 40px;
   left: 0;
   z-index: 9999;
   width: 4%;
-  height: calc(97vh);
+  height: calc(90vh);
 }
+
+.side-header-menu {
+  list-style: none;
+  
+}
+.side-header-menu_d {
+  list-style: none;
+margin-top: 70px;
+}
+
+
+.side-header li {
+  text-align: center;
+ height: max-content;
+
+  position: relative;
+  
+}
+
+.side-header li i {
+  line-height: 47px !important;
+  color: #858585;
+  cursor: pointer;
+  font-size: 60px;
+  position: absolute;
+  z-index: 1; 
+  
+  transform: translateX(-60%);
+}
+
 .side-header li:after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  
   width: 0;
   height: 100%;
   background: #fff;
   transition: all .3s linear;
   opacity: 0;
 }
-.side-header li i {
-  line-height: 47px !important;
-  color: #858585;
-  cursor: pointer;
-  
-  font-size: 80px;
-}
-.side-header li {
-  text-align: center;
-  height: 44px;
-  margin-bottom: 3cm;
-  position: relative;
-}
+
 .side-header li:hover:after {
-  width: 2px;
-  opacity: 1;
+  width: 4px;
+  opacity: 1;height:100%
+
 }
-.side-header li.active:after {
-  width: 2px;
-  opacity: 1;
-  z-index: 0;
+.side-header li:hover .tooltiptext {
+  visibility: visible;
 }
-.side-header .active i {
+
+.port_texte {
+  height: 80px;
+  width: 700px;
+  font-size: 60px;
+}
+
+.port_bouton {
+  background-color: #007acc;
+  color: #ccc;
+  height: 80px;
+  width: 700px;
+  font-size: 60px;
+  align-items: center;
+}
+
+.side-header .tooltiptext {
+  visibility: hidden;
+  width:max-content;
+  background-color: black;
   color: #fff;
-  z-index: 0;
-}
-ul.side-header-botton-menu {
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  height:60px;
+  font-size: 40px;
+  /* Position the tooltip */
   position: absolute;
-  width: 100%;
-  bottom: 0;
+  z-index: 10000;
+  top: 150%;
+  left: 50%;
+  transform: translatey(-150px) translateX(40px);
+}
+
+.side-header li:hover .tooltiptext {
+  visibility: visible;
 }
 /*menu-option*/
 .menu-option {
   background: #252526;
   float: left;
-  width: 14%;
-  height: calc(100vh - 50px);
+  width: 15%;
+  height: calc(90vh);
   cursor: pointer;
 }
 .aref{font-size: 40px;
 color:#ccc}
 .menu-option h5 {
-  margin: 10px 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 80px;
   color: #ccc;
   font-size: 40px;
   font-weight: 300;
@@ -185,12 +286,17 @@ color:#ccc}
   background-color: rgba(0, 122, 204, 0.3);
   border: 2px solid #68CDFE;
 }
+.box-click2{
+  border-top:10px solid #000000;
+}
 .box-click i, .box-click span {
   color: #ccc;
   font-size: 40px;
   margin: 0 5px;
   z-index: 99;
   position: relative;
+  
+  
 }
 .header-menu {
   display: flex;
@@ -237,12 +343,13 @@ color:#ccc}
   border-color: #68CDFE;
 }
 /* pourcode*/
+
 .pourcode{
-  width: 82%;
+  width: 80%;
    float:left;
   
    background-color: #cc008b;
-   height: calc(98vh);
+   height: calc(90vh);
  
    flex-direction: column;
    display: flex;
@@ -256,14 +363,14 @@ color:#ccc}
   align-items: center;
  width: 100%;
   float: left;
-  height: 110px;
+  height: 7%;
   background-color: #252526;
   cursor: pointer;
 }
 
 .boutons {
   display: flex;
-  margin: 30px;
+  
 }
 .icon_droite_onglet{
   color:#ccc;
@@ -302,6 +409,7 @@ color:#ccc}
 .containerdev {
   position: relative;
   display: flex;
+  height: 69%;
 }
 .num_code::-webkit-scrollbar {
   width: 0;  /* Rendre la barre de défilement invisible */
@@ -311,25 +419,31 @@ color:#ccc}
   width: 80px;
   flex-direction: column; 
   background-color: #1E1E1E;
-  height:920px;
+  height:100%;
   overflow: auto;
-  font-size: 40px;
+  font-size: 41px;
   color:#ccc;
   scrollbar-width: thin;
   scrollbar-color: transparent transparent; 
   
 }
+.num_code_nb{
+  margin-bottom: 14px;
+}
 .code {
   float: left;
   clear: both;
-  height: 920px;
+  height: 100%;
   width: 90%; /* Ajustez la largeur selon vos besoins */
   background-color: #1E1E1E;
   overflow: auto;
  
-  font-size: 40px;
+  font-size: 41px;
   color: #cccccc;
-
+  
+}
+br {
+  margin-bottom: 14px;
 }
 .minimap {
   height: 100%; /* Ajustez la hauteur selon vos besoins */
@@ -338,48 +452,56 @@ color:#ccc}
   position: sticky;
   top: 0;
   font-size: 0.6rem !important; 
-  
+  scrollbar-color: transparent transparent; 
+   scrollbar-width: thin;
+   overflow: auto;
 }
 /*terminal*/
 .resizable {
 
   resize: vertical; /* permet la redimension verticale */
 }
+
 .terminal{
   resize: vertical;
   float:left;
   clear:both;
   flex:1;
-  height: 100px;
+  height: 17%;
   width: 100%;
   background-color: #1E1E1E;
+  border-top:0.5px solid #414141;
 }
 .button-container_ter {
   display: flex;
+  height: 150px;
 }
 .button_ter {
   margin-right: 10px;
-  margin:10px;
+  margin:50px;
   background-color: #1E1E1E;
   color:#ccc;
-  font-size: 30px;
+  font-size: 40px;
   border:none;
 }
 .button_ter_select {
-  font-weight: bold;
   margin-right: 10px;
-  background-color: #323232;
+  margin:50px;
+  background-color: #1E1E1E;
   color:#ccc;
+  font-size: 40px;
+  border:none;
   border-bottom: 2px solid #ffffff; 
-  font-size: 35px;
+
  
 
 }
 .interface_ter{
   color:#ccc;
   font-size: 30px;
-  height: 300px;
+  height: 60%;
   overflow-y: scroll;
+  overflow: auto;
 }
 .table {
   display: table;
@@ -394,24 +516,44 @@ color:#ccc}
 }
 /*bar bleu */
 .bottom-header {
-  clear:both;
-  bottom: 0;
+    clear:both;
   flex:1;
   width: 100%;
-  height: 50px;
+  height: 70px;
   background: #007acc;
-  padding: 0px 10px;
 }
 ul.right {
   float: left;
+  height: 100%;
+
+  list-style: none; /* Supprime les puces de la liste */
+  padding: 0; /* Assurez-vous qu'il n'y a pas de remplissage pour la liste */
 }
+
 ul.right li {
   display: inline-block;
-  margin: 0 5px;
+  height: 100%;
+  
+  padding: 0;
+margin-right: 1cm;
 }
 ul.right li i {
   color: #fff;
-  font-size: 12px;
+  height:100%;
+  
+ 
+}
+.terminal_image_t{
+  height: max-content;
+width: 200px;
+}
+.terminal_image_g{
+  height: max-content;
+width: 200px;
+}
+.terminal_image_v{
+  height: max-content;
+  width: 113px;
 }
 ul.left {
   float: right;
@@ -426,7 +568,7 @@ ul.left li {
 
 /* ------------------------*/
 /* python */
-.variable { color: #68CDFE  }
+.variable { color: #9CDCFE  }
 .string { color:#CE9178 }
 .number { color:#B5CEA8  }
 .print{color: #DCDC8B }
@@ -452,6 +594,7 @@ ul.left li {
 }
 body {
   background-color: #1e1e1e;
+  
 }
 
 .croix{
@@ -479,10 +622,19 @@ i.fab.fa-js {
 }
 
 .bottom-header .right li i {
-  font-size: 30px; /* ou toute autre valeur souhaitée */
+  font-size: 50px;
+
+/* ou toute autre valeur souhaitée */
 }
 .bottom-header .left li  {
-  font-size: 30px; /* ou toute autre valeur souhaitée */
+  font-size: 50px; /* ou toute autre valeur souhaitée */
 }
 
 
+.bouton_bleu{
+  color:#ccc;
+  background-color: #0E639C;
+  height: auto;
+  font-size: 40px;
+  width: 90%;
+}
