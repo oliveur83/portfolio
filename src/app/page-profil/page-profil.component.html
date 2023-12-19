@@ -1,0 +1,28 @@
+<!-- page-profil.component.html -->
+
+<div class="container">
+    <div class="header">
+        <img src="./assets/equipe/{{ titreProjet.toString() }} (2).png" alt="Player Image" class="header-image">
+        <h1>{{ utilisateurs[titreProjet.toString()].nom }}</h1>
+    </div>
+
+    <div class="content">
+        <div class="box">
+            <img src="./assets/equipe/{{ titreProjet.toString() }} (1).png" alt="Player Image" class="content-image">
+            <div class="overlay"></div>
+        </div>
+
+        <div class="details">
+            <p><strong>Age:</strong> {{ utilisateurs[titreProjet].age }}</p>
+            <p><strong>Date of Birth:</strong> {{ utilisateurs[titreProjet].date_naissance }}</p>
+            <p><strong>Place of Birth:</strong> {{ utilisateurs[titreProjet].lieu_naissance }}</p>
+            <p><strong>Coding Strengths:</strong> {{ utilisateurs[titreProjet].forces_programmation }}</p>
+            <p><strong>Coding Weaknesses:</strong> {{ utilisateurs[titreProjet].faiblesses_programmation }}</p>
+            <p><strong>Biggest Achievement:</strong> {{ utilisateurs[titreProjet].plus_grande_reussite }}</p>
+            <p><strong>Interests:</strong> {{ utilisateurs[titreProjet].interets }}</p>
+        </div>
+    </div>
+    <button (click)="retour()" class="menu-button">Return</button>
+     
+</div>
+

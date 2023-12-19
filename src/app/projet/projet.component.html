@@ -1,9 +1,0 @@
-<div class="row" *ngFor="let projetRow of projets | slice:0:projets.length">
-  <div class="item" *ngFor="let projet of projetRow" (click)="open_projet(projet.openfenetre)">
-    <img class="imgpro" [src]="projet.imgSrc" alt="Image" />
-    <h1 id="titreprojet">{{ projet.titre }}</h1>
-    <p id="paraprojet">{{ projet.description }}</p>
-  </div>
-</div>
-
-

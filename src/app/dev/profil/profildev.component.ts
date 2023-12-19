@@ -1,7 +1,8 @@
 import { Component,HostListener, ElementRef, Renderer2 } from '@angular/core';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 import { ModalComponent } from './modal/modal.component';
-
+import { ActivatedRoute } from '@angular/router';
+import { DataService } from '../../date.service';
 interface MenuItem {
   label: string;
   isSubMenuVisible: boolean;
@@ -32,8 +33,12 @@ export class ProfilComponentdev {
   side_h_var: String='copy';
   side_h_var_vi: boolean =true;
   dialogRef: MatDialogRef<ModalComponent> | undefined;
-  constructor(private dialog: MatDialog,private el: ElementRef,private renderer: Renderer2){
+ 
 
+  constructor(private dialog: MatDialog,private el: ElementRef,private renderer: Renderer2,private route: ActivatedRoute,private dataService: DataService){
+    this.fichierSelectionne = this.route.snapshot.queryParams['parametre1'];
+  console.log("affichage",this.fichierSelectionne)
+  this.dataService.setSharedValue(this.fichierSelectionne);
   }
  
 ouvreeditors(){
@@ -123,7 +128,7 @@ changerterminal(nouvelterminal: string): void {
 }
 changerfichier(nouvelficher: string): void {
   this.fichierSelectionne = nouvelficher;
-  
+  this.dataService.setSharedValue(this.fichierSelectionne);
 this.syncMinimap();
 }
 ngOnInit() {

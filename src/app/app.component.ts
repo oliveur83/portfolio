@@ -3,6 +3,8 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { logo } from './logo';
+import { DataService } from './date.service';
+
 
 @Component({
   selector: 'app-root',
@@ -15,14 +17,10 @@ export class AppComponent {
   
   isDevMode: boolean = false;
   modedevfond: boolean = false;
-  constructor( private elementRef: ElementRef,private sanitizer: DomSanitizer, private router: Router, private activatedRoute: ActivatedRoute) {
+  constructor( private dataService: DataService, private elementRef: ElementRef,private sanitizer: DomSanitizer, private router: Router, private activatedRoute: ActivatedRoute) {
     this.imagePath = '';
     
-    this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    ).subscribe(() => {
-      this.updateRoute();
-    });
+   
   }
   
   ngAfterViewInit() {
@@ -36,7 +34,6 @@ export class AppComponent {
     this.imagePath = this.sanitizer.bypassSecurityTrustResourceUrl('assets/logo_olicode.png');
   }
   contact(){
-    console.log("toto")
     this.router.navigate(['/contact']);
        
   }
@@ -51,13 +48,24 @@ export class AppComponent {
   }
 
   updateRoute() {
-   
-    const currentRoute = this.activatedRoute.snapshot.firstChild?.routeConfig?.path || 'principal';
-   
+    var currentRouteservice = this.dataService.getSharedValue();
+ 
+    var currentRoute = this.activatedRoute.snapshot.firstChild?.routeConfig?.path || 'principal';
+    var queryParams = {
+      parametre1: currentRoute,
+      
+    };
+    if (currentRoute!==currentRouteservice)
+    {
+      this.dataService.setSharedValue(currentRoute);
+    }
+    console.log("avant changement ",currentRoute,currentRouteservice)
     // Si isDevMode est true, ajoutez le préfixe 'dev/' ; sinon, retirez-le.
-    const newRoute = this.isDevMode ? `dev/${currentRoute}` : currentRoute.replace('dev/', '');
+    const newRoute2 = this.isDevMode ? `dev/profil` : currentRouteservice ;
+
     document.body.style.backgroundColor = this.isDevMode ? "rgb(42, 48, 52)" :"rgb(196, 228, 244)";
-    this.router.navigate([newRoute]);
+   
+    this.router.navigate([newRoute2], { queryParams });
   }
   
   principal(){
@@ -71,4 +79,12 @@ export class AppComponent {
     this.router.navigate(['/projet']);
        
   }
+Test(){
+    console.log("je suis la ")
+    this.router.navigate(['/test']);
+       
+  }
 }
+
+   //const currentRoute = this.activatedRoute.snapshot.firstChild?.routeConfig?.path || 'principal';
+

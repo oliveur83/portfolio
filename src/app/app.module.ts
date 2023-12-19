@@ -5,27 +5,26 @@ import { FormsModule } from '@angular/forms'; // Assurez-vous que vous importez 
 import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProfilComponent } from './profil/profil.component';
-import { ContactComponent } from './contact/contact.component';
-import { PrincipalComponent } from './principal/principal.component';
-import { ProjetComponent } from './projet/projet.component';
+import { ProfilComponent } from './normal/profil/profil.component';
+import { ContactComponent } from './normal/contact/contact.component';
+import { PrincipalComponent } from './normal/principal/principal.component';
+import { ProjetComponent } from './normal/projet/projet.component';
 import { ProfilComponentdev } from './dev/profil/profildev.component';
-import { DevPrincipalComponent } from './dev/principal/principaldev.component';
-import { ContactComponentdev } from './dev/contact/contactdev.component';
-import { JeuDeLoieComponent } from './projet/jeu-de-loie/jeu-de-loie.component';
-import { JeuDeDameComponent } from './projet/jeu-de-dame/jeu-de-dame.component';
-import { OXIComponent } from './projet/oxi/oxi.component';
-import { EDTComponent } from './projet/edt/edt.component';
-import { GestionCampingComponent } from './projet/gestion-camping/gestion-camping.component';
-import { AngularVuejsComponent } from './projet/angular-vuejs/angular-vuejs.component';
-import { HandtrackingComponent } from './projet/handtracking/handtracking.component';
+import { JeuDeLoieComponent } from './normal/projet/jeu-de-loie/jeu-de-loie.component';
+import { JeuDeDameComponent } from './normal/projet/jeu-de-dame/jeu-de-dame.component';
+import { OXIComponent } from './normal/projet/oxi/oxi.component';
+import { EDTComponent } from './normal/projet/edt/edt.component';
+import { GestionCampingComponent } from './normal/projet/gestion-camping/gestion-camping.component';
+import { AngularVuejsComponent } from './normal/projet/angular-vuejs/angular-vuejs.component';
+import { HandtrackingComponent } from './normal/projet/handtracking/handtracking.component';
 import { ModalComponent } from './dev/profil/modal/modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { ChenilleComponent } from './projet/chenille/chenille.component';
+import { ChenilleComponent } from './normal/projet/chenille/chenille.component';
+import { TestComponent } from './test/test.component';
+import { PageProfilComponent } from './page-profil/page-profil.component';
 @NgModule({
   declarations: [
-    ContactComponentdev,
-    DevPrincipalComponent,
+
     ProfilComponentdev,
     AppComponent,
     ProfilComponent,
@@ -41,6 +40,9 @@ import { ChenilleComponent } from './projet/chenille/chenille.component';
     HandtrackingComponent,
     ModalComponent,
     ChenilleComponent,
+
+    TestComponent,
+    PageProfilComponent,
    
   ],
   imports: [CommonModule,
