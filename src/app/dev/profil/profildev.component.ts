@@ -1,4 +1,4 @@
-import { Component,HostListener, ElementRef, Renderer2 } from '@angular/core';
+import { Component,HostListener,AfterViewInit, ElementRef, Renderer2 } from '@angular/core';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 import { ModalComponent } from './modal/modal.component';
 import { ActivatedRoute } from '@angular/router';
@@ -19,7 +19,6 @@ export class ProfilComponentdev {
   terminalSelectionne: string = 'TERMINAL';
   isSubMenuVisible: boolean = false;
   ongletSelectionne: string = 'python';
-
   fichierSelectionne: string = 'profil';
   lineNumbers: number[] = [];
   scrollTop = 0;
@@ -33,6 +32,7 @@ export class ProfilComponentdev {
   side_h_var: String='copy';
   side_h_var_vi: boolean =true;
   dialogRef: MatDialogRef<ModalComponent> | undefined;
+ /// nombre de seance 
  
 
   constructor(private dialog: MatDialog,private el: ElementRef,private renderer: Renderer2,private route: ActivatedRoute,private dataService: DataService){
@@ -89,7 +89,7 @@ exectkinter()
 }
 @HostListener('document:mousemove', ['$event'])
   onMouseMovedialog(event: MouseEvent) {
-    console.log("toto")
+   
     if (this.deplacement_dialog) {
       // Mettre à jour la position de la boîte de dialogue en fonction des nouvelles coordonnées
       this.dialogRef?.updatePosition({
@@ -106,7 +106,7 @@ this.syncMinimap();
 changerOngletFleche(direction: string) {
   // Logique de votre fonction ici
   if (direction=="right"){
-    console.log("totofds")
+   
     if (this.ongletSelectionne=="python"){this.ongletSelectionne="php"}
     else if  (this.ongletSelectionne=="php"){this.ongletSelectionne="javascript"}
     else{this.ongletSelectionne="python"}
@@ -116,7 +116,6 @@ changerOngletFleche(direction: string) {
     else if  (this.ongletSelectionne=="javacript"){this.ongletSelectionne="php"}
     else{this.ongletSelectionne="python"}
   }
-  console.log("tototo")
   this.syncMinimap();
 }
 
@@ -130,6 +129,7 @@ changerfichier(nouvelficher: string): void {
   this.fichierSelectionne = nouvelficher;
   this.dataService.setSharedValue(this.fichierSelectionne);
 this.syncMinimap();
+this.ngAfterViewInit()
 }
 ngOnInit() {
   this.syncMinimap();
@@ -170,8 +170,9 @@ onResize(event: Event) {
   ngAfterViewInit() {
     this.syncMinimap();
     const codeDiv = this.el.nativeElement.querySelector('.code');
-    const lines = codeDiv.innerHTML.split('<br _ngcontent-ng-c458445368=""').length;
-  
+    console.log("oh oh ",codeDiv)
+    const lines = codeDiv.innerHTML.split('<br _ngcontent-ng-c1625721920="">').length;
+    
     this.lineNumbers = Array.from({ length: lines }, (_, index) => index + 1);
  }
   getLinesForNumber(lineNumber: number): string[] {

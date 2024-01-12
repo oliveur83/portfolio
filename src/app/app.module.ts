@@ -20,8 +20,8 @@ import { HandtrackingComponent } from './normal/projet/handtracking/handtracking
 import { ModalComponent } from './dev/profil/modal/modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ChenilleComponent } from './normal/projet/chenille/chenille.component';
-import { TestComponent } from './test/test.component';
 import { PageProfilComponent } from './page-profil/page-profil.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
 
@@ -41,7 +41,6 @@ import { PageProfilComponent } from './page-profil/page-profil.component';
     ModalComponent,
     ChenilleComponent,
 
-    TestComponent,
     PageProfilComponent,
    
   ],
@@ -50,7 +49,8 @@ import { PageProfilComponent } from './page-profil/page-profil.component';
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

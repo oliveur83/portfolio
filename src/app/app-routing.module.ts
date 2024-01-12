@@ -13,12 +13,11 @@ import { EDTComponent } from './normal/projet/edt/edt.component';
 import { OXIComponent } from './normal/projet/oxi/oxi.component';
 import { AngularVuejsComponent } from './normal/projet/angular-vuejs/angular-vuejs.component';
 import { ChenilleComponent } from './normal/projet/chenille/chenille.component';
-import { TestComponent } from './test/test.component' 
 import {PageProfilComponent} from "./page-profil/page-profil.component"
 const routes: Routes = [
 { path: 'dev/profil', component: ProfilComponentdev }, // Assurez-vous que le composant est correct
-{path: 'test',component:TestComponent },
-{path: 'page',component:PageProfilComponent },
+
+{path: 'objectif',component:PageProfilComponent },
 
 
   {path: 'profil',component: ProfilComponent },

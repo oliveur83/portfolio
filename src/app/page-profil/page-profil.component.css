@@ -1,93 +1,73 @@
-/* Ajoutez ceci à votre fichier de style CSS */
-
-.container {
-  max-width: 100%;
-  margin: 0 auto;
-  font-family: 'Roboto', sans-serif;
-  background: linear-gradient(to bottom, #141e30, #243b55);
-  color: #61dafb;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(97, 218, 251, 0.5);
-  overflow: hidden;
+h1{
+  font-size: 100px;
+align-items: center;
+text-align: center;
+}
+h2{
+  font-size: 80px;
+}
+.images-container {
   display: flex;
-  flex-direction: column;
-  align-items: center; /* Ajout pour centrer le contenu verticalement */
+  justify-content: space-between;
 }
-.header {
-  text-align: center;
+h3{
+  font-size: 60px;
 }
-
-.header-image {
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border: 3px solid #61dafb;
+p{
+  font-size: 60px;
+} 
+.imgpro{
+  width: 50%;
+  display: block;
+  margin: auto;
 }
-
-h1 {
-  margin-top: 10px;
-  color: #61dafb;
-}
-
-.content {
-  max-width: 800px; 
-  display: flex;
-  text-align: center;
-
-  margin-top: 20px;
- 
-}
-
-.box {
-  position: relative;
-  flex: 1;
-  margin-right: 20px;
-  overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(97, 218, 251, 0.5);
-  transition: transform 0.3s ease-in-out;
-  cursor: pointer;
-}
-
-.box:hover {
-  transform: scale(1.05);
-}
-
-.content-image {
+table {
   width: 100%;
-  height: auto;
-  border-radius: 8px;
-  transition: filter 0.5s ease-in-out;
+  border-collapse: collapse;
 }
 
-.overlay {
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
+  font-size: 50px;
+}
+.tooltip {
   position: absolute;
-  top: 0;
-  left: 0;
+  background-color: #f2b6b6;
+  border: 1px solid #ccc;
+  padding: 5px;
+  font-size: 30px;
+  z-index: 1000; /* Assure que le tooltip est au-dessus des autres éléments */
+}
+.progress-container {
   width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
-  border-radius: 8px;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  border: 3px solid #000;
+  margin: 20px 0;
 }
 
-.box:hover .overlay {
-  opacity: 1;
+.progress {
+  background-color: #8af08e;
+  color: #0a0202;
+  font-size: 50px;
+  text-align: center;
+  line-height: 50px;
+  transition: width 0.3s;
 }
 
-.box:hover .content-image {
-  filter: brightness(0.8);
+.course {
+  background-color: yellow; /* Choisissez la couleur de fond que vous préférez */
 }
-
-.details {
-  flex: 1;
+.velo {
+  background-color: rgb(0, 255, 94); /* Choisissez la couleur de fond que vous préférez */
 }
-
-p {
-  margin: 10px 0;
-  line-height: 1.6;
-  color: #ffffff;
+.piscine {
+  background-color: rgb(0, 195, 255); /* Choisissez la couleur de fond que vous préférez */
+}
+.street {
+  background-color: rgb(246, 154, 165); /* Choisissez la couleur de fond que vous préférez */
+}
+.green-column {
+  background-color: rgb(149, 231, 149);
+  color: rgb(0, 0, 0); 
 }

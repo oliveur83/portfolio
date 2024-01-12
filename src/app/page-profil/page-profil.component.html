@@ -1,28 +1,110 @@
 <!-- page-profil.component.html -->
 
-<div class="container">
-    <div class="header">
-        <img src="./assets/equipe/{{ titreProjet.toString() }} (2).png" alt="Player Image" class="header-image">
-        <h1>{{ utilisateurs[titreProjet.toString()].nom }}</h1>
-    </div>
+<h1>Objectif 2024</h1>
+  <h2>Iron Man</h2>
+  <img class="imgpro" src="./assets/tri.png" alt="Image" />
 
-    <div class="content">
-        <div class="box">
-            <img src="./assets/equipe/{{ titreProjet.toString() }} (1).png" alt="Player Image" class="content-image">
-            <div class="overlay"></div>
-        </div>
-
-        <div class="details">
-            <p><strong>Age:</strong> {{ utilisateurs[titreProjet].age }}</p>
-            <p><strong>Date of Birth:</strong> {{ utilisateurs[titreProjet].date_naissance }}</p>
-            <p><strong>Place of Birth:</strong> {{ utilisateurs[titreProjet].lieu_naissance }}</p>
-            <p><strong>Coding Strengths:</strong> {{ utilisateurs[titreProjet].forces_programmation }}</p>
-            <p><strong>Coding Weaknesses:</strong> {{ utilisateurs[titreProjet].faiblesses_programmation }}</p>
-            <p><strong>Biggest Achievement:</strong> {{ utilisateurs[titreProjet].plus_grande_reussite }}</p>
-            <p><strong>Interests:</strong> {{ utilisateurs[titreProjet].interets }}</p>
-        </div>
+  <h2>Urban Trail</h2>
+  <img class="imgpro" src="./assets/urban.jpg" alt="Image" />  
+<h2>40km course, 50km vélo</h2>
+<h3>course a pied</h3>
+<div class="progress-container">
+    <div class="progress" [style.width.px]="progressValue">
+      {{ progressValue }} km 
     </div>
-    <button (click)="retour()" class="menu-button">Return</button>
-     
+  </div>
+  <h3>vélo</h3>
+  <div class="progress-container">
+    <div class="progress" [style.width.px]="progressValuevelo">
+      {{ progressValuevelo }} km
+    </div>
+  </div>
+  <h1>nombre de séance</h1>
+ <!-- Dans votre fichier .html -->
+
+<h3>souplesse: {{ seanceSouplesse }}</h3>
+
+<h3>japanese: {{ seanceJapanese }}</h3>
+
+<h3>morse: {{ seanceMorse }}</h3>
+
+<h3>lire: {{ seanceLire }}</h3>
+
+<h3>podcast: {{ seancePodcast }}</h3>
+
+<h3>serie: {{ seanceSerie }}</h3>
+
+<h3>1 chapitre JW: {{ seanceChapitreJW }}</h3>
+
+
+<h1>si je reste sur lyon  alors peut être</h1>
+<div class="images-container">
+  <img class="imgpro" src="./assets/run.jpeg" alt="Image 1" />
+  <img class="imgpro" src="./assets/sainte.jpeg" alt="Image 2" />
 </div>
+<h1>Planning</h1>
+<table border="1">
+    <!-- En-tête du tableau -->
+    <thead>
+        <tr>
+          <th [ngClass]="{'green-column': dayOfWeek! >= 1}">Lundi</th>
+          <th [ngClass]="{'green-column': dayOfWeek! >= 2}">Mardi</th>
+          <th [ngClass]="{'green-column': dayOfWeek! >= 3}">Mercredi</th>
+          <th [ngClass]="{'green-column': dayOfWeek! >= 4}">Jeudi</th>
+          <th [ngClass]="{'green-column': dayOfWeek! >= 5}">Vendredi</th>
+          <th [ngClass]="{'green-column': dayOfWeek! >= 6}">Samedi</th>
+          <th [ngClass]="{'green-column': dayOfWeek! >= 7}">Dimanche</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td [ngClass]="{'green-column': dayOfWeek! >= 1}">
+             9h - 17h Travail<br>
+            <span class="street"> street-workout-push (hspu)</span>
+            souplesse
+          </td>
+          <td [ngClass]="{'green-column': dayOfWeek! >= 2}">
+            9h - 17h travail<br>
+            <span class="course">course a pied </span>
+           
+          </td>
+          <td [ngClass]="{'green-column': dayOfWeek! >= 3}">
+            9h - 17h Travail<br>
+            <span class="street"> street-workout-pull(MU)</span>
+            souplesse
+          </td>
+          <td [ngClass]="{'green-column': dayOfWeek! >= 4}">
+            9h - 17h travail<br>
+            <span class="course"> course a pied-fractionner </span>
+          </td>
+          <td [ngClass]="{'green-column': dayOfWeek! >= 5}">
+            9h - 17h Travail<br>
+            <span class="street">street-workout-push(stradlle planche)</span>
+            souplesse
+          </td>
+          <td [ngClass]="{'green-column': dayOfWeek! >= 6}">
+            <span class="course">9h -course a pied (sortie longue)</span>
+            <span class="course">9h -piscine (sortie longue)</span>
+          </td>
+          <td [ngClass]="{'green-column': dayOfWeek! >= 7}">
+            <span class="velo"> 9h -sortie longue vélo</span>
+          </td>
+        </tr>
+      </tbody>
+      
 
+</table>
+<h1>calendrier</h1>
+<br>
+<table>
+    <tr *ngFor="let row of rows; let rowIndex = index">
+        <ng-container *ngFor="let item of row; let columnIndex = index">
+            <td #cell [style.background-color]="item.color" (click)="showTooltip(item.doit, cell)">{{ item.description }}</td>
+        </ng-container>
+    </tr>
+</table>
+
+<!-- Ajoutez ce code à votre composant TypeScript -->
+<div *ngIf="showTooltipFlag" class="tooltip" [style.top]="tooltipTop" [style.left]="tooltipLeft">
+    {{ currentTooltip }}
+</div>
