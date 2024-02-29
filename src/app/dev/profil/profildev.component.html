@@ -1,692 +1,1346 @@
-<html >
-   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-   <body>
-      <!-- file edit  -->
-      <div class="header">
-         <ul class="header-menu">
-            <img   src="./assets/visual.png" alt="Image" />
-         
-         </ul>
-         <div class="center_onglet">
-            <i class="fas fa-arrow-left arrow-icon" (click)="changerOngletFleche('left')"></i>
-            <i class="fas fa-arrow-right arrow-icon" (click)="changerOngletFleche('right')"></i>
-            <button class="icon-label-button" >
-              <i class="fas fa-search"></i>
-              <span style="margin-left: 8px;">Portfolio</span>
-              <div class="search_h">Recherche portfolio --python.py - Portfolio - Visual Studio Code</div>
-            </button>
+<html>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+  <body>
+    <!-- file edit  -->
+    <div class="header">
+      <ul class="header-menu">
+        <img src="./assets/visual.png" alt="Image" />
+      </ul>
+      <div class="center_onglet">
+        <i
+          class="fas fa-arrow-left arrow-icon"
+          (click)="changerOngletFleche('left')"
+        ></i>
+        <i
+          class="fas fa-arrow-right arrow-icon"
+          (click)="changerOngletFleche('right')"
+        ></i>
+        <button class="icon-label-button">
+          <i class="fas fa-search"></i>
+          <span style="margin-left: 8px">Portfolio</span>
+          <div class="search_h">
+            Recherche portfolio --python.py - Portfolio - Visual Studio Code
           </div>
-          
-         <div class="header-app-icons">
-            <ul>
-               <li>
-                  <img  class="header_img" src="./assets/header/case1.png" alt="Image"/>
-                  <span class="header_droit">Basculer la barre latéral primaire (Ctrl+B)</span>
-               </li>
-               <li>
-                  <img  class="header_img" src="./assets/header/case2.png" alt="Image"/>
-                  <span class="header_droit">Activer/désactiver le panneau (Ctrl+j)</span>
-               </li>
-               <li>
-                  <img  class="header_img" src="./assets/header/case3.png" alt="Image"/>
-                  <span class="header_droit">Basculer la barre latérale secondaire(Ctrl+Alt+B)</span>
-               </li>
-               <li>
-                  <img  class="header_img" src="./assets/header/case.png" alt="Image"/>
-                  <span class="header_droit">Personnaliser la dispostion...</span>
-               </li>
-               <li>
-                  <img  class="header_img" src="./assets/header/case4.png" alt="Image"/>
-                  
-               </li>
-               <li>
-                  <img  class="header_img" src="./assets/header/case5.png" alt="Image"/>
-                  
-               </li>
-               <li>
-                  <img  class="header_img" src="./assets/header/case6.png" alt="Image"/>
-                  
-               </li>
+        </button>
+      </div>
+
+      <div class="header-app-icons">
+        <ul>
+          <li>
+            <img
+              class="header_img"
+              src="./assets/header/case1.png"
+              alt="Image"
+            />
+            <span class="header_droit"
+              >Basculer la barre latéral primaire (Ctrl+B)</span
+            >
+          </li>
+          <li>
+            <img
+              class="header_img"
+              src="./assets/header/case2.png"
+              alt="Image"
+            />
+            <span class="header_droit"
+              >Activer/désactiver le panneau (Ctrl+j)</span
+            >
+          </li>
+          <li>
+            <img
+              class="header_img"
+              src="./assets/header/case3.png"
+              alt="Image"
+            />
+            <span class="header_droit"
+              >Basculer la barre latérale secondaire(Ctrl+Alt+B)</span
+            >
+          </li>
+          <li>
+            <img
+              class="header_img"
+              src="./assets/header/case.png"
+              alt="Image"
+            />
+            <span class="header_droit">Personnaliser la dispostion...</span>
+          </li>
+          <li>
+            <img
+              class="header_img"
+              src="./assets/header/case4.png"
+              alt="Image"
+            />
+          </li>
+          <li>
+            <img
+              class="header_img"
+              src="./assets/header/case5.png"
+              alt="Image"
+            />
+          </li>
+          <li>
+            <img
+              class="header_img"
+              src="./assets/header/case6.png"
+              alt="Image"
+            />
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- collone gauche icon-->
+    <div class="side-header">
+      <ul class="side-header-menu">
+        <li>
+          <img
+            (click)="sied_h('file')"
+            class="search-image"
+            src="./assets/side_header/file.png"
+            alt="Image"
+          />
+        </li>
+        <li>
+          <img
+            (click)="sied_h('copy')"
+            class="search-image"
+            src="./assets/side_header/copy.png"
+            alt="Image"
+          />
+
+          <span class="tooltiptext">Explorateur (Ctrl+Maj+E)</span>
+        </li>
+        <li>
+          <img
+            (click)="sied_h('search')"
+            class="search-image"
+            src="./assets/side_header/search.png"
+            alt="Image"
+          />
+          <span class="tooltiptext">Recherche (Ctrl+Maj+F)</span>
+        </li>
+        <li>
+          <img
+            (click)="sied_h('play')"
+            class="search-image"
+            src="./assets/side_header/play.png"
+            alt="Image"
+          />
+          <span class="tooltiptext">Exécuter et déboguer</span>
+        </li>
+        <li>
+          <img
+            (click)="sied_h('extension')"
+            class="search-image"
+            src="./assets/side_header/extension.png"
+            alt="Image"
+          />
+
+          <span class="tooltiptext">Extension (Ctrl+Maj+X)</span>
+        </li>
+        <li>
+          <img
+            (click)="sied_h('postman')"
+            class="search-image"
+            src="./assets/side_header/postman.png"
+            alt="Image"
+          />
+
+          <span class="tooltiptext">Postman </span>
+        </li>
+        <li>
+          <img
+            (click)="sied_h('check')"
+            class="search-image"
+            src="./assets/side_header/test.png"
+            alt="Image"
+          />
+
+          <span class="tooltiptext">Test</span>
+        </li>
+        <li>
+          <img
+            (click)="sied_h('database')"
+            class="search-image"
+            src="./assets/side_header/database.png"
+            alt="Image"
+          />
+
+          <span class="tooltiptext">Mysql</span>
+        </li>
+        <li>
+          <img
+            (click)="sied_h('spock')"
+            class="search-image"
+            src="./assets/side_header/spoke.png"
+            alt="Image"
+          />
+
+          <span class="tooltiptext">Spockee</span>
+        </li>
+      </ul>
+      <ul class="side-header-menu_d">
+        <li>
+          <img
+            (click)="sied_h('user')"
+            class="search-image"
+            src="./assets/side_header/user.png"
+            alt="Image"
+          />
+
+          <span class="tooltiptext">Accounts</span>
+        </li>
+        <li>
+          <img
+            (click)="sied_h('cog')"
+            class="search-image"
+            src="./assets/side_header/cog.png"
+            alt="Image"
+          />
+
+          <span class="tooltiptext">Manage</span>
+        </li>
+      </ul>
+    </div>
+    <!-- collone gauche texte -->
+    <div class="menu-option" *ngIf="side_h_var === 'copy' && side_h_var_vi">
+      <h5>EXPLORATEUR<i class="fas fa-ellipsis-h icon_droite_onglet"></i></h5>
+      <div class="menu-drop">
+        <div class="box-click">
+          <i class="fa fa-chevron-down" (click)="ouvreeditors()"></i>
+          <span>PORTFORLIO</span>
+          <div class="box-click2">
+            <ul *ngIf="ongletSelectionne === 'python' && ouvreeditorla == true">
+              <li
+                class="show-pre"
+                [class.show-press-select]="fichierSelectionne === 'profil'"
+                (click)="changerfichier('profil')"
+              >
+                <i class="fab fa-python"></i> <span>profil.py</span>
+              </li>
+              <li
+                class="show-pre"
+                [class.show-press-select]="fichierSelectionne === 'contact'"
+                (click)="changerfichier('contact')"
+              >
+                <i class="fab fa-python"></i> <span> contact.py </span>
+              </li>
+              <li
+                class="show-pre"
+                [class.show-press-select]="fichierSelectionne === 'projet'"
+                (click)="changerfichier('projet')"
+              >
+                <i class="fab fa-python"></i> <span> projet.py </span>
+              </li>
             </ul>
-         </div>
-      </div>
-      <!-- collone gauche icon-->
-      <div class="side-header">
-         <ul class="side-header-menu">
-           <li>
-            <img  (click)="sied_h('file')" class="search-image" src="./assets/side_header/file.png" alt="Image" />   
-           </li>
-            <li>
-               <img  (click)="sied_h('copy')" class="search-image" src="./assets/side_header/copy.png" alt="Image" />
-               
-               <span class="tooltiptext">Explorateur (Ctrl+Maj+E)</span>
-            </li>
-            <li>
-               <img  (click)="sied_h('search')" class="search-image" src="./assets/side_header/search.png" alt="Image" />
-               <span class="tooltiptext">Recherche (Ctrl+Maj+F)</span>
-            </li>
-            <li>
-               <img  (click)="sied_h('play')" class="search-image" src="./assets/side_header/play.png" alt="Image" />
-               <span class="tooltiptext">Exécuter et déboguer</span>
-            </li>
-            <li>
-               <img  (click)="sied_h('extension')" class="search-image" src="./assets/side_header/extension.png" alt="Image" />
-              
-               <span class="tooltiptext">Extension (Ctrl+Maj+X)</span>
-            </li>
-            <li>
-               <img  (click)="sied_h('postman')" class="search-image" src="./assets/side_header/postman.png" alt="Image" />
-              
-               <span class="tooltiptext">Postman </span>
-            </li>
-            <li>
-               <img  (click)="sied_h('check')" class="search-image" src="./assets/side_header/test.png" alt="Image" />
-              
-               <span class="tooltiptext">Test</span>
-            </li>
-            <li>
-               <img  (click)="sied_h('database')" class="search-image" src="./assets/side_header/database.png" alt="Image" />
-              
-               <span class="tooltiptext">Mysql</span>
-            </li>
-            <li>
-               <img  (click)="sied_h('spock')" class="search-image" src="./assets/side_header/spoke.png" alt="Image" />
-              
-               <span class="tooltiptext">Spockee</span>
-            </li>
-         </ul>
-         <ul class="side-header-menu_d">
-            <li>
-               <img  (click)="sied_h('user')" class="search-image" src="./assets/side_header/user.png" alt="Image" />
-              
-               <span class="tooltiptext">Accounts</span>
-            </li>
-            <li>
-               <img  (click)="sied_h('cog')" class="search-image" src="./assets/side_header/cog.png" alt="Image" />
-              
-               <span class="tooltiptext">Manage</span>
-            </li>
-         </ul>
-      </div>
-      <!-- collone gauche texte -->
-      <div class="menu-option" *ngIf="side_h_var === 'copy' && side_h_var_vi">
-         <h5>EXPLORATEUR<i class="fas fa-ellipsis-h icon_droite_onglet"></i>
-          </h5>
-         <div class="menu-drop">
-            <div class="box-click">
-               <i class="fa fa-chevron-down" (click)="ouvreeditors()" ></i> <span>PORTFORLIO</span>
-               <div class="box-click2" >
-                  <ul *ngIf="ongletSelectionne === 'python' && ouvreeditorla == true">
-                     <li class="show-pre" [class.show-press-select]="fichierSelectionne === 'profil'" (click)="changerfichier('profil')" ><i class="fab fa-python "></i> <span>profil.py</span>  </li>
-                     <li class="show-pre"  [class.show-press-select]="fichierSelectionne === 'contact'" (click)="changerfichier('contact')"><i class="fab fa-python"></i> <span  > contact.py </span></li>
-                     <li  class="show-pre"  [class.show-press-select]="fichierSelectionne === 'projet'" (click)="changerfichier('projet')"><i class="fab fa-python"></i> <span> projet.py </span></li>
-                  </ul>
-                  <ul *ngIf="ongletSelectionne === 'php'&& ouvreeditorla == true">
-                     <li class="show-pre" [class.show-press-select]="fichierSelectionne === 'profil'"(click)="changerfichier('profil')"><i class="fab fa-php"></i> <span>profil.php</span> </li>
-                     <li class="show-pre"  [class.show-press-select]="fichierSelectionne === 'contact'"(click)="changerfichier('contact')"><i class="fab fa-php"></i> <span  > contact.php </span></li>
-                     <li  class="show-pre"  [class.show-press-select]="fichierSelectionne === 'projet'"(click)="changerfichier('projet')"><i class="fab fa-php"></i> <span> projet.php </span></li>
-                  </ul>
-                  <ul *ngIf="ongletSelectionne === 'javascript'&& ouvreeditorla == true ">
-                     <li class="show-pre" [class.show-press-select]="fichierSelectionne === 'profil'"(click)="changerfichier('profil')"><i class="fab fa-js"></i> <span>profil.php</span> </li>
-                     <li class="show-pre"  [class.show-press-select]="fichierSelectionne === 'contact'" (click)="changerfichier('contact')"><i class="fab fa-js"></i> <span  > contact.php </span></li>
-                     <li  class="show-pre"  [class.show-press-select]="fichierSelectionne === 'projet'"(click)="changerfichier('projet')"><i class="fab fa-js"></i> <span> projet.php </span></li>
-                  </ul>
-               </div>
-            </div>
-         </div>
-         <br>
-        
-      </div>
-      <div class="menu-option" *ngIf="side_h_var === 'extension' && side_h_var_vi">
-         <h5>extension compétence</h5>
-         <div class="menu-drop">
-            <div class="box-click">
-               <i class="fa fa-chevron-down" (click)="ouvreeditors()" ></i> <span>installé</span>
-               <div class="box-click2" >
-                  <ul>
-                     <li>
-                        <P > angular langage</P>
-                        <P> framework web </P>
-                        <P> angular</P>
-                     </li>
-                </ul>
-               </div>
-            </div>
-         </div>
-         <div class="menu-drop">
-            <div class="box-click">
-               <i class="fa fa-chevron-down" (click)="ouvreeditors()" ></i> <span>recommandation</span>
-               <div class="box-click2" >
-                  <ul>
-                     <P> angular langage</P>
-                        <P> framework web </P>
-                        <P> angular</P>  </ul>
-               </div>
-            </div>
-         </div>
-         <li class="header-menu-link" *ngFor="let menuItem of menuItems" (click)="toggleSubMenu(menuItem)">
-            {{ menuItem.label }}
-            <ul class="sub-menu" *ngIf="menuItem.isSubMenuVisible">
-               <li class="sub-menu-label" *ngFor="let subItem of menuItem.subMenuItems" (click)="submenu(subItem.label)">{{ subItem.label }}</li>
+            <ul *ngIf="ongletSelectionne === 'php' && ouvreeditorla == true">
+              <li
+                class="show-pre"
+                [class.show-press-select]="fichierSelectionne === 'profil'"
+                (click)="changerfichier('profil')"
+              >
+                <i class="fab fa-php"></i> <span>profil.php</span>
+              </li>
+              <li
+                class="show-pre"
+                [class.show-press-select]="fichierSelectionne === 'contact'"
+                (click)="changerfichier('contact')"
+              >
+                <i class="fab fa-php"></i> <span> contact.php </span>
+              </li>
+              <li
+                class="show-pre"
+                [class.show-press-select]="fichierSelectionne === 'projet'"
+                (click)="changerfichier('projet')"
+              >
+                <i class="fab fa-php"></i> <span> projet.php </span>
+              </li>
             </ul>
-      </div>
-      <div class="menu-option" *ngIf="side_h_var === 'search' && side_h_var_vi">
-         <h5>partage ton code</h5>
-         
-         <a class="aref" href="https://github.com/oliveur83" target="_blank" rel="noopener noreferrer">
-            <img class="imgpro" src="./assets/qrgit.png" alt="Image" />
-            GitHub
-          </a>
-          <br>
-          <a class="aref" href="https://www.linkedin.com/in/tom-pascal-olivier/" target="_blank" rel="noopener noreferrer">
-            <img class="imgpro" src="./assets/qrlink.png" alt="Image" />
-            LinkedIn
-          </a>
-      </div>
-      <div class="menu-option" *ngIf="side_h_var === 'play' && side_h_var_vi">
-         <div class="menu-drop">
-            <div class="box-click">
-               <i class="fa fa-chevron-down" (click)="ouvreeditors()" ></i> <span>Exécuter</span>
-               <div class="box-click2" >
-                  <ul>
-                     <li>
-                        <P > angular langage</P>
-                        <P> framework web </P>
-                        <P> angular</P>
-                     </li>
-                </ul>
-               </div>
-            </div>
-         </div>
-         <div class="menu-drop">
-            <div class="box-click">
-               <i class="fa fa-chevron-down" (click)="ouvreeditors()" ></i> <span>Points D'arrèt</span>
-               <div class="box-click2" >
-                  <ul>
-                     <li>
-                        <P > angular langage</P>
-                        <P> framework web </P>
-                        <P> angular</P>
-                     </li>
-                </ul>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="menu-option" *ngIf="side_h_var === 'cog' && side_h_var_vi">
-         <h5>cog</h5>
-      </div>
-      <div class="menu-option" *ngIf="side_h_var === 'postman' && side_h_var_vi">
-         <h5>post</h5>
-      </div>
-      <div class="menu-option" *ngIf="side_h_var === 'spock' && side_h_var_vi">
-         <h5>spock</h5>
-      </div>
-      <div class="menu-option" *ngIf="side_h_var === 'user' && side_h_var_vi">
-         <h5>user</h5>
-      </div>
-      <div class="menu-option" *ngIf="side_h_var === 'database' && side_h_var_vi">
-         <h5>database</h5>
-         <div class="menu-drop">
-            <div class="box-click">
-               <i class="fa fa-chevron-down" (click)="ouvreeditors()" ></i> <span>Connection</span>
-               <div class="box-click2" >
-                  <ul>
-                     <li>
-                        <P > angular langage</P>
-                        <button class="bouton_bleu"> Add Connexion</button>
-        
-                     </li>
-                </ul>
-               </div>
-            </div>
-         </div>
-         
-      </div>
-      <div class="menu-option" *ngIf="side_h_var === 'check' && side_h_var_vi">
-         <h5>Test introuvables dans cet espace de travail.<br>
-            Configure a test framework to see your tests header
-            <button class="bouton_bleu"> Configure Python Test</button><br>
-            <button class="bouton_bleu"> installer des extensions de test suplémentaire..</button>
-         </h5>
-      </div>
-      <div class="pourcode">
-         <div class="onglet">
-            <div class="boutons">
-              <button [ngClass]="{'button_onglet_select': ongletSelectionne === 'python', 'button_onglet_no_select': ongletSelectionne !== 'python'}" (click)="changerOnglet('python')">
-                <i class="fab fa-python"></i> python.py <i class="fa fa-times croix"></i>
-              </button>
-              <button [ngClass]="{'button_onglet_select': ongletSelectionne === 'php', 'button_onglet_no_select': ongletSelectionne !== 'php'}" (click)="changerOnglet('php')">
-                <i class="fab fa-php"></i> php.php <i class="fa fa-times croix"></i>
-              </button>
-              <button [ngClass]="{'button_onglet_select': ongletSelectionne === 'javascript', 'button_onglet_no_select': ongletSelectionne !== 'javascript'}" (click)="changerOnglet('javascript')">
-                <i class="fab fa-js"></i> javascript.js <i class="fa fa-times croix"></i>
-              </button>
-            </div>
-            
-            <div class="image-container">
-              <img  class="reduced-height-image"  *ngIf="ongletSelectionne === 'python' && fichierSelectionne === 'projet'" src="./assets/exec.png" (click)="exectkinter()">
-              <i class="fas fa-edit icon_droite_onglet"></i>
-              <i class="fas fa-print icon_droite_onglet"></i>
-              <i class="fas fa-columns icon_droite_onglet"></i>
-              <i class="fas fa-ellipsis-h icon_droite_onglet"></i>
-
-            </div>
-          </div>   
-         <div class="containerdev"  *ngIf="ongletSelectionne === 'python' && fichierSelectionne === 'profil'">
-            <div class="num_code"  >
-               <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
-                 {{ lineNumber }} 
-               </div>
-             </div>
-             
-            <div class="code" id="code"  (scroll)="syncMinimap($event)" >
-               <span class="variable">prenom</span> = "<span class="string">tom</span>"<br>
-               <span class="variable">nom</span> = "<span class="string">Olivier</span>"<br>
-               <span class="variable">mail</span> = "<span class="string">tomolivierpro@gmail.com</span>"<br>
-               <span class="variable">ville</span> = "<span class="string">lyon</span>"<br>
-               <span class="variable">langages</span> = <span class="boolean">False</span><br>
-               <br>
-               <span class="print">print</span>(<span class="string">" formation "</span>)<br>
-               <br>
-               <span class="key">if </span><span class="variable">ville</span> == <span class="string">"toulon"</span>:<br>
-                   <span class="tabulation print">print</span>(<span class="string">"DUT GEII , 2017-2019"</span>)<br>
-                   <span class="tabulation print">print</span>(<span class="string">"licence informatique , 2019 - 2022"</span>)<br>
-               
-                   <span class="key">elif </span> <span class="variable">ville</span> == <span class="string">"corse"</span>:<br>
-                   <span class="tabulation print">print</span>(<span class="string">"master informatique, 2022 -2024"</span>)<br>
-                   <br>
-                   <span class="print">print</span>(<span class="string">"experience profesionnel"</span>)<br>
-                  <br>
-                  <span class="key">if </span> <span class="variable">ville</span> == <span class="string">"toulon"</span>:<br>
-                   <span class="tabulation print">print</span>(<span class="string">""" stage fin de DUT GEII , 2019, 8 semaine
-                         hopital saint anne
-                         techno principaux  :php ,mysql
-                         """</span>)<br>
-               <span class="key">elif</span> <span class="variable">ville</span> == <span class="string">"corse"</span>:<br>
-                   <span class="tabulation print">print</span>(<span class="string">"""stage fin de master , 2024 , 6 mois a
-                         alteca 
-                         techno principaux php(synfony), vuejs
-                         """</span>)<br>
-                         <br>
-               <span class="key">def</span> <span class="fonction">switch_case_annee</span>(<span class="variable">annee</span>):<br>
-               <span class="tabulation variable"> switch</span> = (<br>
-               <span class="tabulation number"> 2019</span>:<span class="string"> """ Stage à l'Hôpital d'Instruction des Armées Sainte-Anne de Toulon,<br>
-                  création d'une application web de type QCM destinée aux apprentis Docteurs en transfusion sanguine.<br> Récupération de données pour analyse
-                  par le directeur.
-                  <br><br>
-                  Concours entrepreneuriat "Les Entrep' Var", création de "Handicap Indépendance", une application connectée à différents modules qui
-                  Permettront à n'importe quelle personne handicapée d'être autonome chez elle.
-                  """</span>,<br><br>
-
-               <span class="tabulation number"> 2022</span>: <span class="string"> """Hackathon, développement d'une application web de type jeu de loi avec des voitures 
-                  électriques comme pions pour que l'utilisateur
-               Comprenne l'importance de la gestion de l'énergie. Réalisé en
-               Collaboration avec EDF Corse."""</span>,<br><br>
-
-               <span class="tabulation number"> 2023</span>:<span class="string">  """Concours entrepreneuriat "Challenge Innovation", création d'un boîtier connecté relié 
-                  à une application intelligente. OXI (nom de L’entreprise) vous permet d'arrêter de fumer en gérant à votre place votre consommation de tabac."""</span>,<br>
-                  <br>
-   <span class="tabulation number"> 2024</span>:<span class="string">  """2024 """</span>,<br>
-   <span class="tabulation" >)</span> <br>
-    
-    <span class="variable">annee</span> = <span class="  number">2023</span><br>
-    <span class="variable">resultat</span> = <span class="fonction">switch_case_annee</span>(<span class="variable">annee</span>)<br>
-    <span class="print">print</span>(<span class="variable">resultat</span>)<br>
-    <br>   
-    <span class="print">print</span>(<span class="string">"compétence"</span>)<br>
-    <br>
-    <span class="key">if </span> <span class="variable">langages</span> == <span class="boolean">True</span>:<br>
-        <span class="tabulation variable">top_langage_decroissante</span> = (
-         <span class="number">1</span>: <span class="string">"python"</span>,
-         <span class="number">2</span>:  <span class="string">"javascript"</span>,
-         <span class="number">3</span>: <br><span class="string">"php"</span>,
-         <span class="number">4</span>:  <span class="string">"html/css"</span>,
-         <span class="number">5</span>:  <span class="string">"typescript"</span>,
-         <span class="number">6</span>:  <span class="string">"flutter"</span>,
-         <span class="number">7</span>: <br><span class="string">"SQL"</span>,)
-
-            <span class="key tabulation">for </span> <span class="variable">cle</span>, <span class="variable">valeur</span> in <span class="variable">top_langage_decroissante</span>.<span class="function">items</span>():<br>
-            <span class="print tabulation tabulation">print</span>(<span class="string">f"Clé : (cle), Valeur : (valeur)"</span>)<br>
-    
-      <span class="key">else</span>:<br>
-        <span class="tabulation variable">top_framework</span> = [<span class="string">"angular"</span>, <span class="string">"vue.js"</span>,<span class="string">"react"</span>]<br>
-        <span class="tabulation variable">logiciel</span> = [<span class="string">"github"</span>, <span class="string">"vscode"</span>]<br>
-        <span class="tabulation print">print</span>(<span class="string">"loisir"</span>)<br>
-         <br>
-         
-<span class="key">def</span> <span class="fonction">myloisir</span>():<br>
-    <span class="tabulation print">print</span>(<span class="string">""" 
-          Pratique du street workout et du triathlon, ce qui m'apporte 
-          rigueur et discipline.<br><br> Voyages autour du monde (Japon, États-Unis, 
-          Irlande, Londres, Thaïlande), grâce à quoi j'ai acquis une adaptabilité
-           aux imprévus et une ouverture d'esprit.<br><br>
-Les projets 3D JavaScript et les projets Python handtracking qui satisfont
-           ma curiosité et mon envie de réaliser des projets.
-          """</span>)<br>
-
-<span class="fonction">myloisir</span>()<br>
-            </div>
-            <div class="minimap" id="minimap"></div>
-         </div>
-         <div class="containerdev" *ngIf="ongletSelectionne === 'python' && fichierSelectionne === 'contact'">
-        <div class="num_code"  >
-               <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
-                 {{ lineNumber }} 
-               </div>
-             </div>
-            <div class="code" id="code"  (scroll)="syncMinimap($event)" >
-               <span class="variable">contact</span> ={{ '{' }}<br>
-               <span class="string">github </span>:<span class="string"> https://github.com/oliveur83</span>;<br>
-               <span class="string">linkedin </span>:<span class="string"> https://www.linkedin.com/in/tom-pascal-olivier/</span>;<br>
-               <span class="string">mail </span>:<span class="string"> tomolivierpro@gmail.com</span>;<br>
-               {{ '}' }}
-
-            </div>
-            <div class="minimap" id="minimap"></div>
-         </div>
-         <div class="containerdev" *ngIf="ongletSelectionne === 'python' && fichierSelectionne === 'projet'">
-        <div class="num_code"  >
-               <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
-                 {{ lineNumber }} 
-               </div>
-             </div>
-            <div class="code" id="code"  (scroll)="syncMinimap($event)" >
-               <span class="import">import </span><span class="import_key">tkinter </span><span class="import">as </span> <span class="import_key">tk</span><br>
-               <span class="import">from </span> <span class="import_key">tkinter </span> <span class="import">import</span><span class="import_key">PhotoImage</span> <br>
-               <br>
-               <span class="def">  def </span> <span class="fonction">afficher_image ()</span>:<br>
-               <br>
-               <span class="variable tabulation">fenetre</span> = <span class="import_key">tk</span>.<span class="import_key">Tk</span>()<br>
-               <span class="variable tabulation">fenetre</span>.<span class="variable tabulation">title</span>(<span class="string">"Affichage d'une image"</span>)<br>
-               <br>
-               <span class="variable tabulation">chemin_image </span> = <span class="string">""chemin/vers/votre/image.png""</span><br>
-               <span class="variable tabulation">img</span> =<span class="import_key">PhotoImage</span> (<span class="variable tabulation">file</span>=<span class="variable">chemin_image </span>)<br>
-               <br>
-               <span class="variable tabulation">label_image</span> = <span class="import_key">tk</span>.<span class="import_key">label</span>(<span class="variable">fenetre</span>, <span class="variable">image</span>=<span class="variable">img</span>)<br>
-               <span class="variable tabulation">label_image</span>.<span class="variable tabulation">pack()</span> <br>
-                   <span class="variable tabulation">  fenetre</span>.<span class="fonction">mainloop()</span>
-               
-                   <br>
-                   <span class="comments">  # veulliez executer le code pour voir le resultat </span><br>
-                   <span class="fonction">afficher_image()</span><br>
-               
-            </div>
-            <div class="minimap" id="minimap"></div>
-         </div>
-        
-         <div class="containerdev" *ngIf="ongletSelectionne === 'php' && fichierSelectionne === 'profil'">
-        <div class="num_code"  >
-               <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
-                 {{ lineNumber }} 
-               </div>
-             </div>
-            <div class="code" id="code"  (scroll)="syncMinimap($event)" >
-              <span class="variable_php">$nom</span> = <span class="string_php">"Olivier"</span><br>
-               <span class="variable_php">$prenom</span> = <span class="string_php">"Jean"</span><br>
-               <span class="variable_php">$age</span> = <span class="number_php">25</span><br>
-               <span class="variable_php">$ville</span> = <span class="string_php">"Paris"</span><br>
-               <span class="variable_php">$stage_a_paris</span> = <span class="string_php">True</span><br>
-              <br>
-               <span class="echo">echo</span><span class="string_php">"formation"</span>  <br>
-               <br>
-               <span class="key_php">if</span><span class="variable_php">$ville</span>  == <span class="string_php">"Toulon"</span> <br>
-               <span class="echo">echo</span><span class="string_php">"DUT GEII , 2017-2019\n"</span>  <br>
-               <span class="echo">echo</span><span class="string_php">"Licence informatique , 2019 - 2022\n"</span>  <br>
-               <span class="key_php">elseif</span><span class="variable_php">$ville</span>  == <span class="string_php">"corse"</span> <br>
-               <span class="echo">echo</span><span class="string_php">"Master informatique, 2022 - 2024\n"</span>  <br>
-               <br>
-               <span class="echo">echo</span><span class="string_php">"Expérience professionnelle\n"</span>  <br>
-               
-               <span class="key_php">if</span><span class="variable_php">$ville</span>  == <span class="string_php">"Toulon"</span> <br>
-               <span class="echo">echo</span><span class="string_php">"Stage fin de DUT GEII , 2019, 8 semaines\n"</span>  <br>
-               <span class="echo">echo</span><span class="string_php">"Hopital Saint Anne\n"</span>  <br>
-               <span class="echo">echo</span><span class="string_php">"Techno principaux : PHP, MySQL\n"</span>  <br>
-               <span class="key_php">if</span><span class="variable_php">$ville</span>  == <span class="string_php">"corse"</span> <br>
-               <span class="echo">echo</span><span class="string_php">"Stage fin de master , 2024 , 6 mois à\n"</span>  <br>
-               <span class="echo">echo</span><span class="string_php">"Alteca\n"</span>  <br>
-               <span class="echo">echo</span><span class="string_php">"Techno principaux: PHP (Symfony), Vue.js\n"</span>  <br>
-               <span class="fonction_php">function</span>  <span class="fonction">switch_case_annee</span>(<span class="variable_php">$annee</span>) (<br>
-                  <span class ="key_php">switch</span>(<span class="variable_php">$annee</span>) (
-                      <span class="key_php">case</span> <span class ="number">2019</span>:<br>
-                      <span class="echo">echo</span> <span class="string_php">"Stage à l'Hôpital d'Instruction des Armées Sainte-Anne de Toulon, création d'une application web de type QCM destinée aux apprentis Docteurs en transfusion sanguine. Récupération de données pour analyse par le directeur.\n\nConcours entrepreneuriat \"Les Entrep' Var\", création de \"Handicap Indépendance\", une application connectée à différents modules qui permettront à n'importe quelle personne handicapée d'être autonome chez elle.\n"</span>;
-                      <br><span class="key_php">break</span>;<br>
-                      <span class="key_php">case</span> <span class ="number">2022</span>:<br>
-                      <span class="echo">echo</span> <span class="string_php">"Hackathon, développement d'une application web de type jeu de loi avec des voitures électriques comme pions pour que l'utilisateur comprenne l'importance de la gestion de l'énergie. Réalisé en collaboration avec EDF Corse.\n"</span>;
-                      <br>  <span class="key_php">break</span>;<br>
-                      <span class="key_php">case</span> <span class ="number">2023</span>:<br>
-                      <span class="echo">echo</span> <span class="string_php">"Concours entrepreneuriat \"Challenge Innovation\", création d'un boîtier connecté relié à une application intelligente. OXI (nom de l’entreprise) vous permet d'arrêter de fumer en gérant à votre place votre consommation de tabac.\n"</span>;
-                      <br> <span class="key_php">break</span>;<br>
-                      <span class="key_php">case</span> <span class ="number">2024</span>:<br>
-                      <span class="echo">echo</span> <span class="string_php">"2024\n"</span>;
-                      <br> <span class="key_php">break</span>;<br>
-                      <span class="key_php">defautl</span>:<br>
-                      <span class="echo">echo</span> <span class="string_php">"L'année n'est pas 2019, 2022, 2023, 2024 ou 2029.\n"</span>;<br>
-                      <br>)
-              )
-              <span class="variable_php"> $annee</span> = <span class ="number">2023</span>;<br>
-              <span class="fonction"> switch_case_annee</span>  (<span class="variable_php"> $annee</span> );<br>
-              
-              <span class="echo">echo</span><span class="string_php">"Compétence\n";</span><br>
-              <span class="key_php">if</span> (<span class="variable_php">$langages</span>) (<br>
-               <span class="variable_php">$top_langage_decroissante</span> = [1 => 'Python', 2 => 'JavaScript', 3 => 'PHP', 4 => 'HTML/CSS', 5 => 'TypeScript', 6 => 'Flutter', 7 => 'SQL'];<br>
-               <span class="key_php">foreach</span> ($top_langage_decroissante as $cle => $valeur) (<br>
-                      <span class="echo">echo</span> "Clé : $cle, Valeur : $valeur\n";<br>
-                  )
-              ) <span class="key_php">else</span> (<br>
-               <span class="variable_php"> $top_framework</span> = ["Angular", 'Vue.js', 'React'];<br>
-                  <span class="variable_php"> $logiciel</span> = ['GitHub', 'VSCode'];<br>
-              )
-              
-              <span class="echo">echo</span> "Loisir\n";<br>
-              <span class="fonction_php">function myloisir()</span> (<br>
-                  <span class="echo">echo</span> <span class="string_php">"Pratique du street workout et du triathlon, ce qui m'apporte rigueur et discipline. Voyages autour du monde (Japon, États-Unis, Irlande, Londres, Thaïlande), grâce à quoi j'ai acquis une adaptabilité aux imprévus et une ouverture d'esprit.\nLes projets 3D JavaScript et les projets Python handtracking qui satisfont ma curiosité et mon envie de réaliser des projets.\n"</span>;<br>
-              )<br>
-              <br><br><br><br>
-              <span class="fonction_php"> myloisir()</span>;<br>
-              
-               
-            </div>
-            <div class="minimap" id="minimap"></div>
-         </div>
-         <div class="containerdev" *ngIf="ongletSelectionne === 'php' && fichierSelectionne === 'contact'">
-        <div class="num_code"  >
-               <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
-                 {{ lineNumber }} 
-               </div>
-             </div>
-            <div class="code" id="code"  (scroll)="syncMinimap($event)" >
-               <span class="variable_php">$nom</span> = <span class="string_php">"Olivier"</span><br>
-               <span class="variable_php">$prenom</span> = <span class="string_php">"Jean"</span><br>
-              <span class="variable_php">$ville</span> = <span class="string_php">"Paris"</span><br>
-               <span class="variable_php">$stage_a_paris</span> = <span class="string_php">True</span><br>
-               <span class="echo">echo</span>(<span class="string_php">"formation"</span> ) <br>
-               <span class="key_php">if</span> <span class="variable_php">$ville</span> == <span class="string_php">"Toulon"</span> <br>
-            </div>
-            <div class="minimap" id="minimap"></div>
-         </div>
-         <div class="containerdev" *ngIf="ongletSelectionne === 'php'&& fichierSelectionne === 'projet'">
-        <div class="num_code"  >
-               <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
-                 {{ lineNumber }} 
-               </div>
-             </div>
-            <div class="code" id="code"  (scroll)="syncMinimap($event)" >
-               <span class="variable_php">$nom</span> = <span class="string_php">"Olivier"</span><br>
-               <span class="variable_php">$prenom</span> = <span class="string_php">"Jean"</span><br>
-               <span class="variable_php">$age</span> = <span class="number_php">25</span><br>
-               <span class="variable_php">$ville</span> = <span class="string_php">"Paris"</span><br>
-               <span class="variable_php">$stage_a_paris</span> = <span class="string_php">True</span><br>
-           </div>
-            <div class="minimap" id="minimap"></div>
-         </div>
-         <div class="containerdev" *ngIf="ongletSelectionne === 'javascript' && fichierSelectionne === 'profil'">
-        <div class="num_code"  >
-               <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
-                 {{ lineNumber }} 
-               </div>
-             </div>
-            <div class="code" id="code"  (scroll)="syncMinimap($event)" >
-               <span class="variable">nom</span> = <span class="string">"Olivier"</span><br>
-               <span class="variable">prenom</span> = <span class="string">"Jean"</span><br>
-               <span class="variable">age</span> = <span class="number">25</span><br>
-               <span class="variable">stage_a_paris</span> = <span class="string">True</span><br>
-               <span class="print">print</span>(<span class="string">"formation"</span> ) <br>
-             
-            </div>
-            <div class="minimap" id="minimap"></div>
-         </div>
-         <div class="containerdev" *ngIf="ongletSelectionne === 'javascript' && fichierSelectionne === 'contact'">
-        <div class="num_code"  >
-               <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
-                 {{ lineNumber }} 
-               </div>
-             </div>
-            <div class="code" id="code"  (scroll)="syncMinimap($event)" >
-              <span class="variable">prenom</span> = <span class="string">"Jean"</span><br>
-               <span class="variable">age</span> = <span class="number">25</span><br>
-               <span class="variable">ville</span> = <span class="string">"Paris"</span><br>
-               <span class="variable">stage_a_paris</span> = <span class="string">True</span><br>
-               <span class="print">print</span>(<span class="string">"formation"</span> ) <br>
-             
-            </div>
-            <div class="minimap" id="minimap"></div>
-         </div>
-         <div class="containerdev" *ngIf="ongletSelectionne === 'javascript'&& fichierSelectionne === 'projet'">
-        <div class="num_code"  >
-               <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
-                 {{ lineNumber }} 
-               </div>
-             </div>
-            <div class="code" id="code"  (scroll)="syncMinimap($event)" >
-               <span class="variable">nom</span> = <span class="string">"Olivier"</span><br>
-               <span class="variable">prenom</span> = <span class="string">"Jean"</span><br>
-               <span class="variable">age</span> = <span class="number">25</span><br>
-               <span class="variable">ville</span> = <span class="string">"Paris"</span><br>
-               <span class="variable">stage_a_paris</span> = <span class="string">True</span><br>
-               <span class="print">print</span><span class="string">"formation"</span> ) <br>
-             
-            </div>
-            <div class="minimap" id="minimap"></div>
-         </div>
-         <div class="terminal resizable" id="terminal"
-         (mousedown)="onMouseDown($event)"
-         (document:mousemove)="onMouseMove($event)"
-         (document:mouseup)="onMouseUp()">
-            <div class="button-container_ter">
-                <button class="button_ter" [class.button_ter_select]="terminalSelectionne === 'PROBLeME'" (click)="changerterminal('PROBLeME')">PROBLÈME</button>
-                <button class="button_ter" [class.button_ter_select]="terminalSelectionne === 'SORTIE'" (click)="changerterminal('SORTIE')">SORTIE</button>
-                <button class="button_ter" [class.button_ter_select]="terminalSelectionne === 'TERMINAL'" (click)="changerterminal('TERMINAL')">TERMINAL</button>
-                <button class="button_ter" [class.button_ter_select]="terminalSelectionne === 'PORTS'" (click)="changerterminal('PORTS')">PORTS</button>
-           
-                <button class="button_ter" [class.button_ter_select]="terminalSelectionne === 'POSTMAN'" (click)="changerterminal('POSTMAN')">POSTMAN CONSOLE</button>
-          
-               </div>
-            
-            <!-- La deuxième div avec le mot changeant -->
-          
-            <div class="interface_ter" *ngIf="terminalSelectionne==='TERMINAL'" >
-            
-               PS C:\Users\tomol\OneDrive\Bureau\freelance\forpor> ng serve<br>
-              <span class="number"> ✔</span> Browser application bundle generation complete.<br>
-               <br>
-               <div class="table">
-                  <div class="table-row">
-                      <div class="table-cell ">Initial Chunk Files</div>
-                      <div class="table-cell">Names</div>
-                      <div class="table-cell ">Raw Size</div>
-                  </div>
-                  <div class="table-row">
-                      <div class="table-cell number">vendor.js</div>
-                      <div class="table-cell">vendor</div>
-                      <div class="table-cell variable">4.08 MB</div>
-                  </div>
-                  <div class="table-row">
-                      <div class="table-cell number">polyfills.js</div>
-                      <div class="table-cell">polyfills</div>
-                      <div class="table-cell variable">333.17 kB</div>
-                  </div>
-                  <div class="table-row">
-                      <div class="table-cell number">main.js</div>
-                      <div class="table-cell">main</div>
-                      <div class="table-cell variable">250.64 kB</div>
-                  </div>
-                  <div class="table-row">
-                      <div class="table-cell number">styles.css, styles.js</div>
-                      <div class="table-cell">styles</div>
-                      <div class="table-cell variable">230.50 kB</div>
-                  </div>
-                  <div class="table-row">
-                      <div class="table-cell number">runtime.js</div>
-                      <div class="table-cell">runtime</div>
-                      <div class="table-cell variable">6.51 kB</div>
-                  </div>
-              </div>  <br>
-                                     | Initial Total |   4.88 MB<br>
-                                     <br>
-               Build at: 2023-11-21T15:16:31.865Z - Hash: 187f42945e756cae - Time: 7930ms<br>
-               <br>
-               ** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **<br>
-               <br><br>
-               <span class="number"> ✔</span> Compiled successfully.<br>
-            </div>
-            <div class="interface_ter" *ngIf="terminalSelectionne==='PROBLeME'" >
-            Aucun problème n'a été détecté dans mon code car il parfait
-            </div>
-            <div class="interface_ter" *ngIf="terminalSelectionne==='SORTIE'" >{{ mot }}</div>
-            <div class="interface_ter" *ngIf="terminalSelectionne==='PORTS'" >
-            Aucun port transféré. Transférez moi votre port pour accéder à nos services exécutés localement sur internet 
-           <br> <input class ="port_texte " type="text" id="texteInput" name="texteInput" placeholder="Votre texte ici">
-           <br><button class=" port_bouton"type="button" onclick="afficherTexte()">Transférer un port</button>
-     
-            </div>
-            <div class="interface_ter" *ngIf="terminalSelectionne==='POSTMAN'" >
-               no logs yet<br> send a request to view its details in the console 
-               </div>
+            <ul
+              *ngIf="
+                ongletSelectionne === 'javascript' && ouvreeditorla == true
+              "
+            >
+              <li
+                class="show-pre"
+                [class.show-press-select]="fichierSelectionne === 'profil'"
+                (click)="changerfichier('profil')"
+              >
+                <i class="fab fa-js"></i> <span>profil.js</span>
+              </li>
+              <li
+                class="show-pre"
+                [class.show-press-select]="fichierSelectionne === 'contact'"
+                (click)="changerfichier('contact')"
+              >
+                <i class="fab fa-js"></i> <span> contact.js </span>
+              </li>
+              <li
+                class="show-pre"
+                [class.show-press-select]="fichierSelectionne === 'projet'"
+                (click)="changerfichier('projet')"
+              >
+                <i class="fab fa-js"></i> <span> projet.js </span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-      <!-- truc bleu en bas -->
-      <div class="bottom-header">
-         <ul class="right">
-            <li> 
-               <i>
-               <img  class ="terminal_image_v"src="./assets/terminal/vert.png" alt="Image" />
-            </i> 
-         </li>
-            <li>
-               <i>
-                  <img  class ="terminal_image_g"src="./assets/terminal/git.png" alt="Image" />
-               </i> 
-            </li>
-            <li>
-               <img  class ="terminal_image_t"src="./assets/terminal/test.png" alt="Image" />
-          
-            </li>
-         </ul>
-         <ul class="left">
-            <li>
-               Ln 24, Col 32
-            </li>
-            <li>
-               Spaces: 3
-            </li>
-            <li>
-               UTF-8
-            </li>
-            <li>
-               CRLF
-            </li>
-            <li>
-               HTML
-            </li>
-            <li>
-               <i class="fa fa-radiation-alt"></i> Port: 5050
-            </li>
-            <li>
-               <i class="fa fa-bell"></i>
-            </li>
-         </ul>
+      <br />
+    </div>
+    <div
+      class="menu-option"
+      *ngIf="side_h_var === 'extension' && side_h_var_vi"
+    >
+      <h5>extension compétence</h5>
+      <div class="menu-drop">
+        <div class="box-click">
+          <i class="fa fa-chevron-down" (click)="ouvreeditors()"></i>
+          <span>installé</span>
+          <div class="box-click2">
+            <ul>
+              <li>
+                <P> angular langage</P>
+                <P> framework web </P>
+                <P> angular</P>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-   </body>
+      <div class="menu-drop">
+        <div class="box-click">
+          <i class="fa fa-chevron-down" (click)="ouvreeditors()"></i>
+          <span>recommandation</span>
+          <div class="box-click2">
+            <ul>
+              <P> angular langage</P>
+              <P> framework web </P>
+              <P> angular</P>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <li
+        class="header-menu-link"
+        *ngFor="let menuItem of menuItems"
+        (click)="toggleSubMenu(menuItem)"
+      >
+        {{ menuItem.label }}
+        <ul class="sub-menu" *ngIf="menuItem.isSubMenuVisible">
+          <li
+            class="sub-menu-label"
+            *ngFor="let subItem of menuItem.subMenuItems"
+            (click)="submenu(subItem.label)"
+          >
+            {{ subItem.label }}
+          </li>
+        </ul>
+      </li>
+    </div>
+
+    <div class="menu-option" *ngIf="side_h_var === 'search' && side_h_var_vi">
+      <h5>partage ton code</h5>
+
+      <a
+        class="aref"
+        href="https://github.com/oliveur83"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img class="imgpro" src="./assets/qrgit.png" alt="Image" />
+        GitHub
+      </a>
+      <br />
+      <a
+        class="aref"
+        href="https://www.linkedin.com/in/tom-pascal-olivier/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img class="imgpro" src="./assets/qrlink.png" alt="Image" />
+        LinkedIn
+      </a>
+    </div>
+    <div class="menu-option" *ngIf="side_h_var === 'play' && side_h_var_vi">
+      <div class="menu-drop">
+        <div class="box-click">
+          <i class="fa fa-chevron-down" (click)="ouvreeditors()"></i>
+          <span>Exécuter</span>
+          <div class="box-click2">
+            <ul>
+              <li>
+                <P> angular langage</P>
+                <P> framework web </P>
+                <P> angular</P>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="menu-drop">
+        <div class="box-click">
+          <i class="fa fa-chevron-down" (click)="ouvreeditors()"></i>
+          <span>Points D'arrèt</span>
+          <div class="box-click2">
+            <ul>
+              <li>
+                <P> angular langage</P>
+                <P> framework web </P>
+                <P> angular</P>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-option" *ngIf="side_h_var === 'cog' && side_h_var_vi">
+      <h5>cog</h5>
+    </div>
+    <div class="menu-option" *ngIf="side_h_var === 'postman' && side_h_var_vi">
+      <h5>post</h5>
+    </div>
+    <div class="menu-option" *ngIf="side_h_var === 'spock' && side_h_var_vi">
+      <h5>spock</h5>
+    </div>
+    <div class="menu-option" *ngIf="side_h_var === 'user' && side_h_var_vi">
+      <h5>user</h5>
+    </div>
+    <div class="menu-option" *ngIf="side_h_var === 'database' && side_h_var_vi">
+      <h5>database</h5>
+      <div class="menu-drop">
+        <div class="box-click">
+          <i class="fa fa-chevron-down" (click)="ouvreeditors()"></i>
+          <span>Connection</span>
+          <div class="box-click2">
+            <ul>
+              <li>
+                <P> angular langage</P>
+                <button class="bouton_bleu">Add Connexion</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-option" *ngIf="side_h_var === 'check' && side_h_var_vi">
+      <h5>
+        Test introuvables dans cet espace de travail.<br />
+        Configure a test framework to see your tests header
+        <button class="bouton_bleu">Configure Python Test</button><br />
+        <button class="bouton_bleu">
+          installer des extensions de test suplémentaire..
+        </button>
+      </h5>
+    </div>
+    <div class="pourcode">
+      <div class="onglet">
+        <div class="boutons">
+          <button
+            [ngClass]="{
+              button_onglet_select: ongletSelectionne === 'python',
+              button_onglet_no_select: ongletSelectionne !== 'python'
+            }"
+            (click)="changerOnglet('python')"
+          >
+            <i class="fab fa-python"></i> python.py
+            <i class="fa fa-times croix"></i>
+          </button>
+          <button
+            [ngClass]="{
+              button_onglet_select: ongletSelectionne === 'php',
+              button_onglet_no_select: ongletSelectionne !== 'php'
+            }"
+            (click)="changerOnglet('php')"
+          >
+            <i class="fab fa-php"></i> php.php <i class="fa fa-times croix"></i>
+          </button>
+          <button
+            [ngClass]="{
+              button_onglet_select: ongletSelectionne === 'javascript',
+              button_onglet_no_select: ongletSelectionne !== 'javascript'
+            }"
+            (click)="changerOnglet('javascript')"
+          >
+            <i class="fab fa-js"></i> javascript.js
+            <i class="fa fa-times croix"></i>
+          </button>
+        </div>
+
+        <div class="image-container">
+          <img
+            class="reduced-height-image"
+            *ngIf="
+              ongletSelectionne === 'python' && fichierSelectionne === 'projet'
+            "
+            src="./assets/exec.png"
+            (click)="exectkinter()"
+          />
+          <i class="fas fa-edit icon_droite_onglet"></i>
+          <i class="fas fa-print icon_droite_onglet"></i>
+          <i class="fas fa-columns icon_droite_onglet"></i>
+          <i class="fas fa-ellipsis-h icon_droite_onglet"></i>
+        </div>
+      </div>
+      <div
+        class="containerdev"
+        *ngIf="
+          ongletSelectionne === 'python' && fichierSelectionne === 'profil'
+        "
+      >
+        <div class="num_code">
+          <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
+            {{ lineNumber }}
+          </div>
+        </div>
+
+        <div class="code" id="code" (scroll)="syncMinimap($event)">
+          <span class="variable">prenom</span> = "<span class="string">tom</span
+          >"<br />
+          <span class="variable">nom</span> = "<span class="string"
+            >Olivier</span
+          >"<br />
+          <span class="variable">mail</span> = "<span class="string"
+            >tomolivierpro@gmail.com</span
+          >"<br />
+          <span class="variable">ville</span> = "<span class="string">lyon</span
+          >"<br />
+
+          <br />
+          <span class="print">print</span>(<span class="string"
+            >" formation "</span
+          >)<br />
+          <br />
+          <span class="key">if </span><span class="variable">ville</span> ==
+          <span class="string">"toulon"</span>:<br />
+          <span class="tabulation print">print</span>(<span class="string"
+            >"DUT GEII , 2017-2019"</span
+          >)<br />
+          <span class="tabulation print">print</span>(<span class="string"
+            >"licence informatique , 2019 - 2022"</span
+          >)<br />
+
+          <span class="key">elif </span> <span class="variable">ville</span> ==
+          <span class="string">"corse"</span>:<br />
+          <span class="tabulation print">print</span>(<span class="string"
+            >"master informatique, 2022 -2024"</span
+          >)<br />
+          <br />
+          <span class="print">print</span>(<span class="string"
+            >"experience profesionnel"</span
+          >)<br />
+          <br />
+          <span class="key">if </span> <span class="variable">ville</span> ==
+          <span class="string">"toulon"</span>:<br />
+          <span class="tabulation print">print</span>(<span class="string"
+            >""" stage fin de DUT GEII , 2019, 8 semaine hopital saint anne
+            techno principaux :php ,mysql """</span
+          >)<br />
+          <span class="key">elif</span> <span class="variable">ville</span> ==
+          <span class="string">"corse"</span>:<br />
+          <span class="tabulation print">print</span>(<span class="string"
+            >"""stage fin de master , 2024 , 6 mois a alteca techno principaux
+            php(synfony), vuejs """</span
+          >)<br />
+          <br />
+          <span class="key">def</span>
+          <span class="fonction">switch_case_annee</span>(<span class="variable"
+            >annee</span
+          >):<br />
+          <span class="tabulation variable"> switch</span> = (<br />
+          <span class="tabulation number"> 2019</span>:<span class="string">
+            """ Stage à l'Hôpital d'Instruction des Armées Sainte-Anne de
+            Toulon,<br />
+            création d'une application web de type QCM destinée aux apprentis
+            Docteurs en transfusion sanguine.<br />
+            Récupération de données pour analyse par le directeur. <br /><br />
+            Concours entrepreneuriat "Les Entrep' Var", création de "Handicap
+            Indépendance", une application connectée à différents modules qui
+            Permettront à n'importe quelle personne handicapée d'être autonome
+            chez elle. """</span
+          >,<br /><br />
+
+          <span class="tabulation number"> 2022</span>:
+          <span class="string">
+            """Hackathon, développement d'une application web de type jeu de loi
+            avec des voitures électriques comme pions pour que l'utilisateur
+            Comprenne l'importance de la gestion de l'énergie. Réalisé en
+            Collaboration avec EDF Corse."""</span
+          >,<br /><br />
+
+          <span class="tabulation number"> 2023</span>:<span class="string">
+            """Concours entrepreneuriat "Challenge Innovation", création d'un
+            boîtier connecté relié à une application intelligente. OXI (nom de
+            L’entreprise) vous permet d'arrêter de fumer en gérant à votre place
+            votre consommation de tabac."""</span
+          >,<br />
+          <br />
+          <span class="tabulation number"> 2024</span>:<span class="string">
+            """2024 """</span
+          >,<br />
+          <span class="tabulation">)</span> <br />
+
+          <span class="variable">annee</span> = <span class="number">2023</span
+          ><br />
+          <span class="variable">resultat</span> =
+          <span class="fonction">switch_case_annee</span>(<span class="variable"
+            >annee</span
+          >)<br />
+          <span class="print">print</span>(<span class="variable">resultat</span
+          >)<br />
+          <br />
+          <span class="print">print</span>(<span class="string"
+            >"compétence"</span
+          >)<br />
+          <br />
+          <span class="key">if </span> <span class="variable">langages</span> ==
+          <span class="boolean">True</span>:<br />
+          <span class="tabulation variable">top_langage_decroissante</span> = (
+          <span class="number">1</span>: <span class="string">"python"</span>,
+          <span class="number">2</span>:
+          <span class="string">"javascript"</span>,
+          <span class="number">3</span>: <br /><span class="string">"php"</span
+          >, <span class="number">4</span>:
+          <span class="string">"html/css"</span>, <span class="number">5</span>:
+          <span class="string">"typescript"</span>,
+          <span class="number">6</span>: <span class="string">"flutter"</span>,
+          <span class="number">7</span>: <br /><span class="string">"SQL"</span
+          >,)
+
+          <span class="key tabulation">for </span>
+          <span class="variable">cle</span>,
+          <span class="variable">valeur</span> in
+          <span class="variable">top_langage_decroissante</span>.<span
+            class="function"
+            >items</span
+          >():<br />
+          <span class="print tabulation tabulation">print</span>(<span
+            class="string"
+            >f"Clé : (cle), Valeur : (valeur)"</span
+          >)<br />
+
+          <span class="key">else</span>:<br />
+          <span class="tabulation variable">top_framework</span> = [<span
+            class="string"
+            >"angular"</span
+          >, <span class="string">"vue.js"</span>,<span class="string"
+            >"react"</span
+          >]<br />
+          <span class="tabulation variable">logiciel</span> = [<span
+            class="string"
+            >"github"</span
+          >, <span class="string">"vscode"</span>]<br />
+          <span class="tabulation print">print</span>(<span class="string"
+            >"loisir"</span
+          >)<br />
+          <br />
+
+          <span class="key">def</span>
+          <span class="fonction">myloisir</span>():<br />
+          <span class="tabulation print">print</span>(<span class="string"
+            >""" Pratique du street workout et du triathlon, ce qui m'apporte
+            rigueur et discipline.<br /><br />
+            Voyages autour du monde (Japon, États-Unis, Irlande, Londres,
+            Thaïlande), grâce à quoi j'ai acquis une adaptabilité aux imprévus
+            et une ouverture d'esprit.<br /><br />
+            Les projets 3D JavaScript et les projets Python handtracking qui
+            satisfont ma curiosité et mon envie de réaliser des projets.
+            """</span
+          >)<br />
+
+          <span class="fonction">myloisir</span>()<br />
+        </div>
+        <div class="minimap" id="minimap"></div>
+      </div>
+      <div
+        class="containerdev"
+        *ngIf="
+          ongletSelectionne === 'python' && fichierSelectionne === 'contact'
+        "
+      >
+        <div class="num_code">
+          <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
+            {{ lineNumber }}
+          </div>
+        </div>
+        <div class="code" id="code" (scroll)="syncMinimap($event)">
+          <span class="variable">contact</span> ={{ "{" }}<br />
+          <span class="string">github </span>:<span class="string">
+            https://github.com/oliveur83</span
+          >;<br />
+          <span class="string">linkedin </span>:<span class="string">
+            https://www.linkedin.com/in/tom-pascal-olivier/</span
+          >;<br />
+          <span class="string">mail </span>:<span class="string">
+            tomolivierpro@gmail.com</span
+          >;<br />
+          {{ "}" }}
+        </div>
+        <div class="minimap" id="minimap"></div>
+      </div>
+      <div
+        class="containerdev"
+        *ngIf="
+          ongletSelectionne === 'python' && fichierSelectionne === 'projet'
+        "
+      >
+        <div class="num_code">
+          <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
+            {{ lineNumber }}
+          </div>
+        </div>
+        <div class="code" id="code" (scroll)="syncMinimap($event)">
+          <span class="import">import </span
+          ><span class="import_key">tkinter </span
+          ><span class="import">as </span> <span class="import_key">tk</span
+          ><br />
+          <span class="import">from </span>
+          <span class="import_key">tkinter </span>
+          <span class="import">import</span
+          ><span class="import_key">PhotoImage</span> <br />
+          <br />
+          <span class="def"> def </span>
+          <span class="fonction">afficher_image ()</span>:<br />
+          <br />
+          <span class="variable tabulation">fenetre</span> =
+          <span class="import_key">tk</span>.<span class="import_key">Tk</span
+          >()<br />
+          <span class="variable tabulation">fenetre</span>.<span
+            class="variable tabulation"
+            >title</span
+          >(<span class="string">"Affichage d'une image"</span>)<br />
+          <br />
+          <span class="variable tabulation">chemin_image </span> =
+          <span class="string">""chemin/vers/votre/image.png""</span><br />
+          <span class="variable tabulation">img</span> =<span class="import_key"
+            >PhotoImage</span
+          >
+          (<span class="variable tabulation">file</span>=<span class="variable"
+            >chemin_image </span
+          >)<br />
+          <br />
+          <span class="variable tabulation">label_image</span> =
+          <span class="import_key">tk</span>.<span class="import_key"
+            >label</span
+          >(<span class="variable">fenetre</span>,
+          <span class="variable">image</span>=<span class="variable">img</span
+          >)<br />
+          <span class="variable tabulation">label_image</span>.<span
+            class="variable tabulation"
+            >pack()</span
+          >
+          <br />
+          <span class="variable tabulation"> fenetre</span>.<span
+            class="fonction"
+            >mainloop()</span
+          >
+
+          <br />
+          <span class="comments">
+            # veulliez executer le code pour voir le resultat </span
+          ><br />
+          <span class="fonction">afficher_image()</span><br />
+        </div>
+        <div class="minimap" id="minimap"></div>
+      </div>
+
+      <div
+        class="containerdev"
+        *ngIf="ongletSelectionne === 'php' && fichierSelectionne === 'profil'"
+      >
+        <div class="num_code">
+          <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
+            {{ lineNumber }}
+          </div>
+        </div>
+        <div class="code" id="code" (scroll)="syncMinimap($event)">
+          <span class="variable_php">$nom</span> =
+          <span class="string_php">"Olivier"</span><br />
+          <span class="variable_php">$prenom</span> =
+          <span class="string_php">"Jean"</span><br />
+          <span class="variable_php">$age</span> =
+          <span class="number_php">25</span><br />
+          <span class="variable_php">$ville</span> =
+          <span class="string_php">"Paris"</span><br />
+
+          <br />
+          <span class="echo">echo</span
+          ><span class="string_php">"formation"</span> <br />
+          <br />
+          <span class="key_php">if</span
+          ><span class="variable_php">$ville</span> ==
+          <span class="string_php">"Toulon"</span> <br />
+          <span class="echo">echo</span
+          ><span class="string_php">"DUT GEII , 2017-2019\n"</span> <br />
+          <span class="echo">echo</span
+          ><span class="string_php"
+            >"Licence informatique , 2019 - 2022\n"</span
+          >
+          <br />
+          <span class="key_php">elseif</span
+          ><span class="variable_php">$ville</span> ==
+          <span class="string_php">"corse"</span> <br />
+          <span class="echo">echo</span
+          ><span class="string_php">"Master informatique, 2022 - 2024\n"</span>
+          <br />
+          <br />
+          <span class="echo">echo</span
+          ><span class="string_php">"Expérience professionnelle\n"</span> <br />
+
+          <span class="key_php">if</span
+          ><span class="variable_php">$ville</span> ==
+          <span class="string_php">"Toulon"</span> <br />
+          <span class="echo">echo</span
+          ><span class="string_php"
+            >"Stage fin de DUT GEII , 2019, 8 semaines\n"</span
+          >
+          <br />
+          <span class="echo">echo</span
+          ><span class="string_php">"Hopital Saint Anne\n"</span> <br />
+          <span class="echo">echo</span
+          ><span class="string_php">"Techno principaux : PHP, MySQL\n"</span>
+          <br />
+          <span class="key_php">if</span
+          ><span class="variable_php">$ville</span> ==
+          <span class="string_php">"corse"</span> <br />
+          <span class="echo">echo</span
+          ><span class="string_php"
+            >"Stage fin de master , 2024 , 6 mois à\n"</span
+          >
+          <br />
+          <span class="echo">echo</span
+          ><span class="string_php">"Alteca\n"</span> <br />
+          <span class="echo">echo</span
+          ><span class="string_php"
+            >"Techno principaux: PHP (Symfony), Vue.js\n"</span
+          >
+          <br />
+          <span class="fonction_php">function</span>
+          <span class="fonction">switch_case_annee</span>(<span
+            class="variable_php"
+            >$annee</span
+          >) (<br />
+          <span class="key_php">switch</span>(<span class="variable_php"
+            >$annee</span
+          >) ( <span class="key_php">case</span>
+          <span class="number">2019</span>:<br />
+          <span class="echo">echo</span>
+          <span class="string_php"
+            >"Stage à l'Hôpital d'Instruction des Armées Sainte-Anne de Toulon,
+            création d'une application web de type QCM destinée aux apprentis
+            Docteurs en transfusion sanguine. Récupération de données pour
+            analyse par le directeur.\n\nConcours entrepreneuriat \"Les Entrep'
+            Var\", création de \"Handicap Indépendance\", une application
+            connectée à différents modules qui permettront à n'importe quelle
+            personne handicapée d'être autonome chez elle.\n"</span
+          >; <br /><span class="key_php">break</span>;<br />
+          <span class="key_php">case</span>
+          <span class="number">2022</span>:<br />
+          <span class="echo">echo</span>
+          <span class="string_php"
+            >"Hackathon, développement d'une application web de type jeu de loi
+            avec des voitures électriques comme pions pour que l'utilisateur
+            comprenne l'importance de la gestion de l'énergie. Réalisé en
+            collaboration avec EDF Corse.\n"</span
+          >; <br />
+          <span class="key_php">break</span>;<br />
+          <span class="key_php">case</span>
+          <span class="number">2023</span>:<br />
+          <span class="echo">echo</span>
+          <span class="string_php"
+            >"Concours entrepreneuriat \"Challenge Innovation\", création d'un
+            boîtier connecté relié à une application intelligente. OXI (nom de
+            l’entreprise) vous permet d'arrêter de fumer en gérant à votre place
+            votre consommation de tabac.\n"</span
+          >; <br />
+          <span class="key_php">break</span>;<br />
+          <span class="key_php">case</span>
+          <span class="number">2024</span>:<br />
+          <span class="echo">echo</span>
+          <span class="string_php">"2024\n"</span>; <br />
+          <span class="key_php">break</span>;<br />
+          <span class="key_php">defautl</span>:<br />
+          <span class="echo">echo</span>
+          <span class="string_php"
+            >"L'année n'est pas 2019, 2022, 2023, 2024 ou 2029.\n"</span
+          >;<br />
+          <br />) ) <span class="variable_php"> $annee</span> =
+          <span class="number">2023</span>;<br />
+          <span class="fonction"> switch_case_annee</span> (<span
+            class="variable_php"
+          >
+            $annee</span
+          >
+          );<br />
+
+          <span class="echo">echo</span
+          ><span class="string_php">"Compétence\n";</span><br />
+          <span class="key_php">if</span> (<span class="variable_php"
+            >$langages</span
+          >) (<br />
+          <span class="variable_php">$top_langage_decroissante</span> = [1 =>
+          'Python', 2 => 'JavaScript', 3 => 'PHP', 4 => 'HTML/CSS', 5 =>
+          'TypeScript', 6 => 'Flutter', 7 => 'SQL'];<br />
+          <span class="key_php">foreach</span> ($top_langage_decroissante as
+          $cle => $valeur) (<br />
+          <span class="echo">echo</span> "Clé : $cle, Valeur : $valeur\n";<br />
+          ) ) <span class="key_php">else</span> (<br />
+          <span class="variable_php"> $top_framework</span> = ["Angular",
+          'Vue.js', 'React'];<br />
+          <span class="variable_php"> $logiciel</span> = ['GitHub',
+          'VSCode'];<br />
+          )
+
+          <span class="echo">echo</span> "Loisir\n";<br />
+          <span class="fonction_php">function myloisir()</span> (<br />
+          <span class="echo">echo</span>
+          <span class="string_php"
+            >"Pratique du street workout et du triathlon, ce qui m'apporte
+            rigueur et discipline. Voyages autour du monde (Japon, États-Unis,
+            Irlande, Londres, Thaïlande), grâce à quoi j'ai acquis une
+            adaptabilité aux imprévus et une ouverture d'esprit.\nLes projets 3D
+            JavaScript et les projets Python handtracking qui satisfont ma
+            curiosité et mon envie de réaliser des projets.\n"</span
+          >;<br />
+          )<br />
+          <br /><br /><br /><br />
+          <span class="fonction_php"> myloisir()</span>;<br />
+        </div>
+        <div class="minimap" id="minimap"></div>
+      </div>
+      <div
+        class="containerdev"
+        *ngIf="ongletSelectionne === 'php' && fichierSelectionne === 'contact'"
+      >
+        <div class="num_code">
+          <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
+            {{ lineNumber }}
+          </div>
+        </div>
+        <div class="code" id="code" (scroll)="syncMinimap($event)">
+          <span class="variable_php">$nom</span> =
+          <span class="string_php">"Olivier"</span><br />
+          <span class="variable_php">$prenom</span> =
+          <span class="string_php">"Jean"</span><br />
+          <span class="variable_php">$ville</span> =
+          <span class="string_php">"Paris"</span><br />
+          <span class="variable_php">$stage_a_paris</span> =
+          <span class="string_php">True</span><br />
+          <span class="echo">echo</span>(<span class="string_php"
+            >"formation"</span
+          >
+          ) <br />
+          <span class="key_php">if</span>
+          <span class="variable_php">$ville</span> ==
+          <span class="string_php">"Toulon"</span> <br />
+        </div>
+        <div class="minimap" id="minimap"></div>
+      </div>
+      <div
+        class="containerdev"
+        *ngIf="ongletSelectionne === 'php' && fichierSelectionne === 'projet'"
+      >
+        <div class="num_code">
+          <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
+            {{ lineNumber }}
+          </div>
+        </div>
+        <div class="code" id="code" (scroll)="syncMinimap($event)">
+          <span class="variable_php">$nom</span> =
+          <span class="string_php">"Olivier"</span><br />
+          <span class="variable_php">$prenom</span> =
+          <span class="string_php">"Jean"</span><br />
+          <span class="variable_php">$age</span> =
+          <span class="number_php">25</span><br />
+          <span class="variable_php">$ville</span> =
+          <span class="string_php">"Paris"</span><br />
+          <span class="variable_php">$stage_a_paris</span> =
+          <span class="string_php">True</span><br />
+        </div>
+        <div class="minimap" id="minimap"></div>
+      </div>
+      <div
+        class="containerdev"
+        *ngIf="
+          ongletSelectionne === 'javascript' && fichierSelectionne === 'profil'
+        "
+      >
+        <div class="num_code">
+          <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
+            {{ lineNumber }}
+          </div>
+        </div>
+        <div class="code" id="code" (scroll)="syncMinimap($event)">
+          <span class="let">let </span> <span class="variable">nom</span> =
+          <span class="string">"Olivier"</span><br />
+          <span class="let">let </span> <span class="variable">prenom</span> =
+          <span class="string">"olivier"</span><br />
+          <span class="let">let </span> <span class="variable">age</span> =
+          <span class="number">25</span><br />
+          <span class="let">let </span> <span class="variable">mail</span> =
+          <span class="string">tomolivierpro@gmail.com</span><br />
+          <span class="let">let </span> <span class="variable">ville</span>
+          =<span class="string">"lyon"</span>
+          <br />
+          <br />
+          <span class="console">console</span>.<span class="log_ja">log</span
+          >(<span class="string">"formation"</span>);<br />
+          <br />
+          <span class="if_java">if</span> (<span class="variable">ville</span>
+          === <span class="string">"toulon"</span>) {{ "{" }}<br />
+          <span class="console">console</span>.<span class="log_ja">log</span
+          >(<span class="string">"DUT GEII , 2017-2019"</span>);<br />
+          <span class="console">console</span>.<span class="log_ja">log</span
+          >(<span class="string">"Licence informatique , 2019 - 2022"</span
+          >);<br />
+          {{ "}" }} <span class="variable">else if</span> (<span
+            class="variable"
+            >ville</span
+          >
+          === <span class="string">"Corse"</span>) {{ "{" }}<br />
+          <span class="console">console</span>.<span class="log_ja">log</span
+          >(<span class="string">"Master informatique, 2022 - 2024"</span
+          >);<br />
+          {{ "}" }}
+          <br />
+          <span class="console">console</span>.
+          <span class="log_ja">log</span>(<span class="string"
+            >"Expérience professionnelle</span
+          >;<br />
+          <br />
+          <span class="if_java">if</span> (ville ===
+          <span class="string">"Toulon"</span> {{ "{" }}<br />
+          <span class="console">console</span>.
+          <span class="log_ja">log</span>(<span class="string"
+            >"Stage fin de DUT GEII , 2019, 8 semaines</span
+          >;<br />
+          <span class="console">console</span>.
+          <span class="log_ja">log</span>(<span class="string"
+            >"Hopital Saint Anne</span
+          >;<br />
+          <span class="console">console</span>.
+          <span class="log_ja">log</span>(<span class="string"
+            >"Techno principaux : PHP, MySQL</span
+          >;<br />
+          {{ "}" }} <span class="if_java">if</span> (ville ===
+          <span class="string">"Corse"</span> {{ "{" }}<br />
+          <span class="console">console</span>.
+          <span class="log_ja">log</span>(<span class="string"
+            >"Stage fin de master , 2024 , 6 mois à</span
+          >;<br />
+          <span class="console">console</span>.
+          <span class="log_ja">log</span>(<span class="string">"Alteca</span
+          >;<br />
+          <span class="console">console</span>.
+          <span class="log_ja">log</span>(<span class="string"
+            >"Techno principaux: PHP (Symfony), Vue.js</span
+          >;<br />
+          {{ "}" }}
+          <br />
+          <span class="fun_string"> function</span
+          ><span class="fun"> switch_case_annee</span>(annee) {{ "{" }}
+          <br />
+          <span class="if_java"> switch</span> (annee) {{ "{" }} <br />
+            <span class="if_java"> case</span> 2019: <br />
+          console.log(<span class="string_java"
+            >"Stage à l'Hôpital d'Instruction des Armées Sainte-Anne de Toulon,
+            création d'une application web de type QCM destinée aux apprentis
+            Docteurs en transfusion sanguine. Récupération de données pour
+            analyse par le directeur.\n\nConcours entrepreneuriat \"Les Entrep'
+            Var\", création de \"Handicap Indépendance\", une application
+            connectée à différents modules qui permettront à n'importe quelle
+            personne handicapée d'être autonome chez elle."</span
+          >); <span class="if_java"> break; </span><br />
+         <span class="if_java"> case</span> 2022: <br />
+          console.log(<span class="string_java"
+            >"Hackathon, développement d'une application web de type jeu de loi
+            avec des voitures électriques comme pions pour que l'utilisateur
+            comprenne l'importance de la gestion de l'énergie. Réalisé en
+            collaboration avec EDF Corse."</span
+          >); <span class="if_java"> break; </span> <br />
+         <span class="if_java"> case</span> 2023: <br />
+          console.log(<span class="string_java"
+            >"Concours entrepreneuriat \"Challenge Innovation\", création d'un
+            boîtier connecté relié à une application intelligente. OXI (nom de
+            l’entreprise) vous permet d'arrêter de fumer en gérant à votre place
+            votre consommation de tabac."</span
+          >); <span class="if_java"> break; </span> <br />
+         <span class="if_java"> case</span> 2024: <br />
+          console.log("2024"); <br />
+          <span class="if_java"> break; </span> <br />
+          <span class="if_java"> default</span>: <br />
+          console.log("L'année n'est pas 2019, 2022, 2023, 2024 ou 2029.");
+          <br />
+          {{ "}" }}
+          {{ "}" }}
+
+          <span class="let">let </span> annee = 2023; <br />
+          switch_case_annee(annee); <br />
+
+          console.log("Compétence"); <br />
+          <span class="if_java">if</span> (langages) {{ "{" }} <br />
+          <span class="let">let </span> top_langage_decroissante = {{ "{" }} 1:
+          'Python', 2: 'JavaScript', 3: 'PHP', 4: 'HTML/CSS', 5: 'TypeScript',
+          6: 'Flutter', 7: 'SQL' {{ "}" }}; <br />
+          <span class="if_java">for</span> (<span class="let">let </span> cle in
+          top_langage_decroissante) {{ "{" }} <br />
+          <span class="if_java">if</span>
+          (top_langage_decroissante.hasOwnProperty(cle)) {{ "{" }} <br />
+          console.log(`Clé : ${{ "{" }}cle{{ "}" }}, Valeur : ${{
+            "{"
+          }}top_langage_decroissante[cle]{{ "}" }}`); <br />
+          {{ "}" }} <br />
+          {{ "}" }} <br />
+          {{ "}" }} else {{ "{" }} <br />
+          <span class="let">let </span> top_framework = ["Angular", 'Vue.js',
+          'React']; <br />
+          <br />
+          <span class="let">let </span> logiciel = ['GitHub', 'VSCode']; <br />
+          {{ "}" }} <br />
+          <br />
+          <span class="console">console</span>.log("Loisir"); <br />
+          function myloisir() {{ "{" }} <br />
+          <span class="console">console</span>.log(<span class="string_java"
+            >"Pratique du street workout et du triathlon, ce qui m'apporte
+            rigueur et discipline. Voyages autour du monde (Japon, États-Unis,
+            Irlande, Londres, Thaïlande), grâce à quoi j'ai acquis une
+            adaptabilité aux imprévus et une ouverture d'esprit."</span
+          >); <br />
+          <span class="console">console</span>.log("<span class="string_java"
+            >Les projets 3D JavaScript et les projets Python handtracking qui
+            satisfont ma curiosité et mon envie de réaliser des projets."</span
+          >); <br />{{ "}" }} <br />
+          <span class="fun">myloisir</span>();
+        </div>
+        <div class="minimap" id="minimap"></div>
+      </div>
+      <div
+        class="containerdev"
+        *ngIf="
+          ongletSelectionne === 'javascript' && fichierSelectionne === 'contact'
+        "
+      >
+        <div class="num_code">
+          <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
+            {{ lineNumber }}
+          </div>
+        </div>
+        <div class="code" id="code" (scroll)="syncMinimap($event)">
+          <span class="variable">prenom</span> =
+          <span class="string">"Jean"</span><br />
+          <span class="variable">age</span> = <span class="number">25</span
+          ><br />
+          <span class="variable">ville</span> =
+          <span class="string">"Paris"</span><br />
+          <span class="variable">stage_a_paris</span> =
+          <span class="string">True</span><br />
+          <span class="print">print</span>(<span class="string"
+            >"formation"</span
+          >
+          ) <br />
+        </div>
+        <div class="minimap" id="minimap"></div>
+      </div>
+      <div
+        class="containerdev"
+        *ngIf="
+          ongletSelectionne === 'javascript' && fichierSelectionne === 'projet'
+        "
+      >
+        <div class="num_code">
+          <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
+            {{ lineNumber }}
+          </div>
+        </div>
+        <div class="code" id="code" (scroll)="syncMinimap($event)">
+          <span class="variable">nom</span> =
+          <span class="string">"Olivier"</span><br />
+          <span class="variable">prenom</span> =
+          <span class="string">"Jean"</span><br />
+          <span class="variable">age</span> = <span class="number">25</span
+          ><br />
+          <span class="variable">ville</span> =
+          <span class="string">"Paris"</span><br />
+          <span class="variable">stage_a_paris</span> =
+          <span class="string">True</span><br />
+          <span class="print">print</span
+          ><span class="string">"formation"</span> ) <br />
+        </div>
+        <div class="minimap" id="minimap"></div>
+      </div>
+      <div
+        class="terminal resizable"
+        id="terminal"
+        (mousedown)="onMouseDown($event)"
+        (document:mousemove)="onMouseMove($event)"
+        (document:mouseup)="onMouseUp()"
+      >
+        <div class="button-container_ter">
+          <button
+            class="button_ter"
+            [class.button_ter_select]="terminalSelectionne === 'PROBLeME'"
+            (click)="changerterminal('PROBLeME')"
+          >
+            PROBLÈME
+          </button>
+          <button
+            class="button_ter"
+            [class.button_ter_select]="terminalSelectionne === 'SORTIE'"
+            (click)="changerterminal('SORTIE')"
+          >
+            SORTIE
+          </button>
+          <button
+            class="button_ter"
+            [class.button_ter_select]="terminalSelectionne === 'TERMINAL'"
+            (click)="changerterminal('TERMINAL')"
+          >
+            TERMINAL
+          </button>
+          <button
+            class="button_ter"
+            [class.button_ter_select]="terminalSelectionne === 'PORTS'"
+            (click)="changerterminal('PORTS')"
+          >
+            PORTS
+          </button>
+
+          <button
+            class="button_ter"
+            [class.button_ter_select]="terminalSelectionne === 'POSTMAN'"
+            (click)="changerterminal('POSTMAN')"
+          >
+            POSTMAN CONSOLE
+          </button>
+        </div>
+
+        <!-- La deuxième div avec le mot changeant -->
+
+        <div class="interface_ter" *ngIf="terminalSelectionne === 'TERMINAL'">
+          PS C:\Users\tomol\OneDrive\Bureau\freelance\forpor> ng serve<br />
+          <span class="number"> ✔</span> Browser application bundle generation
+          complete.<br />
+          <br />
+          <div class="table">
+            <div class="table-row">
+              <div class="table-cell">Initial Chunk Files</div>
+              <div class="table-cell">Names</div>
+              <div class="table-cell">Raw Size</div>
+            </div>
+            <div class="table-row">
+              <div class="table-cell number">vendor.js</div>
+              <div class="table-cell">vendor</div>
+              <div class="table-cell variable">4.08 MB</div>
+            </div>
+            <div class="table-row">
+              <div class="table-cell number">polyfills.js</div>
+              <div class="table-cell">polyfills</div>
+              <div class="table-cell variable">333.17 kB</div>
+            </div>
+            <div class="table-row">
+              <div class="table-cell number">main.js</div>
+              <div class="table-cell">main</div>
+              <div class="table-cell variable">250.64 kB</div>
+            </div>
+            <div class="table-row">
+              <div class="table-cell number">styles.css, styles.js</div>
+              <div class="table-cell">styles</div>
+              <div class="table-cell variable">230.50 kB</div>
+            </div>
+            <div class="table-row">
+              <div class="table-cell number">runtime.js</div>
+              <div class="table-cell">runtime</div>
+              <div class="table-cell variable">6.51 kB</div>
+            </div>
+          </div>
+          <br />
+          | Initial Total | 4.88 MB<br />
+          <br />
+          Build at: 2023-11-21T15:16:31.865Z - Hash: 187f42945e756cae - Time:
+          7930ms<br />
+          <br />
+          ** Angular Live Development Server is listening on localhost:4200,
+          open your browser on http://localhost:4200/ **<br />
+          <br /><br />
+          <span class="number"> ✔</span> Compiled successfully.<br />
+        </div>
+        <div class="interface_ter" *ngIf="terminalSelectionne === 'PROBLeME'">
+          Aucun problème n'a été détecté dans mon code car il parfait
+        </div>
+        <div class="interface_ter" *ngIf="terminalSelectionne === 'SORTIE'">
+          {{ mot }}
+        </div>
+        <div class="interface_ter" *ngIf="terminalSelectionne === 'PORTS'">
+          Aucun port transféré. Transférez moi votre port pour accéder à nos
+          services exécutés localement sur internet
+          <br />
+          <input
+            class="port_texte"
+            type="text"
+            id="texteInput"
+            name="texteInput"
+            placeholder="Votre texte ici"
+          />
+          <br /><button
+            class="port_bouton"
+            type="button"
+            onclick="afficherTexte()"
+          >
+            Transférer un port
+          </button>
+        </div>
+        <div class="interface_ter" *ngIf="terminalSelectionne === 'POSTMAN'">
+          no logs yet<br />
+          send a request to view its details in the console
+        </div>
+      </div>
+    </div>
+    <!-- truc bleu en bas -->
+    <div class="bottom-header">
+      <ul class="right">
+        <li>
+          <i>
+            <img
+              class="terminal_image_v"
+              src="./assets/terminal/vert.png"
+              alt="Image"
+            />
+          </i>
+        </li>
+        <li>
+          <i>
+            <img
+              class="terminal_image_g"
+              src="./assets/terminal/git.png"
+              alt="Image"
+            />
+          </i>
+        </li>
+        <li>
+          <img
+            class="terminal_image_t"
+            src="./assets/terminal/test.png"
+            alt="Image"
+          />
+        </li>
+      </ul>
+      <ul class="left">
+        <li>Ln 24, Col 32</li>
+        <li>Spaces: 3</li>
+        <li>UTF-8</li>
+        <li>CRLF</li>
+        <li>HTML</li>
+        <li><i class="fa fa-radiation-alt"></i> Port: 5050</li>
+        <li>
+          <i class="fa fa-bell"></i>
+        </li>
+      </ul>
+    </div>
+  </body>
 </html>

@@ -74,7 +74,7 @@ export class PageProfilComponent implements OnInit {
   }
 extractJWOccurrences(data: any[]){
   
-console.log("titi")
+
   // Iterate over each object in the array
   data.forEach(item => {
     // Extract occurrences of "jw" from the "doit" property

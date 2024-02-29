@@ -1,0 +1,6 @@
+jw: 1 chapitre 
+ep: episode 
+tour_de_tel: jeu ,reseaux ect.
+lecture: lire des page d'un livre 
+pod: podcast
+po_info: travail sur un projet info

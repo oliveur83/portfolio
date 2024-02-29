@@ -266,6 +266,17 @@ ul.left li {
 .acolade{color:darkgoldenrod}
 .fonction_php{color:#0b0bea}
 /* javascript */
+.let{color:#569CD6}
+.log_ja{color:#DCDCAA}
+.if_java{color:#C586C0}
+.acolad_u{color:#0b0bea}
+.acolad_d{color:#0b0bea}
+.acolad_t{color:#0b0bea}
+.number_ja{color:#0b0bea}
+.fun{color: #a0cc00}
+.fun_string{color: #007acc}
+.string_java{color: #CE9178}
+.console{color: #9CDCFE}
 .tabulation {
   padding-left: 40px;
 }
