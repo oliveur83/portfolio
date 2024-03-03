@@ -1014,7 +1014,7 @@
             >"Expérience professionnelle</span
           >;<br />
           <br />
-          <span class="if_java">if</span> (ville ===
+          <span class="if_java">if</span> (<span class="variable">ville</span> ===
           <span class="string">"Toulon"</span> {{ "{" }}<br />
           <span class="console">console</span>.
           <span class="log_ja">log</span>(<span class="string"
@@ -1028,7 +1028,7 @@
           <span class="log_ja">log</span>(<span class="string"
             >"Techno principaux : PHP, MySQL</span
           >;<br />
-          {{ "}" }} <span class="if_java">if</span> (ville ===
+          {{ "}" }} <span class="if_java">if</span> (<span class="variable">ville</span> ===
           <span class="string">"Corse"</span> {{ "{" }}<br />
           <span class="console">console</span>.
           <span class="log_ja">log</span>(<span class="string"
@@ -1044,11 +1044,12 @@
           {{ "}" }}
           <br />
           <span class="fun_string"> function</span
-          ><span class="fun"> switch_case_annee</span>(annee) {{ "{" }}
+          ><span class="fun"> switch_case_annee</span>(<span class="variable">ville</span>) {{ "{" }}
           <br />
-          <span class="if_java"> switch</span> (annee) {{ "{" }} <br />
-            <span class="if_java"> case</span> 2019: <br />
-          console.log(<span class="string_java"
+          <span class="if_java"> switch</span> (<span class="variable">annee</span>) {{ "{" }} <br />
+            <span class="if_java"> case</span> <span class="number">2019</span>: <br />
+          <span class="console">console</span>.
+          <span class="log_ja">log</span>(<span class="string_java"
             >"Stage à l'Hôpital d'Instruction des Armées Sainte-Anne de Toulon,
             création d'une application web de type QCM destinée aux apprentis
             Docteurs en transfusion sanguine. Récupération de données pour
@@ -1057,25 +1058,29 @@
             connectée à différents modules qui permettront à n'importe quelle
             personne handicapée d'être autonome chez elle."</span
           >); <span class="if_java"> break; </span><br />
-         <span class="if_java"> case</span> 2022: <br />
-          console.log(<span class="string_java"
+         <span class="if_java"> case</span> <span class="number">2022</span>: <br />
+          <span class="console">console</span>.
+          <span class="log_ja">log</span>(<span class="string_java"
             >"Hackathon, développement d'une application web de type jeu de loi
             avec des voitures électriques comme pions pour que l'utilisateur
             comprenne l'importance de la gestion de l'énergie. Réalisé en
             collaboration avec EDF Corse."</span
           >); <span class="if_java"> break; </span> <br />
-         <span class="if_java"> case</span> 2023: <br />
-          console.log(<span class="string_java"
+         <span class="if_java"> case</span> <span class="number">2023</span>: <br />
+          <span class="console">console</span>.
+          <span class="log_ja">log</span>(<span class="string_java"
             >"Concours entrepreneuriat \"Challenge Innovation\", création d'un
             boîtier connecté relié à une application intelligente. OXI (nom de
             l’entreprise) vous permet d'arrêter de fumer en gérant à votre place
             votre consommation de tabac."</span
           >); <span class="if_java"> break; </span> <br />
-         <span class="if_java"> case</span> 2024: <br />
-          console.log("2024"); <br />
+         <span class="if_java"> case</span> <span class="number">2024</span>: <br />
+          <span class="console">console</span>.
+          <span class="log_ja">log</span>("<span class="number">2</span>"); <br />
           <span class="if_java"> break; </span> <br />
           <span class="if_java"> default</span>: <br />
-          console.log("L'année n'est pas 2019, 2022, 2023, 2024 ou 2029.");
+          <span class="console">console</span>.
+          <span class="log_ja">log</span>("L'année n'est pas 2019, 2022, 2023, 2024 ou 2029.");
           <br />
           {{ "}" }}
           {{ "}" }}
@@ -1083,7 +1088,8 @@
           <span class="let">let </span> annee = 2023; <br />
           switch_case_annee(annee); <br />
 
-          console.log("Compétence"); <br />
+          <span class="console">console</span>.
+          <span class="log_ja">log</span>("Compétence"); <br />
           <span class="if_java">if</span> (langages) {{ "{" }} <br />
           <span class="let">let </span> top_langage_decroissante = {{ "{" }} 1:
           'Python', 2: 'JavaScript', 3: 'PHP', 4: 'HTML/CSS', 5: 'TypeScript',
@@ -1092,7 +1098,8 @@
           top_langage_decroissante) {{ "{" }} <br />
           <span class="if_java">if</span>
           (top_langage_decroissante.hasOwnProperty(cle)) {{ "{" }} <br />
-          console.log(`Clé : ${{ "{" }}cle{{ "}" }}, Valeur : ${{
+          <span class="console">console</span>.
+          <span class="log_ja">log</span>(`Clé : ${{ "{" }}cle{{ "}" }}, Valeur : ${{
             "{"
           }}top_langage_decroissante[cle]{{ "}" }}`); <br />
           {{ "}" }} <br />
@@ -1104,15 +1111,15 @@
           <span class="let">let </span> logiciel = ['GitHub', 'VSCode']; <br />
           {{ "}" }} <br />
           <br />
-          <span class="console">console</span>.log("Loisir"); <br />
+          <span class="console">console</span>.<span class="log_ja">log</span>("Loisir"); <br />
           function myloisir() {{ "{" }} <br />
-          <span class="console">console</span>.log(<span class="string_java"
+          <span class="console">console</span>.<span class="log_ja">log</span>(<span class="string_java"
             >"Pratique du street workout et du triathlon, ce qui m'apporte
             rigueur et discipline. Voyages autour du monde (Japon, États-Unis,
             Irlande, Londres, Thaïlande), grâce à quoi j'ai acquis une
             adaptabilité aux imprévus et une ouverture d'esprit."</span
           >); <br />
-          <span class="console">console</span>.log("<span class="string_java"
+          <span class="console">console</span>.<span class="log_ja">log</span>("<span class="string_java"
             >Les projets 3D JavaScript et les projets Python handtracking qui
             satisfont ma curiosité et mon envie de réaliser des projets."</span
           >); <br />{{ "}" }} <br />
