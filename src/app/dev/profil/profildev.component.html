@@ -1080,39 +1080,57 @@
           <span class="if_java"> break; </span> <br />
           <span class="if_java"> default</span>: <br />
           <span class="console">console</span>.
-          <span class="log_ja">log</span>("L'année n'est pas 2019, 2022, 2023, 2024 ou 2029.");
+          <span class="log_ja">log</span>(<span class="string_java"
+          >"L'année n'est pas 2019, 2022, 2023, 2024 ou 2029."</span>);
           <br />
           {{ "}" }}
           {{ "}" }}
 
-          <span class="let">let </span> annee = 2023; <br />
-          switch_case_annee(annee); <br />
+          <span class="let">let </span> <span class="variable">annee</span> = 2023; <br />
+          <span class="fun"> switch_case_annee</span
+            >(<span class="variable">annee</span>); <br />
 
           <span class="console">console</span>.
-          <span class="log_ja">log</span>("Compétence"); <br />
-          <span class="if_java">if</span> (langages) {{ "{" }} <br />
-          <span class="let">let </span> top_langage_decroissante = {{ "{" }} 1:
-          'Python', 2: 'JavaScript', 3: 'PHP', 4: 'HTML/CSS', 5: 'TypeScript',
-          6: 'Flutter', 7: 'SQL' {{ "}" }}; <br />
-          <span class="if_java">for</span> (<span class="let">let </span> cle in
-          top_langage_decroissante) {{ "{" }} <br />
-          <span class="if_java">if</span>
-          (top_langage_decroissante.hasOwnProperty(cle)) {{ "{" }} <br />
+          <span class="log_ja">log</span>(<span class="string_java">"Compétence"</span>); <br />
+          <span class="if_java">if</span> (<span class="variable">langages</span>) {{ "{" }} <br />
+          <span class="let">let </span> <span class="variable">top_langage_decroissante</span> = {{ "{" }} 
+          <span class="number"> 1:</span><span class="string_java">'Python'</span>, 
+          <span class="number"> 2:</span> <span class="string_java">'JavaScript'</span>, 
+          <span class="number"> 3:</span><span class="string_java"> 'PHP'</span>, 
+          <span class="number"> 4:</span><span class="string_java"> 'HTML/CSS'</span>, 
+          <span class="number"> 5:</span><span class="string_java"> 'TypeScript'</span>,
+          <span class="number"> 6:</span><span class="string_java"> 'Flutter'</span>, 
+          <span class="number"> 7:</span><span class="string_java"> 'SQL'</span> {{ "}" }}; <br />
+          <span class="if_java">for</span> (<span class="let">let </span><span class="variable">cle </span> in
+          <span class="variable">top_langage_decroissante</span>) {{ "{" }} <br />
+          <span class="if_java">if{{'('}}</span>  <span class="fun"> hasOwnProperty</span
+            >
+          (<span class="variable">top_langage_decroissante</span>.<span class="fun"></span>(<span class="variable">cle</span>)) {{ "{" }} <br />
           <span class="console">console</span>.
-          <span class="log_ja">log</span>(`Clé : ${{ "{" }}cle{{ "}" }}, Valeur : ${{
+          <span class="log_ja">log</span>(<span class="string_java"
+          >`Clé : </span>${{ "{" }}<span class="variable">cle</span>{{ "}" }}<span class="string_java"
+          >, Valeur :</span>${{
             "{"
-          }}top_langage_decroissante[cle]{{ "}" }}`); <br />
+          }}<span class="variable">top_langage_decroissante</span>[<span class="variable">cle</span>]{{ "}" }}`); <br />
           {{ "}" }} <br />
           {{ "}" }} <br />
-          {{ "}" }} else {{ "{" }} <br />
-          <span class="let">let </span> top_framework = ["Angular", 'Vue.js',
-          'React']; <br />
+          {{ "}" }} <span class="if_java">else</span> {{ "{" }} <br />
+          <span class="let">let </span><span class="variable">top_framework </span> = [<span class="string_java"
+          >"Angular"</span>, <span class="string_java"
+          >'Vue.js'</span>,<span class="string_java"
+          >
+          'React'</span>]; <br />
           <br />
-          <span class="let">let </span> logiciel = ['GitHub', 'VSCode']; <br />
+          <span class="let">let </span> <span class="variable">logiciel</span> = [<span class="string_java"
+          >'GitHub'</span>, <span class="string_java"
+          >'VSCode'</span>]; <br />
           {{ "}" }} <br />
           <br />
-          <span class="console">console</span>.<span class="log_ja">log</span>("Loisir"); <br />
-          function myloisir() {{ "{" }} <br />
+          <span class="console">console</span>.<span class="log_ja">log</span>(<span class="string_java"
+          >"Loisir"</span>); <br />
+       
+          <span class="fun_string"> function</span
+            > <span class="fun">myloisir()</span> {{ "{" }} <br />
           <span class="console">console</span>.<span class="log_ja">log</span>(<span class="string_java"
             >"Pratique du street workout et du triathlon, ce qui m'apporte
             rigueur et discipline. Voyages autour du monde (Japon, États-Unis,
@@ -1123,7 +1141,7 @@
             >Les projets 3D JavaScript et les projets Python handtracking qui
             satisfont ma curiosité et mon envie de réaliser des projets."</span
           >); <br />{{ "}" }} <br />
-          <span class="fun">myloisir</span>();
+          <span class="fun">myloisir()</span>;
         </div>
         <div class="minimap" id="minimap"></div>
       </div>
