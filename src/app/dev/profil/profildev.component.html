@@ -8,6 +8,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
   />
   <body>
+   
     <!-- file edit  -->
     <div class="header">
       <ul class="header-menu">
@@ -440,6 +441,7 @@
       </h5>
     </div>
     <div class="pourcode">
+    
       <div class="onglet">
         <div class="boutons">
           <button
@@ -494,13 +496,16 @@
           ongletSelectionne === 'python' && fichierSelectionne === 'profil'
         "
       >
+
         <div class="num_code">
           <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
             {{ lineNumber }}
           </div>
         </div>
 
-        <div class="code" id="code" (scroll)="syncMinimap($event)">
+        <div  class="code" id="code" (scroll)="syncMinimap($event)">
+          <div [innerHTML]="toto()"></div>
+          <div [innerHTML]="htmlContent"></div>
           <span class="variable">prenom</span> = "<span class="string">tom</span
           >"<br />
           <span class="variable">nom</span> = "<span class="string"

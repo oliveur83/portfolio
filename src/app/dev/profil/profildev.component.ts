@@ -3,6 +3,10 @@ import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dial
 import { ModalComponent } from './modal/modal.component';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../../date.service';
+import { HttpClient } from '@angular/common/http';
+import { javacript_profil,dico } from './toto';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+
 interface MenuItem {
   label: string;
   isSubMenuVisible: boolean;
@@ -35,7 +39,7 @@ export class ProfilComponentdev {
  /// nombre de seance 
  
 
-  constructor(private dialog: MatDialog,private el: ElementRef,private renderer: Renderer2,private route: ActivatedRoute,private dataService: DataService){
+  constructor(private http: HttpClient,private sanitizer: DomSanitizer,private dialog: MatDialog,private el: ElementRef,private renderer: Renderer2,private route: ActivatedRoute,private dataService: DataService){
     this.fichierSelectionne = this.route.snapshot.queryParams['parametre1'];
   console.log("affichage",this.fichierSelectionne)
   this.dataService.setSharedValue(this.fichierSelectionne);
@@ -50,6 +54,14 @@ toggleSubMenu(menuItem: MenuItem) {
 submenu(subMenuItems: string) {
  
   subMenuItems=== "download" ? this.download() : null; 
+}
+toto()
+{   this.http.get('dev/profil/profil.js', { responseType: 'text' as 'json' }).subscribe(data => {
+  const lines: string[] = data.toString().split('\n');
+  console.log(lines);
+});
+
+  return '<div><p>Contenu généré par la fonction.</p></div>';
 }
 download()
 {
@@ -133,8 +145,9 @@ this.ngAfterViewInit()
 }
 ngOnInit() {
   this.syncMinimap();
-
+ this.totoo()
 }
+
 
 @HostListener('window:resize', ['$event'])
 onResize(event: Event) {
@@ -196,7 +209,7 @@ onResize(event: Event) {
       // Ajustez la hauteur de la minimap en fonction de la fenêtre principale
       const scaleFactor = codeContent.clientHeight / codeContent.scrollHeight;
     
-      // Synchronisez la position de défilement entre la div principale et la minimap
+      // Synchronisez    la position de défilement entre la div principale et la minimap
       minimap.scrollTop = codeContent.scrollTop * scaleFactor;
 
     }
@@ -250,5 +263,34 @@ onMouseMove(event: MouseEvent): void {
 
 onMouseUp(): void {
   this.isResizing = false;
+}
+liste_code: string[] = [];
+string_complete:string ="";
+htmlContent: SafeHtml | undefined;
+code = javacript_profil; // Assurez-vous que python_profil est une chaîne de caractères
+
+totoo():void {
+    // Vérifier si `code` est bien une chaîne de caractères
+    if (typeof this.code === 'string') {
+      // Extraction des mots en utilisant une expression régulière
+      const words = this.code.match(/\b\w+\b|[{}\[\]()]/g);
+      if (words ) {
+        // Ajout des mots extraits à la liste
+        this.liste_code.push(...words);
+        
+      }
+    }
+    for (const motCle of this.liste_code) {
+      if (motCle in dico )
+      {
+        this.string_complete=this.string_complete+'<span style="color:'+dico[motCle]+';">'+motCle+"</span>"
+      }
+      else{
+        this.string_complete=this.string_complete+motCle
+
+      }
+   }
+   this.htmlContent = this.sanitizer.bypassSecurityTrustHtml(this.string_complete);
+ 
 }
 }

@@ -1,0 +1,2 @@
+dans la page contact tu a le code pour la generation de code 
+prendre le code du back et le mettre dans .ts avec le chat gpt 283
