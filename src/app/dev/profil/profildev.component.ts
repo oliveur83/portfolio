@@ -4,7 +4,7 @@ import { ModalComponent } from './modal/modal.component';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../../date.service';
 import { HttpClient } from '@angular/common/http';
-import { javacript_profil,dico } from './toto';
+import { javacript_profil,dico, javascript_contact } from './toto';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 interface MenuItem {
@@ -30,18 +30,16 @@ export class ProfilComponentdev {
   menuItems: MenuItem[] = [
     { label: 'File', isSubMenuVisible: false, subMenuItems: [{ label: 'download' }] },
     { label: 'Edit', isSubMenuVisible: false, subMenuItems: [{ label: 'texte_agrandir' },] },
-    // Ajoutez d'autres éléments du menu avec leurs sous-menus ici
   ];
   deplacement_dialog=false;
   side_h_var: String='copy';
   side_h_var_vi: boolean =true;
   dialogRef: MatDialogRef<ModalComponent> | undefined;
- /// nombre de seance 
- 
+
 
   constructor(private http: HttpClient,private sanitizer: DomSanitizer,private dialog: MatDialog,private el: ElementRef,private renderer: Renderer2,private route: ActivatedRoute,private dataService: DataService){
     this.fichierSelectionne = this.route.snapshot.queryParams['parametre1'];
-  console.log("affichage",this.fichierSelectionne)
+
   this.dataService.setSharedValue(this.fichierSelectionne);
   }
  
@@ -58,7 +56,7 @@ submenu(subMenuItems: string) {
 toto()
 {   this.http.get('dev/profil/profil.js', { responseType: 'text' as 'json' }).subscribe(data => {
   const lines: string[] = data.toString().split('\n');
-  console.log(lines);
+
 });
 
   return '<div><p>Contenu généré par la fonction.</p></div>';
@@ -95,8 +93,7 @@ exectkinter()
   this.dialogRef = this.dialog.open(ModalComponent, dialogConfig);
   this.dialogRef.componentInstance.dialogClick.subscribe(() => {
     this.deplacement_dialog=! this.deplacement_dialog
-    console.log('Clic à l\'intérieur de la boîte de dialogue détecté');
-    // Vous pouvez effectuer d'autres actions ici
+  // Vous pouvez effectuer d'autres actions ici
   });
 }
 @HostListener('document:mousemove', ['$event'])
@@ -139,13 +136,15 @@ changerterminal(nouvelterminal: string): void {
 }
 changerfichier(nouvelficher: string): void {
   this.fichierSelectionne = nouvelficher;
+  console.log(this.fichierSelectionne)
   this.dataService.setSharedValue(this.fichierSelectionne);
 this.syncMinimap();
 this.ngAfterViewInit()
+this.GenerateCode();
 }
 ngOnInit() {
   this.syncMinimap();
- this.totoo()
+ this.GenerateCode ()
 }
 
 
@@ -161,7 +160,7 @@ onResize(event: Event) {
    const screenWidth = window.innerWidth;
    const percentage = (currentWidth / screenWidth) * 100;
 
-   console.log(percentage)
+
       if (percentage<87){
         this.renderer.setStyle(codeDiv, 'width', '96%');
         this.side_h_var_vi=false
@@ -183,7 +182,7 @@ onResize(event: Event) {
   ngAfterViewInit() {
     this.syncMinimap();
     const codeDiv = this.el.nativeElement.querySelector('.code');
-    console.log("oh oh ",codeDiv)
+  
     const lines = codeDiv.innerHTML.split('<br _ngcontent-ng-c1625721920="">').length;
     
     this.lineNumbers = Array.from({ length: lines }, (_, index) => index + 1);
@@ -231,6 +230,7 @@ onDocumentClick(event: MouseEvent) {
   this.syncMinimap();
 }
 private isResizing = false;
+
 private initialHeight = 0;
 onMouseDown(event: MouseEvent): void {
 
@@ -266,31 +266,55 @@ onMouseUp(): void {
 }
 liste_code: string[] = [];
 string_complete:string ="";
-htmlContent: SafeHtml | undefined;
+html_java_pro: SafeHtml | undefined;
 code = javacript_profil; // Assurez-vous que python_profil est une chaîne de caractères
-
-totoo():void {
-    // Vérifier si `code` est bien une chaîne de caractères
+motsDansString=false
+GenerateCode ():void {
+  console.log("putain",this.fichierSelectionne)
+    if (this.fichierSelectionne=="contact"){
+      console.log("ok ok ")
+      this.code=javascript_contact
+      this.string_complete=""
+      this.liste_code=[]
+    }
     if (typeof this.code === 'string') {
-      // Extraction des mots en utilisant une expression régulière
-      const words = this.code.match(/\b\w+\b|[{}\[\]()]/g);
-      if (words ) {
-        // Ajout des mots extraits à la liste
-        this.liste_code.push(...words);
-        
+      const words = this.code.match(/(\s+|\b\w+\b|[{}\[\]()<>'.=/]|[\n])/g);
+    if (words ) {
+        this.liste_code.push(...words);   
       }
     }
+    
     for (const motCle of this.liste_code) {
-      if (motCle in dico )
-      {
-        this.string_complete=this.string_complete+'<span style="color:'+dico[motCle]+';">'+motCle+"</span>"
-      }
-      else{
-        this.string_complete=this.string_complete+motCle
-
-      }
-   }
-   this.htmlContent = this.sanitizer.bypassSecurityTrustHtml(this.string_complete);
  
+      if (this.motsDansString){
+        this.string_complete += ` ${motCle}`;
+   
+    if (motCle=="'"){
+   
+      this.motsDansString=false ;this.string_complete+="</span>"} 
+
+  }
+      else if (motCle.trim() === '') { // Espaces d'indentation ou nouvelles lignes
+          if (motCle === '\n') {
+            this.string_complete += "<br>"; // Remplacer les nouvelles lignes par <br>
+          } else {
+            this.string_complete += "&nbsp;".repeat(motCle.length); // Conserver les espaces d'indentation
+          }
+      } 
+      else if(motCle=="'"){ this.string_complete += `<span style="color:${dico[motCle]};">${motCle}`;
+      this.motsDansString=true;
+
+    }
+      else if (motCle =='<') { // Assurez-vous que dico est défini
+        this.string_complete += "<br>";
+      }else if (motCle in dico) { // Assurez-vous que dico est défini
+        this.string_complete += `<span style="color:${dico[motCle]};">${motCle}</span>`;
+      } else {
+        this.string_complete += ` ${motCle}`; // Ajouter le mot ou le symbole
+      }
+  }
+  console.log("mince ",this.string_complete)
+   this.html_java_pro = this.sanitizer.bypassSecurityTrustHtml(this.string_complete);
+
 }
 }
