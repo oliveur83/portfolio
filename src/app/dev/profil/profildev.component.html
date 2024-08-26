@@ -496,170 +496,13 @@
           ongletSelectionne === 'python' && fichierSelectionne === 'profil'
         "
       >
-
         <div class="num_code">
           <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
             {{ lineNumber }}
           </div>
         </div>
-
         <div  class="code" id="code" (scroll)="syncMinimap($event)">
-  
-          
-          <span class="variable">prenom</span> = "<span class="string">tom</span
-          >"<br />
-          <span class="variable">nom</span> = "<span class="string"
-            >Olivier</span
-          >"<br />
-          <span class="variable">mail</span> = "<span class="string"
-            >tomolivierprogmail.com</span
-          >"<br />
-          <span class="variable">ville</span> = "<span class="string">lyon</span
-          >"<br />
-
-          <br />
-          <span class="print">print</span>(<span class="string"
-            >" formation "</span
-          >)<br />
-          <br />
-          <span class="key">if </span><span class="variable">ville</span> ==
-          <span class="string">"toulon"</span>:<br />
-          <span class="tabulation print">print</span>(<span class="string"
-            >"DUT GEII , 2017-2019"</span
-          >)<br />
-          <span class="tabulation print">print</span>(<span class="string"
-            >"licence informatique , 2019 - 2022"</span
-          >)<br />
-
-          <span class="key">elif </span> <span class="variable">ville</span> ==
-          <span class="string">"corse"</span>:<br />
-          <span class="tabulation print">print</span>(<span class="string"
-            >"master informatique, 2022 -2024"</span
-          >)<br />
-          <br />
-          <span class="print">print</span>(<span class="string"
-            >"experience profesionnel"</span
-          >)<br />
-          <br />
-          <span class="key">if </span> <span class="variable">ville</span> ==
-          <span class="string">"toulon"</span>:<br />
-          <span class="tabulation print">print</span>(<span class="string"
-            >""" stage fin de DUT GEII , 2019, 8 semaine hopital saint anne
-            techno principaux :php ,mysql """</span
-          >)<br />
-          <span class="key">elif</span> <span class="variable">ville</span> ==
-          <span class="string">"corse"</span>:<br />
-          <span class="tabulation print">print</span>(<span class="string"
-            >"""stage fin de master , 2024 , 6 mois a alteca techno principaux
-            php(synfony), vuejs """</span
-          >)<br />
-          <br />
-          <span class="key">def</span>
-          <span class="fonction">switch_case_annee</span>(<span class="variable"
-            >annee</span
-          >):<br />
-          <span class="tabulation variable"> switch</span> = (<br />
-          <span class="tabulation number"> 2019</span>:<span class="string">
-            """ Stage à l'Hôpital d'Instruction des Armées Sainte-Anne de
-            Toulon,<br />
-            création d'une application web de type QCM destinée aux apprentis
-            Docteurs en transfusion sanguine.<br />
-            Récupération de données pour analyse par le directeur. <br /><br />
-            Concours entrepreneuriat "Les Entrep' Var", création de "Handicap
-            Indépendance", une application connectée à différents modules qui
-            Permettront à n'importe quelle personne handicapée d'être autonome
-            chez elle. """</span
-          >,<br /><br />
-
-          <span class="tabulation number"> 2022</span>:
-          <span class="string">
-            """Hackathon, développement d'une application web de type jeu de loi
-            avec des voitures électriques comme pions pour que l'utilisateur
-            Comprenne l'importance de la gestion de l'énergie. Réalisé en
-            Collaboration avec EDF Corse."""</span
-          >,<br /><br />
-
-          <span class="tabulation number"> 2023</span>:<span class="string">
-            """Concours entrepreneuriat "Challenge Innovation", création d'un
-            boîtier connecté relié à une application intelligente. OXI (nom de
-            L’entreprise) vous permet d'arrêter de fumer en gérant à votre place
-            votre consommation de tabac."""</span
-          >,<br />
-          <br />
-          <span class="tabulation number"> 2024</span>:<span class="string">
-            """2024 """</span
-          >,<br />
-          <span class="tabulation">)</span> <br />
-
-          <span class="variable">annee</span> = <span class="number">2023</span
-          ><br />
-          <span class="variable">resultat</span> =
-          <span class="fonction">switch_case_annee</span>(<span class="variable"
-            >annee</span
-          >)<br />
-          <span class="print">print</span>(<span class="variable">resultat</span
-          >)<br />
-          <br />
-          <span class="print">print</span>(<span class="string"
-            >"compétence"</span
-          >)<br />
-          <br />
-          <span class="key">if </span> <span class="variable">langages</span> ==
-          <span class="boolean">True</span>:<br />
-          <span class="tabulation variable">top_langage_decroissante</span> = (
-          <span class="number">1</span>: <span class="string">"python"</span>,
-          <span class="number">2</span>:
-          <span class="string">"javascript"</span>,
-          <span class="number">3</span>: <br /><span class="string">"php"</span
-          >, <span class="number">4</span>:
-          <span class="string">"html/css"</span>, <span class="number">5</span>:
-          <span class="string">"typescript"</span>,
-          <span class="number">6</span>: <span class="string">"flutter"</span>,
-          <span class="number">7</span>: <br /><span class="string">"SQL"</span
-          >,)
-
-          <span class="key tabulation">for </span>
-          <span class="variable">cle</span>,
-          <span class="variable">valeur</span> in
-          <span class="variable">top_langage_decroissante</span>.<span
-            class="function"
-            >items</span
-          >():<br />
-          <span class="print tabulation tabulation">print</span>(<span
-            class="string"
-            >f"Clé : (cle), Valeur : (valeur)"</span
-          >)<br />
-
-          <span class="key">else</span>:<br />
-          <span class="tabulation variable">top_framework</span> = [<span
-            class="string"
-            >"angular"</span
-          >, <span class="string">"vue.js"</span>,<span class="string"
-            >"react"</span
-          >]<br />
-          <span class="tabulation variable">logiciel</span> = [<span
-            class="string"
-            >"github"</span
-          >, <span class="string">"vscode"</span>]<br />
-          <span class="tabulation print">print</span>(<span class="string"
-            >"loisir"</span
-          >)<br />
-          <br />
-
-          <span class="key">def</span>
-          <span class="fonction">myloisir</span>():<br />
-          <span class="tabulation print">print</span>(<span class="string"
-            >""" Pratique du street workout et du triathlon, ce qui m'apporte
-            rigueur et discipline.<br /><br />
-            Voyages autour du monde (Japon, États-Unis, Irlande, Londres,
-            Thaïlande), grâce à quoi j'ai acquis une adaptabilité aux imprévus
-            et une ouverture d'esprit.<br /><br />
-            Les projets 3D JavaScript et les projets Python handtracking qui
-            satisfont ma curiosité et mon envie de réaliser des projets.
-            """</span
-          >)<br />
-
-          <span class="fonction">myloisir</span>()<br />
+          <div [innerHTML]="html_java_pro"></div>
         </div>
         <div class="minimap" id="minimap"></div>
       </div>
@@ -674,18 +517,9 @@
             {{ lineNumber }}
           </div>
         </div>
+   
         <div class="code" id="code" (scroll)="syncMinimap($event)">
-          <span class="variable">contact</span> ={{ "{" }}<br />
-          <span class="string">github </span>:<span class="string">
-            https://github.com/oliveur83</span
-          >;<br />
-          <span class="string">linkedin </span>:<span class="string">
-            https://www.linkedin.com/in/tom-pascal-olivier/</span
-          >;<br />
-          <span class="string">mail </span>:<span class="string">
-            tomolivierprogmail.com</span
-          >;<br />
-          {{ "}" }}
+          <div [innerHTML]="html_java_pro"></div>
         </div>
         <div class="minimap" id="minimap"></div>
       </div>
@@ -701,56 +535,8 @@
           </div>
         </div>
         <div class="code" id="code" (scroll)="syncMinimap($event)">
-          <span class="import">import </span
-          ><span class="import_key">tkinter </span
-          ><span class="import">as </span> <span class="import_key">tk</span
-          ><br />
-          <span class="import">from </span>
-          <span class="import_key">tkinter </span>
-          <span class="import">import</span
-          ><span class="import_key">PhotoImage</span> <br />
-          <br />
-          <span class="def"> def </span>
-          <span class="fonction">afficher_image ()</span>:<br />
-          <br />
-          <span class="variable tabulation">fenetre</span> =
-          <span class="import_key">tk</span>.<span class="import_key">Tk</span
-          >()<br />
-          <span class="variable tabulation">fenetre</span>.<span
-            class="variable tabulation"
-            >title</span
-          >(<span class="string">"Affichage d'une image"</span>)<br />
-          <br />
-          <span class="variable tabulation">chemin_image </span> =
-          <span class="string">""chemin/vers/votre/image.png""</span><br />
-          <span class="variable tabulation">img</span> =<span class="import_key"
-            >PhotoImage</span
-          >
-          (<span class="variable tabulation">file</span>=<span class="variable"
-            >chemin_image </span
-          >)<br />
-          <br />
-          <span class="variable tabulation">label_image</span> =
-          <span class="import_key">tk</span>.<span class="import_key"
-            >label</span
-          >(<span class="variable">fenetre</span>,
-          <span class="variable">image</span>=<span class="variable">img</span
-          >)<br />
-          <span class="variable tabulation">label_image</span>.<span
-            class="variable tabulation"
-            >pack()</span
-          >
-          <br />
-          <span class="variable tabulation"> fenetre</span>.<span
-            class="fonction"
-            >mainloop()</span
-          >
-
-          <br />
-          <span class="comments">
-            # veulliez executer le code pour voir le resultat </span
-          ><br />
-          <span class="fonction">afficher_image()</span><br />
+          <div [innerHTML]="html_java_pro"></div>
+        
         </div>
         <div class="minimap" id="minimap"></div>
       </div>
@@ -765,157 +551,7 @@
           </div>
         </div>
         <div class="code" id="code" (scroll)="syncMinimap($event)">
-          <span class="variable_php">$nom</span> =
-          <span class="string_php">"Olivier"</span><br />
-          <span class="variable_php">$prenom</span> =
-          <span class="string_php">"Jean"</span><br />
-          <span class="variable_php">$age</span> =
-          <span class="number_php">25</span><br />
-          <span class="variable_php">$ville</span> =
-          <span class="string_php">"Paris"</span><br />
-
-          <br />
-          <span class="echo">echo</span
-          ><span class="string_php">"formation"</span> <br />
-          <br />
-          <span class="key_php">if</span
-          ><span class="variable_php">$ville</span> ==
-          <span class="string_php">"Toulon"</span> <br />
-          <span class="echo">echo</span
-          ><span class="string_php">"DUT GEII , 2017-2019\n"</span> <br />
-          <span class="echo">echo</span
-          ><span class="string_php"
-            >"Licence informatique , 2019 - 2022\n"</span
-          >
-          <br />
-          <span class="key_php">elseif</span
-          ><span class="variable_php">$ville</span> ==
-          <span class="string_php">"corse"</span> <br />
-          <span class="echo">echo</span
-          ><span class="string_php">"Master informatique, 2022 - 2024\n"</span>
-          <br />
-          <br />
-          <span class="echo">echo</span
-          ><span class="string_php">"Expérience professionnelle\n"</span> <br />
-
-          <span class="key_php">if</span
-          ><span class="variable_php">$ville</span> ==
-          <span class="string_php">"Toulon"</span> <br />
-          <span class="echo">echo</span
-          ><span class="string_php"
-            >"Stage fin de DUT GEII , 2019, 8 semaines\n"</span
-          >
-          <br />
-          <span class="echo">echo</span
-          ><span class="string_php">"Hopital Saint Anne\n"</span> <br />
-          <span class="echo">echo</span
-          ><span class="string_php">"Techno principaux : PHP, MySQL\n"</span>
-          <br />
-          <span class="key_php">if</span
-          ><span class="variable_php">$ville</span> ==
-          <span class="string_php">"corse"</span> <br />
-          <span class="echo">echo</span
-          ><span class="string_php"
-            >"Stage fin de master , 2024 , 6 mois à\n"</span
-          >
-          <br />
-          <span class="echo">echo</span
-          ><span class="string_php">"Alteca\n"</span> <br />
-          <span class="echo">echo</span
-          ><span class="string_php"
-            >"Techno principaux: PHP (Symfony), Vue.js\n"</span
-          >
-          <br />
-          <span class="fonction_php">function</span>
-          <span class="fonction">switch_case_annee</span>(<span
-            class="variable_php"
-            >$annee</span
-          >) (<br />
-          <span class="key_php">switch</span>(<span class="variable_php"
-            >$annee</span
-          >) ( <span class="key_php">case</span>
-          <span class="number">2019</span>:<br />
-          <span class="echo">echo</span>
-          <span class="string_php"
-            >"Stage à l'Hôpital d'Instruction des Armées Sainte-Anne de Toulon,
-            création d'une application web de type QCM destinée aux apprentis
-            Docteurs en transfusion sanguine. Récupération de données pour
-            analyse par le directeur.\n\nConcours entrepreneuriat \"Les Entrep'
-            Var\", création de \"Handicap Indépendance\", une application
-            connectée à différents modules qui permettront à n'importe quelle
-            personne handicapée d'être autonome chez elle.\n"</span
-          >; <br /><span class="key_php">break</span>;<br />
-          <span class="key_php">case</span>
-          <span class="number">2022</span>:<br />
-          <span class="echo">echo</span>
-          <span class="string_php"
-            >"Hackathon, développement d'une application web de type jeu de loi
-            avec des voitures électriques comme pions pour que l'utilisateur
-            comprenne l'importance de la gestion de l'énergie. Réalisé en
-            collaboration avec EDF Corse.\n"</span
-          >; <br />
-          <span class="key_php">break</span>;<br />
-          <span class="key_php">case</span>
-          <span class="number">2023</span>:<br />
-          <span class="echo">echo</span>
-          <span class="string_php"
-            >"Concours entrepreneuriat \"Challenge Innovation\", création d'un
-            boîtier connecté relié à une application intelligente. OXI (nom de
-            l’entreprise) vous permet d'arrêter de fumer en gérant à votre place
-            votre consommation de tabac.\n"</span
-          >; <br />
-          <span class="key_php">break</span>;<br />
-          <span class="key_php">case</span>
-          <span class="number">2024</span>:<br />
-          <span class="echo">echo</span>
-          <span class="string_php">"2024\n"</span>; <br />
-          <span class="key_php">break</span>;<br />
-          <span class="key_php">defautl</span>:<br />
-          <span class="echo">echo</span>
-          <span class="string_php"
-            >"L'année n'est pas 2019, 2022, 2023, 2024 ou 2029.\n"</span
-          >;<br />
-          <br />) ) <span class="variable_php"> $annee</span> =
-          <span class="number">2023</span>;<br />
-          <span class="fonction"> switch_case_annee</span> (<span
-            class="variable_php"
-          >
-            $annee</span
-          >
-          );<br />
-
-          <span class="echo">echo</span
-          ><span class="string_php">"Compétence\n";</span><br />
-          <span class="key_php">if</span> (<span class="variable_php"
-            >$langages</span
-          >) (<br />
-          <span class="variable_php">$top_langage_decroissante</span> = [1 =>
-          'Python', 2 => 'JavaScript', 3 => 'PHP', 4 => 'HTML/CSS', 5 =>
-          'TypeScript', 6 => 'Flutter', 7 => 'SQL'];<br />
-          <span class="key_php">foreach</span> ($top_langage_decroissante as
-          $cle => $valeur) (<br />
-          <span class="echo">echo</span> "Clé : $cle, Valeur : $valeur\n";<br />
-          ) ) <span class="key_php">else</span> (<br />
-          <span class="variable_php"> $top_framework</span> = ["Angular",
-          'Vue.js', 'React'];<br />
-          <span class="variable_php"> $logiciel</span> = ['GitHub',
-          'VSCode'];<br />
-          )
-
-          <span class="echo">echo</span> "Loisir\n";<br />
-          <span class="fonction_php">function myloisir()</span> (<br />
-          <span class="echo">echo</span>
-          <span class="string_php"
-            >"Pratique du street workout et du triathlon, ce qui m'apporte
-            rigueur et discipline. Voyages autour du monde (Japon, États-Unis,
-            Irlande, Londres, Thaïlande), grâce à quoi j'ai acquis une
-            adaptabilité aux imprévus et une ouverture d'esprit.\nLes projets 3D
-            JavaScript et les projets Python handtracking qui satisfont ma
-            curiosité et mon envie de réaliser des projets.\n"</span
-          >;<br />
-          )<br />
-          <br /><br /><br /><br />
-          <span class="fonction_php"> myloisir()</span>;<br />
+          <div [innerHTML]="html_java_pro"></div>
         </div>
         <div class="minimap" id="minimap"></div>
       </div>
@@ -929,21 +565,7 @@
           </div>
         </div>
         <div class="code" id="code" (scroll)="syncMinimap($event)">
-          <span class="variable_php">$nom</span> =
-          <span class="string_php">"Olivier"</span><br />
-          <span class="variable_php">$prenom</span> =
-          <span class="string_php">"Jean"</span><br />
-          <span class="variable_php">$ville</span> =
-          <span class="string_php">"Paris"</span><br />
-          <span class="variable_php">$stage_a_paris</span> =
-          <span class="string_php">True</span><br />
-          <span class="echo">echo</span>(<span class="string_php"
-            >"formation"</span
-          >
-          ) <br />
-          <span class="key_php">if</span>
-          <span class="variable_php">$ville</span> ==
-          <span class="string_php">"Toulon"</span> <br />
+          <div [innerHTML]="html_java_pro"></div>
         </div>
         <div class="minimap" id="minimap"></div>
       </div>
@@ -957,16 +579,7 @@
           </div>
         </div>
         <div class="code" id="code" (scroll)="syncMinimap($event)">
-          <span class="variable_php">$nom</span> =
-          <span class="string_php">"Olivier"</span><br />
-          <span class="variable_php">$prenom</span> =
-          <span class="string_php">"Jean"</span><br />
-          <span class="variable_php">$age</span> =
-          <span class="number_php">25</span><br />
-          <span class="variable_php">$ville</span> =
-          <span class="string_php">"Paris"</span><br />
-          <span class="variable_php">$stage_a_paris</span> =
-          <span class="string_php">True</span><br />
+          <div [innerHTML]="html_java_pro"></div>
         </div>
         <div class="minimap" id="minimap"></div>
       </div>
@@ -1015,18 +628,8 @@
           </div>
         </div>
         <div class="code" id="code" (scroll)="syncMinimap($event)">
-          <span class="variable">nom</span> =
-          <span class="string">"Olivier"</span><br />
-          <span class="variable">prenom</span> =
-          <span class="string">"Jean"</span><br />
-          <span class="variable">age</span> = <span class="number">25</span
-          ><br />
-          <span class="variable">ville</span> =
-          <span class="string">"Paris"</span><br />
-          <span class="variable">stage_a_paris</span> =
-          <span class="string">True</span><br />
-          <span class="print">print</span
-          ><span class="string">"formation"</span> ) <br />
+          <div [innerHTML]="html_java_pro"></div>
+         
         </div>
         <div class="minimap" id="minimap"></div>
       </div>

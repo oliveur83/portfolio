@@ -4,7 +4,9 @@ import { ModalComponent } from './modal/modal.component';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../../date.service';
 import { HttpClient } from '@angular/common/http';
-import { javacript_profil,dico, javascript_contact } from './toto';
+import { javacript_profil,dico, javascript_contact ,javascript_projet} from './toto';
+import { python_profil,dico_python, python_contact ,python_projet} from './toto';
+import { php_profil,dico_php, php_contact ,php_projet} from './toto';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 interface MenuItem {
@@ -127,8 +129,6 @@ changerOngletFleche(direction: string) {
   }
   this.syncMinimap();
 }
-
-
 
 changerterminal(nouvelterminal: string): void {
   this.terminalSelectionne = nouvelterminal;
@@ -271,12 +271,64 @@ code = javacript_profil; // Assurez-vous que python_profil est une chaîne de ca
 motsDansString=false
 GenerateCode ():void {
   console.log("putain",this.fichierSelectionne)
-    if (this.fichierSelectionne=="contact"){
+    if (this.fichierSelectionne=="contact"&& this.ongletSelectionne === 'javascript'
+    ){
       console.log("ok ok ")
       this.code=javascript_contact
       this.string_complete=""
       this.liste_code=[]
     }
+    else if (this.fichierSelectionne=="projet"&& this.ongletSelectionne === 'javascript'){
+      console.log("ok ok ")
+      this.code=javascript_projet
+      this.string_complete=""
+      this.liste_code=[]
+    }
+    else if (this.fichierSelectionne=="profil"&& this.ongletSelectionne === 'javascript'){
+      console.log("ok ok ")
+      this.code=javacript_profil
+      this.string_complete=""
+      this.liste_code=[]
+    }
+    if (this.fichierSelectionne=="contact"&& this.ongletSelectionne === 'python'
+    ){
+      console.log("ok ok ")
+      this.code=python_contact
+      this.string_complete=""
+      this.liste_code=[]
+    }
+    else if (this.fichierSelectionne=="projet"&& this.ongletSelectionne === 'python'){
+      console.log("ok ok ")
+      this.code=python_projet
+      this.string_complete=""
+      this.liste_code=[]
+    }
+    else if (this.fichierSelectionne=="profil"&& this.ongletSelectionne === 'python'){
+      console.log("ok ok ")
+      this.code=python_profil
+      this.string_complete=""
+      this.liste_code=[]
+    }
+    if (this.fichierSelectionne=="contact"&& this.ongletSelectionne === 'php'
+    ){
+      console.log("ok ok ")
+      this.code=php_contact
+      this.string_complete=""
+      this.liste_code=[]
+    }
+    else if (this.fichierSelectionne=="projet"&& this.ongletSelectionne === 'php'){
+      console.log("ok ok ")
+      this.code=php_projet
+      this.string_complete=""
+      this.liste_code=[]
+    }
+    else if (this.fichierSelectionne=="profil"&& this.ongletSelectionne === 'php'){
+      console.log("ok ok ")
+      this.code=php_profil
+      this.string_complete=""
+      this.liste_code=[]
+    }
+
     if (typeof this.code === 'string') {
       const words = this.code.match(/(\s+|\b\w+\b|[{}\[\]()<>'.=/]|[\n])/g);
     if (words ) {

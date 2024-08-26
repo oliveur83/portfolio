@@ -71,52 +71,83 @@ myloisir();
 ` 
 
 export const javascript_projet =`
-
+ const projets = [<
+        [<
+            {"imgSrc": "src/assets/emploie.png", "titre": "Emploi du temps", "openfenetre": "Emploi_du_temps", "description": "Projet réalisé en master - Création d'une application web de gestion et visualisation d'emploi du temps sous différentes formes techno:"},<
+            {"imgSrc": "src/assets/oie.png", "titre": "Jeu de l'oie", "openfenetre": "jeu-de-loie", "description": "Projet réalisé en master (hackathon) - Création d'une application web de gestion de voitures électriques sous forme de jeu de l'oie"},<
+            {"imgSrc": "src/assets/dame.png", "titre": "Jeu de dames", "openfenetre": "Jeu_de_dames", "description": "Projet réalisé en master - Création d'une application web type jeu de dames utilisant l'IA"},<
+        ],<
+        [<
+            {"imgSrc": "src/assets/camping.png", "titre": "Gestion de camping", "openfenetre": "Gestion_de_camping", "description": "Projet réalisé en licence - Création d'une application web de gestion d'un camping totalement connecté"},<
+            {"imgSrc": "src/assets/angular.png", "titre": "Application universitaire (Vue.js & Angular)", "openfenetre": "Application_universitaire_Vuejs_&_angular", "description": "Projet réalisé en master - Création d'une application web de gestion d'emploi du temps et d'un environnement universitaire (notes, inscriptions, etc.)"},<
+            {"imgSrc": "src/assets/oxi.png", "titre": "Application pour OXI", "openfenetre": "Application_pour_OXI", "description": "Projet réalisé en master (concours innovation) - Création d'une application web et mobile de visualisation de plusieurs paramètres"},<
+        ],<
+        [<
+            {"imgSrc": "src/assets/L3chemin.png", "titre": "Jeu de chenilles", "openfenetre": "Jeu_de_chenilles", "description": "Projet réalisé en licence - Création d'un jeu sous OpenGL et Tkinter liant la théorie des graphes et l'infographie"},<
+            {"imgSrc": "src/assets/handtracking.png", "titre": "Handtracking", "openfenetre": "Handtracking", "description": "Projet réalisé en loisirs - Création d'une application Python de handtracking"},<
+        ],<
+    ];<
+<
+    function createProjetFrame(projet) {<
+        const frame = document.createElement("div");
+        frame.classList.add("projet-frame");
+<
+        const img = document.createElement("img");
+        img.src = projet.imgSrc;
+        frame.appendChild(img);
+<
+        const title = document.createElement("h3");
+        title.textContent = projet.titre;
+        frame.appendChild(title);
+<
+        const description = document.createElement("p");
+        description.textContent = projet.description;
+        frame.appendChild(description);
+<
+        return frame;
+ <   }
+<
+ <   function main() {
+        const container = document.getElementById("projets-container");
+<
+        projets.forEach(row => {
+ <           row.forEach(projet => {
+ <               const frame = createProjetFrame(projet);
+  <              container.appendChild(frame);
+  <          });
+   <     });
+   < }
+<
+    main();
 ` 
 export const javascript_contact =`
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-</head>
-<body>
 
-<h3>Contactez-moi !</h3>
-<div id="contact-info"></div>
-
-<script>
     function afficherContact() {
-        const contactInfo = {
-            "Nom": "Votre Nom",
-            "Email": "votre.email@example.com",
-            "Téléphone": "+33 6 12 34 56 78",
-            "LinkedIn": "https://www.linkedin.com/in/votreprofil",
-            "Portfolio": "https://votreportfolio.com"
-        };
-
+<        const contactInfo = {
+ <           "Nom": "Votre Nom",
+  <          "Email": "votre.email@example.com",
+   <         "Téléphone": "+33 6 12 34 56 78",
+    <        "LinkedIn": "https://www.linkedin.com/in/votreprofil",
+     <       "Portfolio": "https://votreportfolio.com"
+      <  };
+<
         const contactDiv = document.getElementById("contact-info");
 
         for (const [key, value] of Object.entries(contactInfo)) {
-            const p = document.createElement("p");
-            p.innerHTML = "<strong>{key} :</strong> {value}";
-            contactDiv.appendChild(p);
-        }
-    }
-
-    afficherContact();
-</script>
-
-</body>
-</html>
+<            const p = document.createElement("p");
+ <           p.innerHTML = "<strong>{key} :</strong> {value}";
+  <          contactDiv.appendChild(p);
+   <     }
+   < }
+<
+<    afficherContact();
 
 ` 
 export const python_profil =`
-
+toto
 ` 
 export const python_projet =`
-import tkinter as tk
+toto import tkinter as tk
 from tkinter import PhotoImage
 
 def afficher_image ():
@@ -131,13 +162,7 @@ def afficher_image ():
     label_image.pack()
     fenetre.mainloop()
 # veulliez executer le code pour voir le resultat
-afficher_image()
-
-
-
-
-
-    
+afficher_image()    
 projets = [
     [
         {"imgSrc": "src/assets/emploie.png", "titre": "Emploi du temps", "openfenetre": "Emploi_du_temps", "description": "Projet réalisé en master - Création d'une application web de gestion et visualisation \nd'emploi du temps sous différentes formes techno:"},
@@ -188,10 +213,28 @@ if __name__ == "__main__":
     main()
 ` 
 export const python_contact =`
+toto import time
+
+def reveal_contact_info():
+    contact_info = {
+        "Nom": "Votre Nom",
+        "Email": "votre.email@example.com",
+        "Téléphone": "+33 6 12 34 56 78",
+        "LinkedIn": "linkedin.com/in/votreprofil",
+        "Portfolio": "votreportfolio.com"
+    }
+    
+    print("Découvrons mes contacts !")
+    for key, value in contact_info.items():
+        print(f"{key}: ", end="", flush=True)
+        time.sleep(1)  # Attendre 1 seconde avant de révéler chaque info
+        print(value)
+        
+reveal_contact_info()
 
 `
 export const php_profil =`
-<?php
+ohoh <?php
 $nom = "Olivier";
 $prenom = "Tom";
 $mail = "tomolivierpro@gmail.com";
@@ -262,10 +305,10 @@ myloisir();
 
 ` 
 export const php_projet =`
-
+oh oh
 ` 
 export const php_contact =`
-
+ohohoho
 `  
 
 export const dico_python: { [nom: string]: string } = {
