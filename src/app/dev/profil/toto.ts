@@ -1,5 +1,5 @@
 export const javacript_profil =`
-var 
+java pro
 let prenom = 'Tom';
 let nom = 'Olivier';
 let mail = 'tomolivierpro@gmail.com';
@@ -71,7 +71,8 @@ myloisir();
 ` 
 
 export const javascript_projet =`
- const projets = [<
+java pro 
+const projets = [<
         [<
             {"imgSrc": "src/assets/emploie.png", "titre": "Emploi du temps", "openfenetre": "Emploi_du_temps", "description": "Projet réalisé en master - Création d'une application web de gestion et visualisation d'emploi du temps sous différentes formes techno:"},<
             {"imgSrc": "src/assets/oie.png", "titre": "Jeu de l'oie", "openfenetre": "jeu-de-loie", "description": "Projet réalisé en master (hackathon) - Création d'une application web de gestion de voitures électriques sous forme de jeu de l'oie"},<
@@ -121,7 +122,7 @@ export const javascript_projet =`
     main();
 ` 
 export const javascript_contact =`
-
+java con
     function afficherContact() {
 <        const contactInfo = {
  <           "Nom": "Votre Nom",
@@ -144,9 +145,70 @@ export const javascript_contact =`
 
 ` 
 export const python_profil =`
-toto
+pyth pro
+# Informations personnelles
+nom = "Olivier"
+prenom = "Tom"
+mail = "tomolivierpro@gmail.com"
+ville = "Lyon"
+langages = False
+
+print("Formation")
+if ville == "Toulon":
+    print("DUT GEII, 2017-2019")
+    print("Licence informatique, 2019 - 2022")
+elif ville == "Corse":
+    print("Master informatique, 2022 - 2024")
+
+print("\nExpérience professionnelle")
+if ville == "Toulon":
+    print("Stage fin de DUT GEII, 2019, 8 semaines")
+    print("Hôpital Saint Anne")
+    print("Techno principaux : PHP, MySQL")
+elif ville == "Corse":
+    print("Stage fin de master, 2024, 6 mois à")
+    print("Alteca")
+    print("Techno principaux : PHP (Symfony), Vue.js")
+
+def switch_case_annee(annee):
+    match annee:
+        case 2019:
+            print("Stage à l'Hôpital d'Instruction des Armées Sainte-Anne de Toulon, création d'une application web de type QCM destinée aux apprentis Docteurs en transfusion sanguine. Récupération de données pour analyse par le directeur.\n")
+            print("Concours entrepreneuriat \"Les Entrep' Var\", création de \"Handicap Indépendance\", une application connectée à différents modules qui permettront à n'importe quelle personne handicapée d'être autonome chez elle.\n")
+        case 2022:
+            print("Hackathon, développement d'une application web de type jeu de loi avec des voitures électriques comme pions pour que l'utilisateur comprenne l'importance de la gestion de l'énergie. Réalisé en collaboration avec EDF Corse.\n")
+        case 2023:
+            print("Concours entrepreneuriat \"Challenge Innovation\", création d'un boîtier connecté relié à une application intelligente. OXI (nom de l’entreprise) vous permet d'arrêter de fumer en gérant à votre place votre consommation de tabac.\n")
+        case 2024:
+            print("2024\n")
+        case _:
+            print("L'année n'est pas 2019, 2022, 2023, 2024 ou 2029.\n")
+
+# Exemple d'utilisation
+annee = 2023
+switch_case_annee(annee)
+
+print("Compétence")
+if langages:
+    top_langage_decroissante = {1: 'Python', 2: 'JavaScript', 3: 'PHP', 4: 'HTML/CSS', 5: 'TypeScript', 6: 'Flutter', 7: 'SQL'}
+    for cle, valeur in top_langage_decroissante.items():
+        print(f"Clé : {cle}, Valeur : {valeur}")
+else:
+    top_framework = ["Angular", 'Vue.js', 'React']
+    logiciel = ['GitHub', 'VSCode']
+    print(f"Frameworks principaux : {', '.join(top_framework)}")
+    print(f"Logiciels utilisés : {', '.join(logiciel)}")
+
+print("\nLoisir")
+def myloisir():
+    print("Pratique du street workout et du triathlon, ce qui m'apporte rigueur et discipline.")
+    print("Voyages autour du monde (Japon, États-Unis, Irlande, Londres, Thaïlande), grâce à quoi j'ai acquis une adaptabilité aux imprévus et une ouverture d'esprit.")
+    print("Les projets 3D JavaScript et les projets Python handtracking qui satisfont ma curiosité et mon envie de réaliser des projets.")
+
+myloisir()
 ` 
 export const python_projet =`
+pyth pro
 toto import tkinter as tk
 from tkinter import PhotoImage
 
@@ -213,7 +275,8 @@ if __name__ == "__main__":
     main()
 ` 
 export const python_contact =`
-toto import time
+pyth con
+ import time
 
 def reveal_contact_info():
     contact_info = {
@@ -234,7 +297,7 @@ reveal_contact_info()
 
 `
 export const php_profil =`
-ohoh <?php
+php pro <?php
 $nom = "Olivier";
 $prenom = "Tom";
 $mail = "tomolivierpro@gmail.com";
@@ -305,10 +368,55 @@ myloisir();
 
 ` 
 export const php_projet =`
-oh oh
+   php proj    <?php
+    $projets = [
+        [
+            ["imgSrc" => "src/assets/emploie.png", "titre" => "Emploi du temps", "openfenetre" => "Emploi_du_temps", "description" => "Projet réalisé en master - Création d'une application web de gestion et visualisation d'emploi du temps sous différentes formes techno:"],
+            ["imgSrc" => "src/assets/oie.png", "titre" => "Jeu de l'oie", "openfenetre" => "jeu-de-loie", "description" => "Projet réalisé en master (hackathon) - Création d'une application web de gestion de voitures électriques sous forme de jeu de l'oie"],
+            ["imgSrc" => "src/assets/dame.png", "titre" => "Jeu de dames", "openfenetre" => "Jeu_de_dames", "description" => "Projet réalisé en master - Création d'une application web type jeu de dames utilisant l'IA"],
+        ],
+        [
+            ["imgSrc" => "src/assets/camping.png", "titre" => "Gestion de camping", "openfenetre" => "Gestion_de_camping", "description" => "Projet réalisé en licence - Création d'une application web de gestion d'un camping totalement connecté"],
+            ["imgSrc" => "src/assets/angular.png", "titre" => "Application universitaire (Vue.js & Angular)", "openfenetre" => "Application_universitaire_Vuejs_&_angular", "description" => "Projet réalisé en master - Création d'une application web de gestion d'emploi du temps et d'un environnement universitaire (notes, inscriptions, etc.)"],
+            ["imgSrc" => "src/assets/oxi.png", "titre" => "Application pour OXI", "openfenetre" => "Application_pour_OXI", "description" => "Projet réalisé en master (concours innovation) - Création d'une application web et mobile de visualisation de plusieurs paramètres"],
+        ],
+        [
+            ["imgSrc" => "src/assets/L3chemin.png", "titre" => "Jeu de chenilles", "openfenetre" => "Jeu_de_chenilles", "description" => "Projet réalisé en licence - Création d'un jeu sous OpenGL et Tkinter liant la théorie des graphes et l'infographie"],
+            ["imgSrc" => "src/assets/handtracking.png", "titre" => "Handtracking", "openfenetre" => "Handtracking", "description" => "Projet réalisé en loisirs - Création d'une application Python de handtracking"],
+        ],
+    ];
+
+    foreach ($projets as $projetRow) {
+        foreach ($projetRow as $projet) {
+            echo '<div class="projet-frame">';
+            echo '<img src="' . $projet["imgSrc"] . '" alt="' . $projet["titre"] . '">';
+            echo '<h3>' . $projet["titre"] . '</h3>';
+            echo '<p>' . $projet["description"] . '</p>';
+            echo '</div>';
+        }
+    }
+    ?>
 ` 
 export const php_contact =`
-ohohoho
+ php con<?php
+function afficher_contact()
+{
+    $contact_info = array(
+        "Nom" => "Votre Nom",
+        "Email" => "votre.email@example.com",
+        "Téléphone" => "+33 6 12 34 56 78",
+        "LinkedIn" => "https://www.linkedin.com/in/votreprofil",
+        "Portfolio" => "https://votreportfolio.com"
+    );
+
+    echo "<h3>Contactez-moi !</h3>";
+    foreach ($contact_info as $key => $value) {
+        echo "<p><strong>$key :</strong> $value</p>";
+    }
+}
+
+afficher_contact();
+?>
 `  
 
 export const dico_python: { [nom: string]: string } = {
@@ -361,10 +469,67 @@ export const dico_python: { [nom: string]: string } = {
         "await": "#569CD6", // Bleu
         };
   
-  export const dico_php: { [nom: string]: string } = {
+        export const dico_php: { [nom: string]: string } = {
    
-
-  };
+            // Mots-clés PHP - Contrôle de flux
+            "if": "#C586C0", // Violet
+            "else": "#C586C0", // Violet
+            "elseif": "#569CD6", // Bleu
+            "for": "#569CD6", // Bleu
+            "while": "#569CD6", // Bleu
+            "break": "#569CD6", // Bleu
+            "continue": "#569CD6", // Bleu
+            "return": "#C586C0", // Violet
+            "try": "#569CD6", // Bleu
+            "catch": "#569CD6", // Bleu
+            "finally": "#569CD6", // Bleu
+            "switch": "#569CD6", // Bleu
+            "case": "#569CD6", // Bleu
+            "default": "#569CD6", // Bleu
+        
+            // Définition de Fonction/Classe
+            "function": "#C586C0", // Violet
+            "class": "#C586C0", // Violet
+            "interface": "#C586C0", // Violet
+            "trait": "#C586C0", // Violet
+            "public": "#569CD6", // Bleu
+            "private": "#569CD6", // Bleu
+            "protected": "#569CD6", // Bleu
+            "static": "#569CD6", // Bleu
+            "const": "#569CD6", // Bleu
+        
+            // Importation de Modules/Namespaces
+            "include": "#C586C0", // Violet
+            "require": "#C586C0", // Violet
+            "use": "#C586C0", // Violet
+            "namespace": "#C586C0", // Violet
+        
+            // Logique
+            "and": "#569CD6", // Bleu
+            "or": "#569CD6", // Bleu
+            "xor": "#569CD6", // Bleu
+            "not": "#569CD6", // Bleu
+            "instanceof": "#569CD6", // Bleu
+            "as": "#569CD6", // Bleu
+        
+            // Types de Données Primitives
+            "true": "#569CD6", // Bleu
+            "false": "#569CD6", // Bleu
+            "null": "#569CD6", // Bleu
+        
+            // Affichage/Entrée
+            "echo": "#DCDCAA", // Jaune clair
+            "print": "#DCDCAA", // Jaune clair
+        
+            // Divers
+            "yield": "#569CD6", // Bleu
+            "array": "#569CD6", // Bleu
+            "new": "#569CD6", // Bleu
+            "clone": "#569CD6", // Bleu
+            "async": "#569CD6", // Bleu
+            "await": "#569CD6", // Bleu
+        };
+        
 
   export const dico: { [nom: string]: string } = {
        // Déclaration de Variables
