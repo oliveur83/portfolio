@@ -297,7 +297,8 @@ reveal_contact_info()
 
 `
 export const php_profil =`
-php pro <?php
+php pro 
+<?php £
 $nom = "Olivier";
 $prenom = "Tom";
 $mail = "tomolivierpro@gmail.com";
@@ -398,7 +399,8 @@ export const php_projet =`
     ?>
 ` 
 export const php_contact =`
- php con<?php
+ php con
+ <?php
 function afficher_contact()
 {
     $contact_info = array(
@@ -469,12 +471,13 @@ export const dico_python: { [nom: string]: string } = {
         "await": "#569CD6", // Bleu
         };
   
-        export const dico_php: { [nom: string]: string } = {
+export const dico_php: { [nom: string]: string } = {
    
             // Mots-clés PHP - Contrôle de flux
             "if": "#C586C0", // Violet
             "else": "#C586C0", // Violet
             "elseif": "#569CD6", // Bleu
+            "php": "#569CD6", // Bleu
             "for": "#569CD6", // Bleu
             "while": "#569CD6", // Bleu
             "break": "#569CD6", // Bleu

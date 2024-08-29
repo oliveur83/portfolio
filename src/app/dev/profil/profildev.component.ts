@@ -37,7 +37,7 @@ export class ProfilComponentdev {
   side_h_var: String='copy';
   side_h_var_vi: boolean =true;
   dialogRef: MatDialogRef<ModalComponent> | undefined;
-
+  dico_string: { [nom: string]: string } =dico
 
   constructor(private http: HttpClient,private sanitizer: DomSanitizer,private dialog: MatDialog,private el: ElementRef,private renderer: Renderer2,private route: ActivatedRoute,private dataService: DataService){
     this.fichierSelectionne = this.route.snapshot.queryParams['parametre1'];
@@ -277,18 +277,21 @@ GenerateCode ():void {
       this.code=javascript_contact
       this.string_complete=""
       this.liste_code=[]
+      this.dico_string=dico
     }
     else if (this.fichierSelectionne=="projet"&& this.ongletSelectionne === 'javascript'){
       console.log("ok ok ")
       this.code=javascript_projet
       this.string_complete=""
       this.liste_code=[]
+      this.dico_string=dico
     }
     else if (this.fichierSelectionne=="profil"&& this.ongletSelectionne === 'javascript'){
       console.log("ok ok ")
       this.code=javacript_profil
       this.string_complete=""
       this.liste_code=[]
+      this.dico_string=dico
     }
     if (this.fichierSelectionne=="contact"&& this.ongletSelectionne === 'python'
     ){
@@ -296,18 +299,21 @@ GenerateCode ():void {
       this.code=python_contact
       this.string_complete=""
       this.liste_code=[]
+      this.dico_string=dico_python
     }
     else if (this.fichierSelectionne=="projet"&& this.ongletSelectionne === 'python'){
       console.log("ok ok ")
       this.code=python_projet
       this.string_complete=""
       this.liste_code=[]
+      this.dico_string=dico_python
     }
     else if (this.fichierSelectionne=="profil"&& this.ongletSelectionne === 'python'){
       console.log("ok ok ")
       this.code=python_profil
       this.string_complete=""
       this.liste_code=[]
+      this.dico_string=dico_python
     }
     if (this.fichierSelectionne=="contact"&& this.ongletSelectionne === 'php'
     ){
@@ -315,22 +321,25 @@ GenerateCode ():void {
       this.code=php_contact
       this.string_complete=""
       this.liste_code=[]
+      this.dico_string=dico_php
     }
     else if (this.fichierSelectionne=="projet"&& this.ongletSelectionne === 'php'){
       console.log("ok ok ")
       this.code=php_projet
       this.string_complete=""
       this.liste_code=[]
+      this.dico_string=dico_php
     }
     else if (this.fichierSelectionne=="profil"&& this.ongletSelectionne === 'php'){
       console.log("ok ok ")
       this.code=php_profil
       this.string_complete=""
       this.liste_code=[]
+      this.dico_string=dico_php
     }
 
     if (typeof this.code === 'string') {
-      const words = this.code.match(/(\s+|\b\w+\b|[{}\[\]()<>'.=/]|[\n])/g);
+      const words = this.code.match(/(\s+|\b\w+\b|[{}\[\]()<>'.=/?]|[\n])/g);
     if (words ) {
         this.liste_code.push(...words);   
       }
@@ -353,14 +362,14 @@ GenerateCode ():void {
             this.string_complete += "&nbsp;".repeat(motCle.length); // Conserver les espaces d'indentation
           }
       } 
-      else if(motCle=="'"){ this.string_complete += `<span style="color:${dico[motCle]};">${motCle}`;
+      else if(motCle=="'"){ this.string_complete += `<span style="color:${this.dico_string[motCle]};">${motCle}`;
       this.motsDansString=true;
 
     }
-      else if (motCle =='<') { // Assurez-vous que dico est défini
+      else if (motCle =='£') { // Assurez-vous que dico_string est défini
         this.string_complete += "<br>";
-      }else if (motCle in dico) { // Assurez-vous que dico est défini
-        this.string_complete += `<span style="color:${dico[motCle]};">${motCle}</span>`;
+      }else if (motCle in this.dico_string) { // Assurez-vous que dico_string est défini
+        this.string_complete += `<span style="color:${this.dico_string[motCle]};">${motCle}</span>`;
       } else {
         this.string_complete += ` ${motCle}`; // Ajouter le mot ou le symbole
       }
