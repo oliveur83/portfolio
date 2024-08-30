@@ -339,7 +339,7 @@ GenerateCode ():void {
     }
 
     if (typeof this.code === 'string') {
-      const words = this.code.match(/(\s+|\b\w+\b|[{}\[\]()<>'.=/?]|[\n])/g);
+      const words = this.code.match(/(\s+|\b\w+\b|[{}\[\]()<>'.=/?£$]|[\n])/g);
     if (words ) {
         this.liste_code.push(...words);   
       }
