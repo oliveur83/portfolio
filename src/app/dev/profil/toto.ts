@@ -368,25 +368,25 @@ export const php_projet =`
    php proj    <?php
    £ $projets = [
     £    [
-    £        ['imgSrc' => 'src/assets/emploie.png', 'titre' => 'Emploi du temps', 'openfenetre' => 'Emploi_du_temps', 'description' => 'Projet réalisé en master - Création d'une application web de gestion et visualisation d'emploi du temps sous différentes formes techno:'],
-£            ['imgSrc' => 'src/assets/oie.png', 'titre' => 'Jeu de l'oie', 'openfenetre' => 'jeu-de-loie', 'description' => 'Projet réalisé en master (hackathon) - Création d'une application web de gestion de voitures électriques sous forme de jeu de l'oie'],
-£            ['imgSrc' => 'src/assets/dame.png', 'titre' => 'Jeu de dames', 'openfenetre' => 'Jeu_de_dames', 'description' => 'Projet réalisé en master - Création d'une application web type jeu de dames utilisant l'IA'],
+    £        ['imgSrc' => 'src/assets/emploie.png', 'titre' => 'Emploi du temps', 'openfenetre' => 'Emploi_du_temps', 'description' => 'Projet réalisé en master  Creation d une application web de gestion et visualisation demploi du temps sous différentes formes techno:'],
+£            ['imgSrc' => 'src/assets/oie.png', 'titre' => 'Jeu de loie', 'openfenetre' => 'jeu-de-loie', 'description' => 'Projet réalisé en master (hackathon) - Creation dune application web de gestion de voitures electriques sous forme de jeu de loie'],
+£            ['imgSrc' => 'src/assets/dame.png', 'titre' => 'Jeu de dames', 'openfenetre' => 'Jeu_de_dames', 'description' => 'Projet réalisé en master - Creation dune application web type jeu de dames utilisant lIA'],
 £        ],
 £        [
-£            ['imgSrc' => 'src/assets/camping.png', 'titre' => 'Gestion de camping', 'openfenetre' => 'Gestion_de_camping', 'description' => 'Projet réalisé en licence - Création d'une application web de gestion d'un camping totalement connecté'],
-£            ['imgSrc' => 'src/assets/angular.png', 'titre' => 'Application universitaire (Vue.js & Angular)', 'openfenetre' => 'Application_universitaire_Vuejs_&_angular', 'description' => 'Projet réalisé en master - Création d'une application web de gestion d'emploi du temps et d'un environnement universitaire (notes, inscriptions, etc.)'],
-£            ['imgSrc' => 'src/assets/oxi.png', 'titre' => 'Application pour OXI', 'openfenetre' => 'Application_pour_OXI', 'description' => 'Projet réalisé en master (concours innovation) - Création d'une application web et mobile de visualisation de plusieurs paramètres'],
+£            ['imgSrc' => 'src/assets/camping.png', 'titre' => 'Gestion de camping', 'openfenetre' => 'Gestion_de_camping', 'description' => 'Projet réalisé en licence - Création dune application web de gestion dun camping totalement connecté'],
+£            ['imgSrc' => 'src/assets/angular.png', 'titre' => 'Application universitaire (Vue.js & Angular)', 'openfenetre' => 'Application_universitaire_Vuejs_&_angular', 'description' => 'Projet réalisé en master - Création dune application web de gestion demploi du temps et dun environnement universitaire (notes, inscriptions, etc.)'],
+£            ['imgSrc' => 'src/assets/oxi.png', 'titre' => 'Application pour OXI', 'openfenetre' => 'Application_pour_OXI', 'description' => 'Projet réalisé en master (concours innovation) - Création dune application web et mobile de visualisation de plusieurs paramètres'],
 £        ],
 £        [
-£            ['imgSrc' => 'src/assets/L3chemin.png', 'titre' => 'Jeu de chenilles', 'openfenetre' => 'Jeu_de_chenilles', 'description' => 'Projet réalisé en licence - Création d'un jeu sous OpenGL et Tkinter liant la théorie des graphes et l'infographie'],
-£            ['imgSrc' => 'src/assets/handtracking.png', 'titre' => 'Handtracking', 'openfenetre' => 'Handtracking', 'description' => 'Projet réalisé en loisirs - Création d'une application Python de handtracking'],
+£            ['imgSrc' => 'src/assets/L3chemin.png', 'titre' => 'Jeu de chenilles', 'openfenetre' => 'Jeu_de_chenilles', 'description' => 'Projet réalisé en licence - Création dun jeu sous OpenGL et Tkinter liant la théorie des graphes et linfographie'],
+£            ['imgSrc' => 'src/assets/handtracking.png', 'titre' => 'Handtracking', 'openfenetre' => 'Handtracking', 'description' => 'Projet réalisé en loisirs - Création dune application Python de handtracking'],
 £        ],
 £    ];
 £
 £    foreach ($projets as $projetRow) {
 £        foreach ($projetRow as $projet) {
-£            echo '<div class='projet-frame'>';
-£            echo '<img src='' . $projet['imgSrc'] . '' alt='' . $projet['titre'] . ''>';
+£            echo '<div class="projet-frame">';
+£            echo '<img src="' . $projet['imgSrc'] . '" alt="' . $projet['titre'] . '">"';
 £            echo '<h3>' . $projet['titre'] . '</h3>';
 £            echo '<p>' . $projet['description'] . '</p>';
 £            echo '</div>';
@@ -474,7 +474,10 @@ export const dico_php: { [nom: string]: string } = {
             "else": "#C586C0", // Violet
             "elseif": "#C586C0", // Bleu
             "php": "#569CD6", // Bleu
-            "for": "#569CD6", // Bleu
+            "?": "#569CD6", // Bleu
+            "<": "#569CD6", // Bleu
+            ">": "#569CD6", // Bleu
+            "foreach": "#569CD6", // Bleu
             "while": "#569CD6", // Bleu
             "break": "#569CD6", // Bleu
             "continue": "#569CD6", // Bleu
@@ -511,6 +514,14 @@ export const dico_php: { [nom: string]: string } = {
             "top_framework": "#80DCFE",
             "logiciel": "#80DCFE",
             "muyloisir": "#DCDCAA",
+            "afficher_contact": "#DCDCAA",
+            "contact_info": "#80DCFE",
+            "key": "#80DCFE",
+            "value": "#80DCFE",
+            "projets": "#80DCFE",
+            "projetRow": "#80DCFE",
+            "projet": "#80DCFE",
+       
 
             // Importation de Modules/Namespaces
             "include": "#C586C0", // Violet
