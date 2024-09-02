@@ -14,11 +14,6 @@ def afficher_image ():
     fenetre.mainloop()
 # veulliez executer le code pour voir le resultat
 afficher_image()
-
-
-
-
-
     
 projets = [
     [
