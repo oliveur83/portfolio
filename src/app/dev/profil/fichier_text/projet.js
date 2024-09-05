@@ -1,33 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projets</title>
-    <style>
-        .projet-frame {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin: 10px;
-            text-align: center;
-            width: 200px;
-        }
-        .projet-frame img {
-            width: 100px;
-            height: auto;
-        }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-    </style>
-</head>
-<body>
 
-<div id="projets-container" class="container"></div>
-
-<script>
     const projets = [
         [
             {"imgSrc": "src/assets/emploie.png", "titre": "Emploi du temps", "openfenetre": "Emploi_du_temps", "description": "Projet réalisé en master - Création d'une application web de gestion et visualisation d'emploi du temps sous différentes formes techno:"},

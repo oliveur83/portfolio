@@ -28,30 +28,30 @@ if (ville === 'Toulon') {£
 function switch_case_annee(annee) {£
     switch (annee) {£
         case 2019:£
-            console.log('Stage à l'Hôpital d'Instruction des Armées Sainte-Anne de Toulon, création d'une application web de type QCM destinée aux apprentis Docteurs en transfusion sanguine. Récupération de données pour analyse par le directeur.\n\nConcours entrepreneuriat \'Les Entrep' Var\', création de \'Handicap Indépendance\', une application connectée à différents modules qui permettront à n'importe quelle personne handicapée d'être autonome chez elle.');
+            console.log('Stage à lHôpital dInstruction des Armées Sainte-Anne de Toulon, création dune application web de type QCM destinée aux apprentis Docteurs en transfusion sanguine. Récupération de données pour analyse par le directeur.\n\nConcours entrepreneuriat \Les Entrep Var\, création de \Handicap Indépendance\, une application connectée à différents modules qui permettront à nimporte quelle personne handicapée dêtre autonome chez elle.');
             break;
         case 2022:£
-            console.log('Hackathon, développement d'une application web de type jeu de loi avec des voitures électriques comme pions pour que l'utilisateur comprenne l'importance de la gestion de l'énergie. Réalisé en collaboration avec EDF Corse.');
+            console.log('Hackathon, développement dune application web de type jeu de loi avec des voitures électriques comme pions pour que lutilisateur comprenne limportance de la gestion de lénergie. Réalisé en collaboration avec EDF Corse.');
             break;
         case 2023:£
-            console.log('Concours entrepreneuriat \'Challenge Innovation\', création d'un boîtier connecté relié à une application intelligente. OXI (nom de l’entreprise) vous permet d'arrêter de fumer en gérant à votre place votre consommation de tabac.');
+            console.log('Concours entrepreneuriat \Challenge Innovation\, création dun boîtier connecté relié à une application intelligente. OXI (nom de l’entreprise) vous permet darrêter de fumer en gérant à votre place votre consommation de tabac.');
             break;
         case 2024:£
             console.log('2024');
             break;
         default:£
-            console.log('L'année n'est pas 2019, 2022, 2023, 2024 ou 2029.');
+            console.log('Lannée nest pas 2019, 2022, 2023, 2024 ou 2029.');
     }£
 }£
 £
-// Exemple d'utilisation£
+
 let annee = 2023;
 switch_case_annee(annee);
 
 console.log('Compétence');
 if (langages) {£
     let top_langage_decroissante = { 1: 'Python', 2: 'JavaScript', 3: 'PHP', 4: 'HTML/CSS', 5: 'TypeScript', 6: 'Flutter', 7: 'SQL' };
-    for (let cle in top_langage_decroissante) {£
+   £ for (let cle in top_langage_decroissante) {£
         if (top_langage_decroissante.hasOwnProperty(cle)) {£
             console.log('Clé : {cle}, Valeur : {top_langage_decroissante[cle]}');
         }£
@@ -63,7 +63,7 @@ if (langages) {£
 £
 console.log('Loisir');
 function myloisir() {£
-    console.log('Pratique du street workout et du triathlon, ce qui m'apporte rigueur et discipline. Voyages autour du monde (Japon, États-Unis, Irlande, Londres, Thaïlande), grâce à quoi j'ai acquis une adaptabilité aux imprévus et une ouverture d'esprit.');
+    console.log('Pratique du street workout et du triathlon, ce qui mapporte rigueur et discipline. Voyages autour du monde (Japon, États-Unis, Irlande, Londres, Thaïlande), grâce à quoi jai acquis une adaptabilité aux imprévus et une ouverture desprit.');
     console.log('Les projets 3D JavaScript et les projets Python handtracking qui satisfont ma curiosité et mon envie de réaliser des projets.');
 }£
 £
@@ -74,42 +74,42 @@ export const javascript_projet =`
 java pro 
 const projets = [£
         [£
-            {"imgSrc": "src/assets/emploie.png", "titre": "Emploi du temps", "openfenetre": "Emploi_du_temps", "description": "Projet réalisé en master - Création d'une application web de gestion et visualisation d'emploi du temps sous différentes formes techno:"},£
-            {"imgSrc": "src/assets/oie.png", "titre": "Jeu de l'oie", "openfenetre": "jeu-de-loie", "description": "Projet réalisé en master (hackathon) - Création d'une application web de gestion de voitures électriques sous forme de jeu de l'oie"},£
-            {"imgSrc": "src/assets/dame.png", "titre": "Jeu de dames", "openfenetre": "Jeu_de_dames", "description": "Projet réalisé en master - Création d'une application web type jeu de dames utilisant l'IA"},£
+            {'imgSrc': 'src/assets/emploie.png', 'titre': 'Emploi du temps', 'openfenetre': 'Emploi_du_temps', 'description': 'Projet réalisé en master - Création dune application web de gestion et visualisation demploi du temps sous différentes formes techno:'},£
+            {'imgSrc': 'src/assets/oie.png', 'titre': 'Jeu de loie', 'openfenetre': 'jeu-de-loie', 'description': 'Projet réalisé en master (hackathon) - Création dune application web de gestion de voitures électriques sous forme de jeu de loie'},£
+            {'imgSrc': 'src/assets/dame.png', 'titre': 'Jeu de dames', 'openfenetre': 'Jeu_de_dames', 'description': 'Projet réalisé en master - Création dune application web type jeu de dames utilisant lIA'},£
         ],£
         [£
-            {"imgSrc": "src/assets/camping.png", "titre": "Gestion de camping", "openfenetre": "Gestion_de_camping", "description": "Projet réalisé en licence - Création d'une application web de gestion d'un camping totalement connecté"},£
-            {"imgSrc": "src/assets/angular.png", "titre": "Application universitaire (Vue.js & Angular)", "openfenetre": "Application_universitaire_Vuejs_&_angular", "description": "Projet réalisé en master - Création d'une application web de gestion d'emploi du temps et d'un environnement universitaire (notes, inscriptions, etc.)"},£
-            {"imgSrc": "src/assets/oxi.png", "titre": "Application pour OXI", "openfenetre": "Application_pour_OXI", "description": "Projet réalisé en master (concours innovation) - Création d'une application web et mobile de visualisation de plusieurs paramètres"},£
+            {'imgSrc': 'src/assets/camping.png', 'titre': 'Gestion de camping', 'openfenetre': 'Gestion_de_camping', 'description': 'Projet réalisé en licence - Création dune application web de gestion dun camping totalement connecté'},£
+            {'imgSrc': 'src/assets/angular.png', 'titre': 'Application universitaire (Vue.js & Angular)', 'openfenetre': 'Application_universitaire_Vuejs_&_angular', 'description': 'Projet réalisé en master - Création dune application web de gestion demploi du temps et dun environnement universitaire (notes, inscriptions, etc.)'},£
+            {'imgSrc': 'src/assets/oxi.png', 'titre': 'Application pour OXI', 'openfenetre': 'Application_pour_OXI', 'description': 'Projet réalisé en master (concours innovation) - Création dune application web et mobile de visualisation de plusieurs paramètres'},£
         ],£
         [£
-            {"imgSrc": "src/assets/L3chemin.png", "titre": "Jeu de chenilles", "openfenetre": "Jeu_de_chenilles", "description": "Projet réalisé en licence - Création d'un jeu sous OpenGL et Tkinter liant la théorie des graphes et l'infographie"},£
-            {"imgSrc": "src/assets/handtracking.png", "titre": "Handtracking", "openfenetre": "Handtracking", "description": "Projet réalisé en loisirs - Création d'une application Python de handtracking"},£
+            {'imgSrc': 'src/assets/L3chemin.png', 'titre': 'Jeu de chenilles', 'openfenetre': 'Jeu_de_chenilles', 'description': 'Projet réalisé en licence - Création dun jeu sous OpenGL et Tkinter liant la théorie des graphes et linfographie'},£
+            {'imgSrc': 'src/assets/handtracking.png', 'titre': 'Handtracking', 'openfenetre': 'Handtracking', 'description': 'Projet réalisé en loisirs - Création dune application Python de handtracking'},£
         ],£
     ];£
 £
     function createProjetFrame(projet) {£
-        const frame = document.createElement("div");
-        frame.classList.add("projet-frame");
+        const frame = document.createElement('div');
+£        frame.classList.add('projet-frame');
 £
-        const img = document.createElement("img");
-        img.src = projet.imgSrc;
-        frame.appendChild(img);
+        const img = document.createElement('img');
+£       img.src = projet.imgSrc;
+ £       frame.appendChild(img);
 £
-        const title = document.createElement("h3");
-        title.textContent = projet.titre;
-        frame.appendChild(title);
+        const title = document.createElement('h3');
+ £       title.textContent = projet.titre;
+ £       frame.appendChild(title);
 £
-        const description = document.createElement("p");
-        description.textContent = projet.description;
-        frame.appendChild(description);
+        const description = document.createElement('p');
+ £       description.textContent = projet.description;
+ £       frame.appendChild(description);
 £
         return frame;
  £   }
 £
  £   function main() {
-        const container = document.getElementById("projets-container");
+ £       const container = document.getElementById('projets-container');
 £
         projets.forEach(row => {
  £           row.forEach(projet => {
@@ -125,18 +125,18 @@ export const javascript_contact =`
 java con
     function afficherContact() {
 £        const contactInfo = {
- £           "Nom": "Votre Nom",
-  £          "Email": "votre.email@example.com",
-   £         "Téléphone": "+33 6 12 34 56 78",
-    £        "LinkedIn": "https://www.linkedin.com/in/votreprofil",
-     £       "Portfolio": "https://votreportfolio.com"
+ £           'Nom': 'Votre Nom',
+  £          'Email': 'votre.email@example.com',
+   £         'Téléphone': '+33 6 12 34 56 78',
+    £        'LinkedIn': 'https://www.linkedin.com/in/votreprofil',
+     £       'Portfolio': 'https://votreportfolio.com'
       £  };
 £
-        const contactDiv = document.getElementById("contact-info");
+        const contactDiv = document.getElementById('contact-info');
 
         for (const [key, value] of Object.entries(contactInfo)) {
-£            const p = document.createElement("p");
- £           p.innerHTML = "<strong>{key} :</strong> {value}";
+£            const p = document.createElement('p');
+ £           p.innerHTML = '<strong>{key} :</strong> {value}';
   £          contactDiv.appendChild(p);
    £     }
    £ }
@@ -146,7 +146,7 @@ java con
 ` 
 export const python_profil =`
 pyth pro
-# Informations personnelles
+
 £nom = 'Olivier'
 £prenom = 'Tom'
 £mail = 'tomolivierpro@gmail.com'
@@ -385,7 +385,7 @@ export const php_projet =`
 £
 £    foreach ($projets as $projetRow) {
 £        foreach ($projetRow as $projet) {
-£            echo '<div class="projet-frame">';
+£            echo '<div class='projet-frame">';
 £            echo '<img src="' . $projet['imgSrc'] . '" alt="' . $projet['titre'] . '">"';
 £            echo '<h3>' . $projet['titre'] . '</h3>';
 £            echo '<p>' . $projet['description'] . '</p>';
@@ -622,7 +622,7 @@ export const dico_php: { [nom: string]: string } = {
        // Déclaration de Variables
        "var": "#D69D85", // Orange clair
        "let": "#569CD6", // Orange clair
-       "const": "#D69D85", // Orange clair
+       "const": "#C586C0", // Bleu
     // Mots-clés de contrôle de flux
     "if": "#C586C0", // Bleu
     "else": "#C586C0", // Bleu
@@ -639,7 +639,23 @@ export const dico_php: { [nom: string]: string } = {
     "try": "#C586C0", // Bleu
     "catch": "#C586C0", // Bleu
     "finally": "#C586C0", // Bleu
+    "contactinfo":"#80DCFE", // Bleu
+    "contactDiv":"#80DCFE", // Bleu
+    "document":"#80DCFE", // Bleu*
+    "container":"#80DCFE", // Bleu
+    "textContent":"#80DCFE", // Bleu*
+    "description":"#80DCFE", // Bleu
+    "frame":"#80DCFE", // Bleu*
+    "projet":"#80DCFE", // Bleu
+    "title":"#80DCFE", // Bleu*
     
+    "createElement": "#DCDCAA",
+   "createProjetFrame": "#DCDCAA",
+    "main": "#DCDCAA",
+    "appendChild": "#DCDCAA",
+    "entries": "#DCDCAA",
+    "getElementById": "#DCDCAA",
+     "afficherContact": "#DCDCAA",
     // Définition de Fonction/Classe
     "function": "#C586C0", // Violet
     "class": "#C586C0", // Violet
