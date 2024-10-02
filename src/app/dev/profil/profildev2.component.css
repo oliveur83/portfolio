@@ -104,9 +104,7 @@
   scrollbar-color: transparent transparent; 
   
 }
-.num_code_nb{
-  margin-bottom: 14px;
-}
+
 .code {
   float: left;
   clear: both;
@@ -114,7 +112,6 @@
   width: 90%; /* Ajustez la largeur selon vos besoins */
   background-color: #1E1E1E;
   overflow: auto;
- 
   font-size: 41px;
   color: #cccccc;
   

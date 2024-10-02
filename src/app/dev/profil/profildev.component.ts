@@ -209,13 +209,6 @@ export class ProfilComponentdev {
   }
   ngAfterViewInit() {
     this.syncMinimap();
-    const codeDiv = this.el.nativeElement.querySelector('.code');
-
-    const lines = codeDiv.innerHTML.split(
-      '<br _ngcontent-ng-c1625721920="">'
-    ).length;
-
-    this.lineNumbers = Array.from({ length: lines }, (_, index) => index + 1);
   }
   getLinesForNumber(lineNumber: number): string[] {
     // Remplacez cela par votre logique pour générer les lignes associées à chaque numéro
@@ -294,6 +287,7 @@ export class ProfilComponentdev {
   code = javacript_profil; // Assurez-vous que python_profil est une chaîne de caractères
   motsDansString = false;
   GenerateCode(): void {
+    this.lines = 0;
     console.log('putain', this.fichierSelectionne);
     if (
       this.fichierSelectionne == 'contact' &&
@@ -398,7 +392,9 @@ export class ProfilComponentdev {
       } else if (motCle.trim() === '') {
         // Espaces d'indentation ou nouvelles lignes
         if (motCle === '\n') {
-          this.string_complete += '<br>'; // Remplacer les nouvelles lignes par <br>
+          this.lines += 1;
+          this.string_complete += '<br>';
+          // Remplacer les nouvelles lignes par <br>
         } else {
           this.string_complete += '&nbsp;'.repeat(motCle.length); // Conserver les espaces d'indentation
         }
@@ -406,6 +402,8 @@ export class ProfilComponentdev {
         this.string_complete += `<span style="color:${this.dico_string[motCle]};">${motCle}`;
         this.motsDansString = true;
       } else if (motCle == '£') {
+        this.lines += 1;
+        console.log;
         // Assurez-vous que dico_string est défini
         this.string_complete += '<br>';
       } else if (motCle in this.dico_string) {
@@ -419,5 +417,11 @@ export class ProfilComponentdev {
     this.html_java_pro = this.sanitizer.bypassSecurityTrustHtml(
       this.string_complete
     );
+
+    this.lineNumbers = Array.from(
+      { length: this.lines },
+      (_, index) => index + 1
+    );
+    console.log(this.lineNumbers, this.lines);
   }
 }

@@ -491,149 +491,24 @@
           <i class="fas fa-ellipsis-h icon_droite_onglet"></i>
         </div>
       </div>
-      <div
-        class="containerdev"
-        *ngIf="
-          ongletSelectionne === 'python' && fichierSelectionne === 'profil'
-        "
-      >
-        <div class="num_code">
-          <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
-            {{ lineNumber }}
+      <ng-container *ngFor="let onglet of ['python', 'php', 'javascript']; let i = index">
+        <ng-container *ngFor="let fichier of ['profil', 'contact', 'projet']">
+          <div
+            class="containerdev"
+            *ngIf="ongletSelectionne === onglet && fichierSelectionne === fichier"
+          >
+            <div class="num_code">
+              <div *ngFor="let lineNumber of lineNumbers">
+                {{ lineNumber }}
+              </div>
+            </div>
+            <div class="code" id="code" (scroll)="syncMinimap($event)">
+              <div [innerHTML]="html_java_pro"></div>
+            </div>
+            <div class="minimap" id="minimap"></div>
           </div>
-        </div>
-        <div  class="code" id="code" (scroll)="syncMinimap($event)">
-          <div [innerHTML]="html_java_pro"></div>
-        </div>
-        <div class="minimap" id="minimap"></div>
-      </div>
-      <div
-        class="containerdev"
-        *ngIf="
-          ongletSelectionne === 'python' && fichierSelectionne === 'contact'
-        "
-      >
-        <div class="num_code">
-          <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
-            {{ lineNumber }}
-          </div>
-        </div>
-   
-        <div class="code" id="code" (scroll)="syncMinimap($event)">
-          <div [innerHTML]="html_java_pro"></div>
-        </div>
-        <div class="minimap" id="minimap"></div>
-      </div>
-      <div
-        class="containerdev"
-        *ngIf="
-          ongletSelectionne === 'python' && fichierSelectionne === 'projet'
-        "
-      >
-        <div class="num_code">
-          <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
-            {{ lineNumber }}
-          </div>
-        </div>
-        <div class="code" id="code" (scroll)="syncMinimap($event)">
-          <div [innerHTML]="html_java_pro"></div>
-        
-        </div>
-        <div class="minimap" id="minimap"></div>
-      </div>
-
-      <div
-        class="containerdev"
-        *ngIf="ongletSelectionne === 'php' && fichierSelectionne === 'profil'"
-      >
-        <div class="num_code">
-          <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
-            {{ lineNumber }}
-          </div>
-        </div>
-        <div class="code" id="code" (scroll)="syncMinimap($event)">
-          <div [innerHTML]="html_java_pro"></div>
-        </div>
-        <div class="minimap" id="minimap"></div>
-      </div>
-      <div
-        class="containerdev"
-        *ngIf="ongletSelectionne === 'php' && fichierSelectionne === 'contact'"
-      >
-        <div class="num_code">
-          <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
-            {{ lineNumber }}
-          </div>
-        </div>
-        <div class="code" id="code" (scroll)="syncMinimap($event)">
-          <div [innerHTML]="html_java_pro"></div>
-        </div>
-        <div class="minimap" id="minimap"></div>
-      </div>
-      <div
-        class="containerdev"
-        *ngIf="ongletSelectionne === 'php' && fichierSelectionne === 'projet'"
-      >
-        <div class="num_code">
-          <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
-            {{ lineNumber }}
-          </div>
-        </div>
-        <div class="code" id="code" (scroll)="syncMinimap($event)">
-          <div [innerHTML]="html_java_pro"></div>
-        </div>
-        <div class="minimap" id="minimap"></div>
-      </div>
-      <div
-        class="containerdev"
-        *ngIf="
-          ongletSelectionne === 'javascript' && fichierSelectionne === 'profil'
-        "
-      >
-        <div class="num_code">
-          <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
-            {{ lineNumber }}
-          </div>
-        </div>
-        <div class="code" id="code" (scroll)="syncMinimap($event)">
-          <div [innerHTML]="html_java_pro"></div>
-
-        </div>
-        <div class="minimap" id="minimap"></div>
-      </div>
-      <div
-        class="containerdev"
-        *ngIf="
-          ongletSelectionne === 'javascript' && fichierSelectionne === 'contact'
-        "
-      >
-        <div class="num_code">
-          <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
-            {{ lineNumber }}
-          </div>
-        </div>
-        <div class="code" id="code" (scroll)="syncMinimap($event)">
-          <div [innerHTML]="html_java_pro"></div>
-        </div>
-        <div class="minimap" id="minimap"></div>
-      </div>
-      <div
-        class="containerdev"
-        *ngIf="
-          ongletSelectionne === 'javascript' && fichierSelectionne === 'projet'
-        "
-      >
-        <div class="num_code">
-          <div class="num_code_nb" *ngFor="let lineNumber of lineNumbers">
-            {{ lineNumber }}
-          </div>
-        </div>
-        <div class="code" id="code" (scroll)="syncMinimap($event)">
-          <div [innerHTML]="html_java_pro"></div>
-         
-        </div>
-        <div class="minimap" id="minimap"></div>
-      </div>
+        </ng-container>
+      </ng-container>
       <div
         class="terminal resizable"
         id="terminal"
