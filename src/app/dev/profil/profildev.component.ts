@@ -424,4 +424,18 @@ export class ProfilComponentdev {
     );
     console.log(this.lineNumbers, this.lines);
   }
+  email: string = '';
+
+  recupererEmail() {
+    // Expression régulière pour valider une adresse email
+    const emailPattern = /^[a-zA-Z0-9._-]+@[gmail]+\.[com]{2,6}$/;
+
+    // Validation du format de l'email
+    if (emailPattern.test(this.email)) {
+      alert('Email valide : ' + this.email);
+      // Ajouter ici votre logique pour transférer l'email ou effectuer une autre action
+    } else {
+      alert('Veuillez entrer un email valide.');
+    }
+  }
 }

@@ -146,16 +146,7 @@
 
           <span class="tooltiptext">Extension (Ctrl+Maj+X)</span>
         </li>
-        <li>
-          <img
-            (click)="sied_h('postman')"
-            class="search-image"
-            src="./assets/side_header/postman.png"
-            alt="Image"
-          />
-
-          <span class="tooltiptext">Postman </span>
-        </li>
+        <li></li>
         <li>
           <img
             (click)="sied_h('check')"
@@ -176,16 +167,6 @@
 
           <span class="tooltiptext">Mysql</span>
         </li>
-        <li>
-          <img
-            (click)="sied_h('spock')"
-            class="search-image"
-            src="./assets/side_header/spoke.png"
-            alt="Image"
-          />
-
-          <span class="tooltiptext">Spockee</span>
-        </li>
       </ul>
       <ul class="side-header-menu_d">
         <li>
@@ -197,16 +178,6 @@
           />
 
           <span class="tooltiptext">Accounts</span>
-        </li>
-        <li>
-          <img
-            (click)="sied_h('cog')"
-            class="search-image"
-            src="./assets/side_header/cog.png"
-            alt="Image"
-          />
-
-          <span class="tooltiptext">Manage</span>
         </li>
       </ul>
     </div>
@@ -375,41 +346,19 @@
         <div class="box-click">
           <i class="fa fa-chevron-down" (click)="ouvreeditors()"></i>
           <span>Exécuter</span>
-          <div class="box-click2">
-            <ul>
-              <li>
-                <P> angular langage</P>
-                <P> framework web </P>
-                <P> angular</P>
-              </li>
-            </ul>
-          </div>
+          <button
+          class="port_bouton"
+          type="button"
+          (click)="recupererEmail()"
+        >
+        Exécuter et déboguer 
+      </button>
+      <H5> pour personnaliser  Exécuter et déboguer  crée un fichier launch.json 
+        afficher toutes les foncfigurations de débogage automatique 
+      </H5>
         </div>
       </div>
-      <div class="menu-drop">
-        <div class="box-click">
-          <i class="fa fa-chevron-down" (click)="ouvreeditors()"></i>
-          <span>Points D'arrèt</span>
-          <div class="box-click2">
-            <ul>
-              <li>
-                <P> angular langage</P>
-                <P> framework web </P>
-                <P> angular</P>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="menu-option" *ngIf="side_h_var === 'cog' && side_h_var_vi">
-      <h5>cog</h5>
-    </div>
-    <div class="menu-option" *ngIf="side_h_var === 'postman' && side_h_var_vi">
-      <h5>post</h5>
-    </div>
-    <div class="menu-option" *ngIf="side_h_var === 'spock' && side_h_var_vi">
-      <h5>spock</h5>
+  
     </div>
     <div class="menu-option" *ngIf="side_h_var === 'user' && side_h_var_vi">
       <h5>user</h5>
@@ -620,12 +569,13 @@
             type="text"
             id="texteInput"
             name="texteInput"
+            [(ngModel)]="email"
             placeholder="Votre texte ici"
           />
           <br /><button
             class="port_bouton"
             type="button"
-            onclick="afficherTexte()"
+            (click)="recupererEmail()"
           >
             Transférer un port
           </button>
