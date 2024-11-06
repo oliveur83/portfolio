@@ -142,7 +142,7 @@ export class ProfilComponentdev {
   }
   changerOnglet(nouvelOnglet: string): void {
     this.ongletSelectionne = nouvelOnglet;
-
+    this.changerfichier(this.fichierSelectionne);
     this.syncMinimap();
   }
   changerOngletFleche(direction: string) {
