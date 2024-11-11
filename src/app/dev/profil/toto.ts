@@ -1,5 +1,4 @@
-export const javacript_profil =`
-java pro
+export const javacript_profil = `
 let prenom = 'Tom';
 let nom = 'Olivier';
 let mail = 'tomolivierpro@gmail.com';
@@ -68,10 +67,10 @@ function myloisir() {£
 }£
 £
 myloisir();
-` 
+`;
 
-export const javascript_projet =`
-java pro 
+export const javascript_projet = `
+
 const projets = [£
         [£
             {'imgSrc': 'src/assets/emploie.png', 'titre': 'Emploi du temps', 'openfenetre': 'Emploi_du_temps', 'description': 'Projet réalisé en master - Création dune application web de gestion et visualisation demploi du temps sous différentes formes techno:'},£
@@ -120,9 +119,9 @@ const projets = [£
    £ }
 £
     main();
-` 
-export const javascript_contact =`
-java con
+`;
+export const javascript_contact = `
+
     function afficherContact() {
 £        const contactInfo = {
  £           'Nom': 'Votre Nom',
@@ -143,9 +142,8 @@ java con
 £
 £    afficherContact();
 
-` 
-export const python_profil =`
-pyth pro
+`;
+export const python_profil = `
 
 £nom = 'Olivier'
 £prenom = 'Tom'
@@ -206,9 +204,9 @@ pyth pro
 £    print('Les projets 3D JavaScript et les projets Python handtracking qui satisfont ma curiosité et mon envie de réaliser des projets.')
 £
 £myloisir()
-` 
-export const python_projet =`
-pyth pro
+`;
+export const python_projet = `
+
 import tkinter as tk
 £from tkinter import PhotoImage
 £
@@ -273,9 +271,8 @@ import tkinter as tk
 £
 £if __name__ == '__main__':
 £    main()
-` 
-export const python_contact =`
-pyth con
+`;
+export const python_contact = `
 £import time
 £
 £def reveal_contact_info():
@@ -294,9 +291,8 @@ pyth con
 £        print(value)
 £        
 £reveal_contact_info()
-`
-export const php_profil =`
-php pro 
+`;
+export const php_profil = `
 <?php £
 £$nom = 'Olivier';
 £$prenom = 'Tom';
@@ -363,9 +359,9 @@ php pro
 £
 £myloisir();
 £?>
-` 
-export const php_projet =`
-   php proj    <?php
+`;
+export const php_projet = `
+<?php
    £ $projets = [
     £    [
     £        ['imgSrc' => 'src/assets/emploie.png', 'titre' => 'Emploi du temps', 'openfenetre' => 'Emploi_du_temps', 'description' => 'Projet réalisé en master  Creation d une application web de gestion et visualisation demploi du temps sous différentes formes techno:'],
@@ -393,10 +389,9 @@ export const php_projet =`
 £        }
 £    }
 £    ?>
-` 
-export const php_contact =`
- php con
- <?php
+`;
+export const php_contact = `
+<?php
 £function afficher_contact()
 £{
 £    $contact_info = array(
@@ -415,284 +410,275 @@ export const php_contact =`
 £
 £afficher_contact();
 £?>
-`  
+`;
 
 export const dico_python: { [nom: string]: string } = {
-   
-        // Mots-clés Python - Contrôle de flux
-        'if': "#C586C0", // Bleu
-           "else": "#C586C0", // Bleu
-        "elif": "#C586C0", // Bleu
-        "for": "#569CD6", // Bleu
-        "while": "#569CD6", // Bleu
-        "break": "#569CD6", // Bleu
-        "continue": "#569CD6", // Bleu
-        "return": "#C586C0", // Violet
-        "switch": "#C586C0",  // Bleu
-        "self": "#C586C0", // Bleu
-        "finally": "#569CD6", // Bleu
-        "with": "#569CD6", // Bleu
-        "as": "#569CD6", // Bleu
-        "assert": "#569CD6", // Bleu
-        "raise": "#569CD6", // Bleu
-      
-        // Définition de Fonction/Classe
-        "def": "#C586C0", // Violet
-        "class": "#C586C0", // Violet
-        "lambda": "#C586C0", // Violet
-        "case": "#C586C0", // Violet
-       // mots variable 
-       "nom": "#80DCFE",
-       "contact_info": "#80DCFE",
-       "end": "#80DCFE",
-       "flush": "#80DCFE",
-       "prenom": "#80DCFE",
-       "mail": "#80DCFE",
-       "master": "#80DCFE",
-       "file": "#80DCFE",
-       "fenetre": "#80DCFE",
-       "title": "#80DCFE",
-       "image": "#80DCFE",
-       "projet_row": "#80DCFE",
-       "img": "#80DCFE",
-       "row_idx": "#80DCFE",
-       "col_idx": "#80DCFE",
-       "frame": "#80DCFE",
-       "column": "#80DCFE",
-       "grid": "#80DCFE",
-       "text": "#80DCFE",
-       "padx": "#80DCFE",
-       "pady": "#80DCFE",
-       "row": "#80DCFE",
-       "__name__": "#80DCFE",
-       "chemin_image": "#80DCFE",
-       "label_image": "#80DCFE",
-       "projet": "#80DCFE",
-       "image_label": "#80DCFE",
-       "title_label": "#80DCFE",
-       "description_label": "#80DCFE",
-       "langages": "#80DCFE",
-       "projets": "#80DCFE",
-       "pack": "#80DCFE",
-       "root": "#80DCFE",
-        "ville": "#80DCFE",
-        "annee": "#80DCFE",
-        "switch_case_annee": "#DCDCAA",
-        "top_langage_decroissante": "#DCDCAA",
-        "top_framework": "#DCDCAA",
-        "valeur": "#DCDCAA",
-        "logiciel": "#DCDCAA",
-"key":"#80DCFE",
-"value": "#80DCFE",
-"time": "#1F7C87",
-"tkinter": "#1F7C87",
-"tk": "#1F7C87",
-"Label": "#1F7C87",
-"PhotoImage": "#1F7C87",
-"Tk": "#1F7C87",
-"enuerate": "#1F7C87",
-"ProjetFrame": "#1F7C87",
-"Frame": "#1F7C87",
-"super": "#1F7C87",
-        // Importation de Modules
-        "import": "#C586C0", // Violet
-        "from": "#C586C0", // Violet
-        "'":"#D69D85",
-      
-        // Logique
-        "and": "#569CD6", // Bleu
-        "or": "#569CD6", // Bleu
-        "not": "#569CD6", // Bleu
-        "is": "#569CD6", // Bleu
-        "in": "#569CD6", // Bleu
-      
-        // Types de Données Primitives
-        "True": "#569CD6", // Bleu
-        "False": "#569CD6", // Bleu
-        "None": "#569CD6", // Bleu
-      
-        // Affichage/Entrée
-        "print": "#DCDCAA", // Jaune clair
-        "input": "#DCDCAA", // Jaune clair
-        "myloisir": "#DCDCAA", 
-        "reveal_contact_info": "#DCDCAA", 
-        "afficher_image": "#DCDCAA", 
-        "create_widgets": "#DCDCAA",
-        "main": "#DCDCAA",  
-        "mainloop": "#DCDCAA",  
-        "__init__": "#DCDCAA",  
-        "subsample": "#DCDCAA",  
-        // Divers
+  // Mots-clés Python - Contrôle de flux
+  if: '#C586C0', // Bleu
+  else: '#C586C0', // Bleu
+  elif: '#C586C0', // Bleu
+  for: '#569CD6', // Bleu
+  while: '#569CD6', // Bleu
+  break: '#569CD6', // Bleu
+  continue: '#569CD6', // Bleu
+  return: '#C586C0', // Violet
+  switch: '#C586C0', // Bleu
+  self: '#C586C0', // Bleu
+  finally: '#569CD6', // Bleu
+  with: '#569CD6', // Bleu
+  as: '#569CD6', // Bleu
+  assert: '#569CD6', // Bleu
+  raise: '#569CD6', // Bleu
 
-        "yield": "#569CD6", // Bleu
-        "async": "#569CD6", // Bleu
-        "await": "#569CD6", // Bleu
-        };
-  
-export const dico_php: { [nom: string]: string } = {
-   
-            // Mots-clés PHP - Contrôle de flux
-            "if": "#C586C0", // Violet
-            "else": "#C586C0", // Violet
-            "elseif": "#C586C0", // Bleu
-            "php": "#569CD6", // Bleu
-            "?": "#569CD6", // Bleu
-            "<": "#569CD6", // Bleu
-            ">": "#569CD6", // Bleu
-            "foreach": "#569CD6", // Bleu
-            "while": "#569CD6", // Bleu
-            "break": "#569CD6", // Bleu
-            "continue": "#569CD6", // Bleu
-            "return": "#C586C0", // Violet
-            "try": "#569CD6", // Bleu
-            "catch": "#569CD6", // Bleu
-            "finally": "#569CD6", // Bleu
-            "switch": "#569CD6", // Bleu
-            "case": "#569CD6", // Bleu
-            "default": "#569CD6", // Bleu
-            "'":"#D69D85",
-            // Définition de Fonction/Classe
-            "function": "#C586C0", // Violet
-            "class": "#C586C0", // Violet
-            "interface": "#C586C0", // Violet
-            "trait": "#C586C0", // Violet
-            "public": "#569CD6", // Bleu
-            "private": "#569CD6", // Bleu
-            "protected": "#569CD6", // Bleu
-            "static": "#569CD6", // Bleu
-            "const": "#569CD6", // Bleu
-            // mot de varibale a voir plus tard 
-            "nom": "#80DCFE",
-            "prenom": "#80DCFE",
-            "mail": "#80DCFE",
-            "ville": "#80DCFE",
-            "langages": "#80DCFE",
-            "annee": "#80DCFE",
-            "$": "#80DCFE",
-            "switch_case_annee": "#80DCFE",
-            "top_langage_decroissante": "#80DCFE",
-            "cle": "#80DCFE",
-            "valeur": "#80DCFE",
-            "top_framework": "#80DCFE",
-            "logiciel": "#80DCFE",
-            "muyloisir": "#DCDCAA",
-            "afficher_contact": "#DCDCAA",
-            "contact_info": "#80DCFE",
-            "key": "#80DCFE",
-            "value": "#80DCFE",
-            "projets": "#80DCFE",
-            "projetRow": "#80DCFE",
-            "projet": "#80DCFE",
-       
+  // Définition de Fonction/Classe
+  def: '#C586C0', // Violet
+  class: '#C586C0', // Violet
+  lambda: '#C586C0', // Violet
+  case: '#C586C0', // Violet
+  // mots variable
+  nom: '#80DCFE',
+  contact_info: '#80DCFE',
+  end: '#80DCFE',
+  flush: '#80DCFE',
+  prenom: '#80DCFE',
+  mail: '#80DCFE',
+  master: '#80DCFE',
+  file: '#80DCFE',
+  fenetre: '#80DCFE',
+  title: '#80DCFE',
+  image: '#80DCFE',
+  projet_row: '#80DCFE',
+  img: '#80DCFE',
+  row_idx: '#80DCFE',
+  col_idx: '#80DCFE',
+  frame: '#80DCFE',
+  column: '#80DCFE',
+  grid: '#80DCFE',
+  text: '#80DCFE',
+  padx: '#80DCFE',
+  pady: '#80DCFE',
+  row: '#80DCFE',
+  __name__: '#80DCFE',
+  chemin_image: '#80DCFE',
+  label_image: '#80DCFE',
+  projet: '#80DCFE',
+  image_label: '#80DCFE',
+  title_label: '#80DCFE',
+  description_label: '#80DCFE',
+  langages: '#80DCFE',
+  projets: '#80DCFE',
+  pack: '#80DCFE',
+  root: '#80DCFE',
+  ville: '#80DCFE',
+  annee: '#80DCFE',
+  switch_case_annee: '#DCDCAA',
+  top_langage_decroissante: '#DCDCAA',
+  top_framework: '#DCDCAA',
+  valeur: '#DCDCAA',
+  logiciel: '#DCDCAA',
+  key: '#80DCFE',
+  value: '#80DCFE',
+  time: '#1F7C87',
+  tkinter: '#1F7C87',
+  tk: '#1F7C87',
+  Label: '#1F7C87',
+  PhotoImage: '#1F7C87',
+  Tk: '#1F7C87',
+  enuerate: '#1F7C87',
+  ProjetFrame: '#1F7C87',
+  Frame: '#1F7C87',
+  super: '#1F7C87',
+  // Importation de Modules
+  import: '#C586C0', // Violet
+  from: '#C586C0', // Violet
+  "'": '#D69D85',
 
-            // Importation de Modules/Namespaces
-            "include": "#C586C0", // Violet
-            "require": "#C586C0", // Violet
-            "use": "#C586C0", // Violet
-            "namespace": "#C586C0", // Violet
-        
-            // Logique
-            "and": "#569CD6", // Bleu
-            "or": "#569CD6", // Bleu
-            "xor": "#569CD6", // Bleu
-            "not": "#569CD6", // Bleu
-            "instanceof": "#569CD6", // Bleu
-            "as": "#569CD6", // Bleu
-        
-            // Types de Données Primitives
-            "true": "#569CD6", // Bleu
-            "false": "#569CD6", // Bleu
-            "null": "#569CD6", // Bleu
-        
-            // Affichage/Entrée
-            "echo": "#DCDCAA", // Jaune clair
-            "print": "#DCDCAA", // Jaune clair
-        
-            // Divers
-            "yield": "#569CD6", // Bleu
-            "array": "#569CD6", // Bleu
-            "new": "#569CD6", // Bleu
-            "clone": "#569CD6", // Bleu
-            "async": "#569CD6", // Bleu
-            "await": "#569CD6", // Bleu
-        };
-        
+  // Logique
+  and: '#569CD6', // Bleu
+  or: '#569CD6', // Bleu
+  not: '#569CD6', // Bleu
+  is: '#569CD6', // Bleu
+  in: '#569CD6', // Bleu
 
-  export const dico: { [nom: string]: string } = {
-       // Déclaration de Variables
-       "var": "#D69D85", // Orange clair
-       "let": "#569CD6", // Orange clair
-       "const": "#C586C0", // Bleu
-    // Mots-clés de contrôle de flux
-    "if": "#C586C0", // Bleu
-    "else": "#C586C0", // Bleu
-    "switch": "#C586C0", // Bleu
-    "case": "#C586C0", // Bleu
-    "default": "#C586C0", // Bleu
-    "for": "#C586C0", // Bleu
-    "while": "#C586C0", // Bleu
-    "do": "#C586C0", // Bleu
-    "break": "#C586C0", // Bleu
-    "continue": "#C586C0", // Bleu
-    "return": "#C586C0", // Violet
-    "throw": "#C586C0", // Violet
-    "try": "#C586C0", // Bleu
-    "catch": "#C586C0", // Bleu
-    "finally": "#C586C0", // Bleu
-    "contactinfo":"#80DCFE", // Bleu
-    "contactDiv":"#80DCFE", // Bleu
-    "document":"#80DCFE", // Bleu*
-    "container":"#80DCFE", // Bleu
-    "textContent":"#80DCFE", // Bleu*
-    "description":"#80DCFE", // Bleu
-    "frame":"#80DCFE", // Bleu*
-    "projet":"#80DCFE", // Bleu
-    "title":"#80DCFE", // Bleu*
-    
-    "createElement": "#DCDCAA",
-   "createProjetFrame": "#DCDCAA",
-    "main": "#DCDCAA",
-    "appendChild": "#DCDCAA",
-    "entries": "#DCDCAA",
-    "getElementById": "#DCDCAA",
-     "afficherContact": "#DCDCAA",
-    // Définition de Fonction/Classe
-    "function": "#C586C0", // Violet
-    "class": "#C586C0", // Violet
-    "constructor": "#C586C0", // Violet
-    "async": "#C586C0", // Violet
-    "await": "#C586C0", // Violet
-    
-    // Importation de Modules
-    "import": "#C586C0", // Violet
-    "export": "#C586C0", // Violet
-    "from": "#C586C0", // Violet
-    "'":"#D69D85",
+  // Types de Données Primitives
+  True: '#569CD6', // Bleu
+  False: '#569CD6', // Bleu
+  None: '#569CD6', // Bleu
 
-    // Logique
-    "and": "#C586C0", // Bleu (remplacé par && en JS)
-    "or": "#C586C0", // Bleu (remplacé par || en JS)
-    "not": "#C586C0", // Bleu (remplacé par ! en JS)
-    "is": "#C586C0", // Bleu (pas de équivalent direct en JS)
-    "in": "#C586C0", // Bleu (pas de équivalent direct en JS)
+  // Affichage/Entrée
+  print: '#DCDCAA', // Jaune clair
+  input: '#DCDCAA', // Jaune clair
+  myloisir: '#DCDCAA',
+  reveal_contact_info: '#DCDCAA',
+  afficher_image: '#DCDCAA',
+  create_widgets: '#DCDCAA',
+  main: '#DCDCAA',
+  mainloop: '#DCDCAA',
+  __init__: '#DCDCAA',
+  subsample: '#DCDCAA',
+  // Divers
 
-    // Types de Données Primitives
-    "true": "#C586C0", // Bleu
-    "false": "#C586C0", // Bleu
-    "null": "#C586C0", // Bleu
-    "undefined": "#C586C0", // Bleu
-    
-    // Affichage/Entrée
-    "console": "#37A3F0", // Jaune clair
-    "log": "#DCDCAA", // Jaune clair
-    "alert": "#DCDCAA", // Jaune clair
-    
-    // Divers
-    "yield": "#C586C0", // Bleu (plus utilisé dans les générateurs)
-     // Violet
+  yield: '#569CD6', // Bleu
+  async: '#569CD6', // Bleu
+  await: '#569CD6', // Bleu
 };
 
-  
-  
-  
-  
+export const dico_php: { [nom: string]: string } = {
+  // Mots-clés PHP - Contrôle de flux
+  if: '#C586C0', // Violet
+  else: '#C586C0', // Violet
+  elseif: '#C586C0', // Bleu
+  php: '#569CD6', // Bleu
+  '?': '#569CD6', // Bleu
+  '<': '#569CD6', // Bleu
+  '>': '#569CD6', // Bleu
+  foreach: '#569CD6', // Bleu
+  while: '#569CD6', // Bleu
+  break: '#569CD6', // Bleu
+  continue: '#569CD6', // Bleu
+  return: '#C586C0', // Violet
+  try: '#569CD6', // Bleu
+  catch: '#569CD6', // Bleu
+  finally: '#569CD6', // Bleu
+  switch: '#569CD6', // Bleu
+  case: '#569CD6', // Bleu
+  default: '#569CD6', // Bleu
+  "'": '#D69D85',
+  // Définition de Fonction/Classe
+  function: '#C586C0', // Violet
+  class: '#C586C0', // Violet
+  interface: '#C586C0', // Violet
+  trait: '#C586C0', // Violet
+  public: '#569CD6', // Bleu
+  private: '#569CD6', // Bleu
+  protected: '#569CD6', // Bleu
+  static: '#569CD6', // Bleu
+  const: '#569CD6', // Bleu
+  // mot de varibale a voir plus tard
+  nom: '#80DCFE',
+  prenom: '#80DCFE',
+  mail: '#80DCFE',
+  ville: '#80DCFE',
+  langages: '#80DCFE',
+  annee: '#80DCFE',
+  $: '#80DCFE',
+  switch_case_annee: '#80DCFE',
+  top_langage_decroissante: '#80DCFE',
+  cle: '#80DCFE',
+  valeur: '#80DCFE',
+  top_framework: '#80DCFE',
+  logiciel: '#80DCFE',
+  muyloisir: '#DCDCAA',
+  afficher_contact: '#DCDCAA',
+  contact_info: '#80DCFE',
+  key: '#80DCFE',
+  value: '#80DCFE',
+  projets: '#80DCFE',
+  projetRow: '#80DCFE',
+  projet: '#80DCFE',
+
+  // Importation de Modules/Namespaces
+  include: '#C586C0', // Violet
+  require: '#C586C0', // Violet
+  use: '#C586C0', // Violet
+  namespace: '#C586C0', // Violet
+
+  // Logique
+  and: '#569CD6', // Bleu
+  or: '#569CD6', // Bleu
+  xor: '#569CD6', // Bleu
+  not: '#569CD6', // Bleu
+  instanceof: '#569CD6', // Bleu
+  as: '#569CD6', // Bleu
+
+  // Types de Données Primitives
+  true: '#569CD6', // Bleu
+  false: '#569CD6', // Bleu
+  null: '#569CD6', // Bleu
+
+  // Affichage/Entrée
+  echo: '#DCDCAA', // Jaune clair
+  print: '#DCDCAA', // Jaune clair
+
+  // Divers
+  yield: '#569CD6', // Bleu
+  array: '#569CD6', // Bleu
+  new: '#569CD6', // Bleu
+  clone: '#569CD6', // Bleu
+  async: '#569CD6', // Bleu
+  await: '#569CD6', // Bleu
+};
+
+export const dico: { [nom: string]: string } = {
+  // Déclaration de Variables
+  var: '#D69D85', // Orange clair
+  let: '#569CD6', // Orange clair
+  const: '#C586C0', // Bleu
+  // Mots-clés de contrôle de flux
+  if: '#C586C0', // Bleu
+  else: '#C586C0', // Bleu
+  switch: '#C586C0', // Bleu
+  case: '#C586C0', // Bleu
+  default: '#C586C0', // Bleu
+  for: '#C586C0', // Bleu
+  while: '#C586C0', // Bleu
+  do: '#C586C0', // Bleu
+  break: '#C586C0', // Bleu
+  continue: '#C586C0', // Bleu
+  return: '#C586C0', // Violet
+  throw: '#C586C0', // Violet
+  try: '#C586C0', // Bleu
+  catch: '#C586C0', // Bleu
+  finally: '#C586C0', // Bleu
+  contactinfo: '#80DCFE', // Bleu
+  contactDiv: '#80DCFE', // Bleu
+  document: '#80DCFE', // Bleu*
+  container: '#80DCFE', // Bleu
+  textContent: '#80DCFE', // Bleu*
+  description: '#80DCFE', // Bleu
+  frame: '#80DCFE', // Bleu*
+  projet: '#80DCFE', // Bleu
+  title: '#80DCFE', // Bleu*
+
+  createElement: '#DCDCAA',
+  createProjetFrame: '#DCDCAA',
+  main: '#DCDCAA',
+  appendChild: '#DCDCAA',
+  entries: '#DCDCAA',
+  getElementById: '#DCDCAA',
+  afficherContact: '#DCDCAA',
+  // Définition de Fonction/Classe
+  function: '#C586C0', // Violet
+  class: '#C586C0', // Violet
+  constructor: '#C586C0', // Violet
+  async: '#C586C0', // Violet
+  await: '#C586C0', // Violet
+
+  // Importation de Modules
+  import: '#C586C0', // Violet
+  export: '#C586C0', // Violet
+  from: '#C586C0', // Violet
+  "'": '#D69D85',
+
+  // Logique
+  and: '#C586C0', // Bleu (remplacé par && en JS)
+  or: '#C586C0', // Bleu (remplacé par || en JS)
+  not: '#C586C0', // Bleu (remplacé par ! en JS)
+  is: '#C586C0', // Bleu (pas de équivalent direct en JS)
+  in: '#C586C0', // Bleu (pas de équivalent direct en JS)
+
+  // Types de Données Primitives
+  true: '#C586C0', // Bleu
+  false: '#C586C0', // Bleu
+  null: '#C586C0', // Bleu
+  undefined: '#C586C0', // Bleu
+
+  // Affichage/Entrée
+  console: '#37A3F0', // Jaune clair
+  log: '#DCDCAA', // Jaune clair
+  alert: '#DCDCAA', // Jaune clair
+
+  // Divers
+  yield: '#C586C0', // Bleu (plus utilisé dans les générateurs)
+  // Violet
+};
